@@ -1,0 +1,19 @@
+2025/04/20 20:02:59 Received {c1 n0 {"type":"init","node_id":"n0","node_ids":["n0","n1"],"msg_id":1}}
+2025/04/20 20:02:59 Node n0 initialized
+2025/04/20 20:02:59 Sent {"src":"n0","dest":"c1","body":{"in_reply_to":1,"type":"init_ok"}}
+2025/04/20 20:02:59 Received {c2 n0 {"type":"topology","topology":{"n0":["n1"],"n1":["n0"]},"msg_id":1}}
+2025/04/20 20:02:59 Sent {"src":"n0","dest":"c2","body":{"in_reply_to":1,"type":"topology_ok"}}
+2025/04/20 20:02:59 Received {c4 n0 {"type":"broadcast","message":0,"msg_id":1}}
+panic: interface conversion: interface {} is []interface {}, not []string
+
+goroutine 38 [running]:
+main.gossipMessage(0x1, 0xc0001b4000, 0xc000116240)
+	/home/divi/git/fly.io/maelstrom_broadcast.go:80 +0x1dd
+main.main.maelstromBroadcast.func3({{0xc0001943d8, 0x2}, {0xc0001943da, 0x2}, {0xc0001dc000, 0x2b, 0x30}})
+	/home/divi/git/fly.io/maelstrom_broadcast.go:122 +0xfb
+github.com/jepsen-io/maelstrom/demo/go.(*Node).handleMessage(0xc0001b4000, 0x0?, {{0xc0001943d8, 0x2}, {0xc0001943da, 0x2}, {0xc0001dc000, 0x2b, 0x30}})
+	/home/divi/go/pkg/mod/github.com/jepsen-io/maelstrom/demo/go@v0.0.0-20250204203845-8263d1dd2b7a/node.go:151 +0x8d
+github.com/jepsen-io/maelstrom/demo/go.(*Node).Run.func2()
+	/home/divi/go/pkg/mod/github.com/jepsen-io/maelstrom/demo/go@v0.0.0-20250204203845-8263d1dd2b7a/node.go:129 +0x77
+created by github.com/jepsen-io/maelstrom/demo/go.(*Node).Run in goroutine 1
+	/home/divi/go/pkg/mod/github.com/jepsen-io/maelstrom/demo/go@v0.0.0-20250204203845-8263d1dd2b7a/node.go:127 +0x4f8

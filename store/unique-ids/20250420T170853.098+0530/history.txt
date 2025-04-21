@@ -1,0 +1,4 @@
+:nemesis	:info	:start-partition	:one
+0	:invoke	:generate	nil
+:nemesis	:info	:start-partition	[:isolated {"n0" #{}}]
+0	:info	:generate	nil	:net-timeout

@@ -1,0 +1,10 @@
+:nemesis	:info	:start-partition	:minority-third
+1	:invoke	:generate	nil
+:nemesis	:info	:start-partition	[:isolated {"n2" #{}, "n1" #{}, "n0" #{}}]
+2	:invoke	:generate	nil
+0	:invoke	:generate	nil
+:nemesis	:info	:stop-partition	nil
+:nemesis	:info	:stop-partition	:network-healed
+1	:info	:generate	nil	:net-timeout
+2	:info	:generate	nil	:net-timeout
+0	:info	:generate	nil	:net-timeout

@@ -1,0 +1,4 @@
+{:index 0, :time 9832157, :type :info, :process :nemesis, :f :start-partition, :value :one}
+{:index 1, :time 12466950, :type :invoke, :process 0, :f :generate, :value nil}
+{:index 2, :time 16425808, :type :info, :process :nemesis, :f :start-partition, :value [:isolated {"n0" #{}}]}
+{:index 3, :time 5018533844, :type :info, :process 0, :f :generate, :value nil, :error :net-timeout}

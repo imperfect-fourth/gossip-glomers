@@ -1,0 +1,31 @@
+2025/04/20 16:47:44 Received {c0 n4 {"type":"init","node_id":"n4","node_ids":["n1","n2","n3","n4","n5"],"msg_id":1}}
+2025/04/20 16:47:44 Node n4 initialized
+2025/04/20 16:47:44 Sent {"src":"n4","dest":"c0","body":{"in_reply_to":1,"type":"init_ok"}}
+2025/04/20 16:47:45 Received {c12 n4 {"echo":"Please echo 64","type":"echo","msg_id":1}}
+2025/04/20 16:47:45 Sent {"src":"n4","dest":"c12","body":{"echo":"Please echo 64","in_reply_to":1,"msg_id":1,"type":"echo_ok"}}
+2025/04/20 16:47:46 Received {c12 n4 {"echo":"Please echo 50","type":"echo","msg_id":2}}
+2025/04/20 16:47:46 Sent {"src":"n4","dest":"c12","body":{"echo":"Please echo 50","in_reply_to":2,"msg_id":2,"type":"echo_ok"}}
+2025/04/20 16:47:46 Received {c12 n4 {"echo":"Please echo 49","type":"echo","msg_id":3}}
+2025/04/20 16:47:46 Sent {"src":"n4","dest":"c12","body":{"echo":"Please echo 49","in_reply_to":3,"msg_id":3,"type":"echo_ok"}}
+2025/04/20 16:47:46 Received {c12 n4 {"echo":"Please echo 5","type":"echo","msg_id":4}}
+2025/04/20 16:47:46 Sent {"src":"n4","dest":"c12","body":{"echo":"Please echo 5","in_reply_to":4,"msg_id":4,"type":"echo_ok"}}
+2025/04/20 16:47:47 Received {c12 n4 {"echo":"Please echo 44","type":"echo","msg_id":5}}
+2025/04/20 16:47:47 Sent {"src":"n4","dest":"c12","body":{"echo":"Please echo 44","in_reply_to":5,"msg_id":5,"type":"echo_ok"}}
+2025/04/20 16:47:47 Received {c12 n4 {"echo":"Please echo 68","type":"echo","msg_id":6}}
+2025/04/20 16:47:47 Sent {"src":"n4","dest":"c12","body":{"echo":"Please echo 68","in_reply_to":6,"msg_id":6,"type":"echo_ok"}}
+2025/04/20 16:47:48 Received {c12 n4 {"echo":"Please echo 121","type":"echo","msg_id":7}}
+2025/04/20 16:47:48 Sent {"src":"n4","dest":"c12","body":{"echo":"Please echo 121","in_reply_to":7,"msg_id":7,"type":"echo_ok"}}
+2025/04/20 16:47:48 Received {c12 n4 {"echo":"Please echo 27","type":"echo","msg_id":8}}
+2025/04/20 16:47:48 Sent {"src":"n4","dest":"c12","body":{"echo":"Please echo 27","in_reply_to":8,"msg_id":8,"type":"echo_ok"}}
+2025/04/20 16:47:50 Received {c12 n4 {"echo":"Please echo 70","type":"echo","msg_id":9}}
+2025/04/20 16:47:50 Sent {"src":"n4","dest":"c12","body":{"echo":"Please echo 70","in_reply_to":9,"msg_id":9,"type":"echo_ok"}}
+2025/04/20 16:47:50 Received {c12 n4 {"echo":"Please echo 99","type":"echo","msg_id":10}}
+2025/04/20 16:47:50 Sent {"src":"n4","dest":"c12","body":{"echo":"Please echo 99","in_reply_to":10,"msg_id":10,"type":"echo_ok"}}
+2025/04/20 16:47:52 Received {c12 n4 {"echo":"Please echo 82","type":"echo","msg_id":11}}
+2025/04/20 16:47:52 Sent {"src":"n4","dest":"c12","body":{"echo":"Please echo 82","in_reply_to":11,"msg_id":11,"type":"echo_ok"}}
+2025/04/20 16:47:53 Received {c12 n4 {"echo":"Please echo 57","type":"echo","msg_id":12}}
+2025/04/20 16:47:53 Sent {"src":"n4","dest":"c12","body":{"echo":"Please echo 57","in_reply_to":12,"msg_id":12,"type":"echo_ok"}}
+2025/04/20 16:47:53 Received {c12 n4 {"echo":"Please echo 81","type":"echo","msg_id":13}}
+2025/04/20 16:47:53 Sent {"src":"n4","dest":"c12","body":{"echo":"Please echo 81","in_reply_to":13,"msg_id":13,"type":"echo_ok"}}
+2025/04/20 16:47:54 Received {c12 n4 {"echo":"Please echo 27","type":"echo","msg_id":14}}
+2025/04/20 16:47:54 Sent {"src":"n4","dest":"c12","body":{"echo":"Please echo 27","in_reply_to":14,"msg_id":14,"type":"echo_ok"}}

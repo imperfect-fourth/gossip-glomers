@@ -1,0 +1,190 @@
+2025-04-20 17:17:45,016{GMT}	INFO	[jepsen test runner] jepsen.core: Command line:
+lein run test -w unique-ids --bin ./fly-io --time-limit 1 --rate 10 --node-count 1 --availability total --nemesis partition
+2025-04-20 17:17:45,093{GMT}	INFO	[jepsen test runner] jepsen.core: Running test:
+{:args []
+ :remote
+ #jepsen.control.retry.Remote{:remote #jepsen.control.scp.Remote{:cmd-remote #jepsen.control.sshj.SSHJRemote{:concurrency-limit 6,
+                                                                                                             :conn-spec nil,
+                                                                                                             :client nil,
+                                                                                                             :semaphore nil},
+                                                                 :conn-spec nil},
+                              :conn nil}
+ :log-net-send false
+ :node-count 1
+ :availability :total
+ :max-txn-length 4
+ :concurrency 1
+ :db
+ #object[maelstrom.db$db$reify__16612
+         "0x1f9b8c23"
+         "maelstrom.db$db$reify__16612@1f9b8c23"]
+ :max-writes-per-key 16
+ :leave-db-running? false
+ :name "unique-ids"
+ :logging-json? false
+ :start-time
+ #object[org.joda.time.DateTime "0x26e74d50" "2025-04-20T17:17:44.991+05:30"]
+ :nemesis-interval 10
+ :net
+ #object[maelstrom.net$jepsen_net$reify__15721
+         "0x6bdc984"
+         "maelstrom.net$jepsen_net$reify__15721@6bdc984"]
+ :client
+ #object[maelstrom.workload.unique_ids$client$reify__21401
+         "0x1f299fc3"
+         "maelstrom.workload.unique_ids$client$reify__21401@1f299fc3"]
+ :barrier
+ #object[java.util.concurrent.CyclicBarrier
+         "0xb997735"
+         "java.util.concurrent.CyclicBarrier@b997735"]
+ :log-stderr false
+ :pure-generators true
+ :ssh {:dummy? true}
+ :rate 10.0
+ :checker
+ #object[jepsen.checker$compose$reify__11089
+         "0x178826db"
+         "jepsen.checker$compose$reify__11089@178826db"]
+ :argv
+ ("test"
+  "-w"
+  "unique-ids"
+  "--bin"
+  "./fly-io"
+  "--time-limit"
+  "1"
+  "--rate"
+  "10"
+  "--node-count"
+  "1"
+  "--availability"
+  "total"
+  "--nemesis"
+  "partition")
+ :nemesis
+ (jepsen.nemesis.ReflCompose
+  {:fm {:start-partition 0,
+        :stop-partition 0,
+        :kill 1,
+        :start 1,
+        :pause 1,
+        :resume 1},
+   :nemeses [#unprintable "jepsen.nemesis.combined$partition_nemesis$reify__16905@7f913c47"
+             #unprintable "jepsen.nemesis.combined$db_nemesis$reify__16886@2c9573f1"]})
+ :nodes ["n0"]
+ :test-count 1
+ :latency {:mean 0, :dist :constant}
+ :bin "./fly-io"
+ :generator
+ #object[jepsen.util.Forgettable
+         "0x37a5ac85"
+         (jepsen.generator.TimeLimit
+          {:limit 1000000000,
+           :cutoff nil,
+           :gen (jepsen.generator.Any
+                 {:gens [(jepsen.generator.OnThreads
+                          {:f #{:nemesis},
+                           :context-filter #object[jepsen.generator.context$make_thread_filter$lazy_filter__12077
+                                                   "0x239fdf8f"
+                                                   "jepsen.generator.context$make_thread_filter$lazy_filter__12077@239fdf8f"],
+                           :gen (jepsen.generator.Stagger
+                                 {:dt 20000000000,
+                                  :next-time nil,
+                                  :gen (jepsen.generator.FlipFlop
+                                        {:gens [#object[jepsen.nemesis.combined$partition_package$start__16909
+                                                        "0x1acd660d"
+                                                        "jepsen.nemesis.combined$partition_package$start__16909@1acd660d"]
+                                                (jepsen.generator.Repeat
+                                                 {:remaining -1,
+                                                  :gen {:type :info,
+                                                        :f :stop-partition,
+                                                        :value nil}})],
+                                         :i 0})})})
+                         (jepsen.generator.OnThreads
+                          {:f #jepsen.generator.context.AllBut{:element :nemesis},
+                           :context-filter #object[jepsen.generator.context$make_thread_filter$lazy_filter__12077
+                                                   "0x22f3b213"
+                                                   "jepsen.generator.context$make_thread_filter$lazy_filter__12077@22f3b213"],
+                           :gen (jepsen.generator.Stagger
+                                 {:dt 200000000,
+                                  :next-time nil,
+                                  :gen (jepsen.generator.Repeat
+                                        {:remaining -1, :gen {:f :generate}})})})]})})]
+ :log-net-recv false
+ :os
+ #object[maelstrom.net$jepsen_os$reify__15724
+         "0xe18848d"
+         "maelstrom.net$jepsen_os$reify__15724@e18848d"]
+ :time-limit 1
+ :workload :unique-ids
+ :consistency-models [:strict-serializable]
+ :topology :grid}
+
+2025-04-20 17:17:46,667{GMT}	INFO	[jepsen node n0] maelstrom.net: Starting Maelstrom network
+2025-04-20 17:17:46,668{GMT}	INFO	[jepsen test runner] jepsen.db: Tearing down DB
+2025-04-20 17:17:46,669{GMT}	INFO	[jepsen test runner] jepsen.db: Setting up DB
+2025-04-20 17:17:46,671{GMT}	INFO	[jepsen node n0] maelstrom.service: Starting services: (lin-kv lin-tso lww-kv seq-kv)
+2025-04-20 17:17:46,675{GMT}	INFO	[jepsen node n0] maelstrom.db: Setting up n0
+2025-04-20 17:17:46,675{GMT}	INFO	[jepsen node n0] maelstrom.process: launching ./fly-io []
+2025-04-20 17:17:46,700{GMT}	INFO	[jepsen test runner] jepsen.core: Relative time begins now
+2025-04-20 17:17:46,714{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:generate	nil
+2025-04-20 17:17:46,714{GMT}	INFO	[jepsen worker nemesis] jepsen.util: :nemesis	:info	:start-partition	:one
+2025-04-20 17:17:46,718{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:generate	"73314893-3d2f-4eb2-bf53-509779339b94"
+2025-04-20 17:17:46,720{GMT}	INFO	[jepsen worker nemesis] jepsen.util: :nemesis	:info	:start-partition	[:isolated {"n0" #{}}]
+2025-04-20 17:17:46,756{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:generate	nil
+2025-04-20 17:17:46,758{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:generate	"88e6af89-2c11-4970-bbfd-f2117be45b35"
+2025-04-20 17:17:46,896{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:generate	nil
+2025-04-20 17:17:46,899{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:generate	"6a3d1412-f214-41b2-b324-35a2918d3146"
+2025-04-20 17:17:47,062{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:generate	nil
+2025-04-20 17:17:47,065{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:generate	"45d1bb81-f6da-481d-afad-33b085c3bf3f"
+2025-04-20 17:17:47,085{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:generate	nil
+2025-04-20 17:17:47,088{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:generate	"af2740da-2b67-4aef-8f49-89a74ffa88b0"
+2025-04-20 17:17:47,277{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:generate	nil
+2025-04-20 17:17:47,280{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:generate	"c972c60d-d5eb-44b0-b73e-5ee20cf50dd7"
+2025-04-20 17:17:47,409{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:generate	nil
+2025-04-20 17:17:47,412{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:generate	"eb414d82-6a94-43e2-8930-978a5874823f"
+2025-04-20 17:17:47,577{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:generate	nil
+2025-04-20 17:17:47,580{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:generate	"ead0c116-c9ec-45c4-99f3-cb5e1b809280"
+2025-04-20 17:17:47,600{GMT}	INFO	[jepsen test runner] jepsen.core: Run complete, writing
+2025-04-20 17:17:47,642{GMT}	INFO	[jepsen node n0] maelstrom.db: Tearing down n0
+2025-04-20 17:17:48,678{GMT}	INFO	[jepsen node n0] maelstrom.net: Shutting down Maelstrom network
+2025-04-20 17:17:48,679{GMT}	INFO	[jepsen test runner] jepsen.core: Analyzing...
+2025-04-20 17:17:48,858{GMT}	INFO	[jepsen test runner] jepsen.core: Analysis complete
+2025-04-20 17:17:48,866{GMT}	INFO	[jepsen results] jepsen.store: Wrote /home/divi/git/fly.io/store/unique-ids/20250420T171744.991+0530/results.edn
+2025-04-20 17:17:48,881{GMT}	INFO	[jepsen test runner] jepsen.core: {:perf {:latency-graph {:valid? true},
+        :rate-graph {:valid? true},
+        :valid? true},
+ :timeline {:valid? true},
+ :exceptions {:valid? true},
+ :stats {:valid? true,
+         :count 8,
+         :ok-count 8,
+         :fail-count 0,
+         :info-count 0,
+         :by-f {:generate {:valid? true,
+                           :count 8,
+                           :ok-count 8,
+                           :fail-count 0,
+                           :info-count 0}}},
+ :availability {:valid? true, :ok-fraction 1.0},
+ :net {:all {:send-count 18,
+             :recv-count 18,
+             :msg-count 18,
+             :msgs-per-op 2.25},
+       :clients {:send-count 18, :recv-count 18, :msg-count 18},
+       :servers {:send-count 0,
+                 :recv-count 0,
+                 :msg-count 0,
+                 :msgs-per-op 0.0},
+       :valid? true},
+ :workload {:valid? true,
+            :attempted-count 8,
+            :acknowledged-count 8,
+            :duplicated-count 0,
+            :duplicated {},
+            :range ["45d1bb81-f6da-481d-afad-33b085c3bf3f"
+                    "eb414d82-6a94-43e2-8930-978a5874823f"]},
+ :valid? true}
+
+
+Everything looks good! ヽ(‘ー`)ノ

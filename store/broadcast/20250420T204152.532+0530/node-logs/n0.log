@@ -1,0 +1,15 @@
+2025/04/20 20:41:54 Received {c0 n0 {"type":"init","node_id":"n0","node_ids":["n0"],"msg_id":1}}
+2025/04/20 20:41:54 Node n0 initialized
+2025/04/20 20:41:54 Sent {"src":"n0","dest":"c0","body":{"in_reply_to":1,"type":"init_ok"}}
+2025/04/20 20:41:54 Received {c1 n0 {"type":"topology","topology":{"n0":[]},"msg_id":1}}
+2025/04/20 20:41:54 Sent {"src":"n0","dest":"c1","body":{"in_reply_to":1,"type":"topology_ok"}}
+2025/04/20 20:41:54 Received {c2 n0 {"type":"broadcast","message":0,"msg_id":1}}
+2025/04/20 20:41:54 Sent {"src":"n0","dest":"c2","body":{"in_reply_to":1,"type":"broadcast_ok"}}
+2025/04/20 20:41:54 Received {c2 n0 {"type":"read","msg_id":2}}
+2025/04/20 20:41:54 Sent {"src":"n0","dest":"c2","body":{"in_reply_to":2,"messages":[0],"msg_id":2,"type":"read_ok"}}
+2025/04/20 20:41:55 Received {c2 n0 {"type":"read","msg_id":3}}
+2025/04/20 20:41:55 Sent {"src":"n0","dest":"c2","body":{"in_reply_to":3,"messages":[0],"msg_id":3,"type":"read_ok"}}
+2025/04/20 20:41:56 Received {c2 n0 {"type":"broadcast","message":1,"msg_id":4}}
+2025/04/20 20:41:56 Sent {"src":"n0","dest":"c2","body":{"in_reply_to":4,"type":"broadcast_ok"}}
+2025/04/20 20:42:06 Received {c2 n0 {"type":"read","msg_id":5}}
+2025/04/20 20:42:06 Sent {"src":"n0","dest":"c2","body":{"in_reply_to":5,"messages":[0,1],"msg_id":5,"type":"read_ok"}}

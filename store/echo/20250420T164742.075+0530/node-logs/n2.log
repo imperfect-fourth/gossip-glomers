@@ -1,0 +1,23 @@
+2025/04/20 16:47:44 Received {c1 n2 {"type":"init","node_id":"n2","node_ids":["n1","n2","n3","n4","n5"],"msg_id":1}}
+2025/04/20 16:47:44 Node n2 initialized
+2025/04/20 16:47:44 Sent {"src":"n2","dest":"c1","body":{"in_reply_to":1,"type":"init_ok"}}
+2025/04/20 16:47:44 Received {c11 n2 {"echo":"Please echo 76","type":"echo","msg_id":1}}
+2025/04/20 16:47:44 Sent {"src":"n2","dest":"c11","body":{"echo":"Please echo 76","in_reply_to":1,"msg_id":1,"type":"echo_ok"}}
+2025/04/20 16:47:47 Received {c11 n2 {"echo":"Please echo 93","type":"echo","msg_id":2}}
+2025/04/20 16:47:47 Sent {"src":"n2","dest":"c11","body":{"echo":"Please echo 93","in_reply_to":2,"msg_id":2,"type":"echo_ok"}}
+2025/04/20 16:47:48 Received {c11 n2 {"echo":"Please echo 72","type":"echo","msg_id":3}}
+2025/04/20 16:47:48 Sent {"src":"n2","dest":"c11","body":{"echo":"Please echo 72","in_reply_to":3,"msg_id":3,"type":"echo_ok"}}
+2025/04/20 16:47:48 Received {c11 n2 {"echo":"Please echo 64","type":"echo","msg_id":4}}
+2025/04/20 16:47:48 Sent {"src":"n2","dest":"c11","body":{"echo":"Please echo 64","in_reply_to":4,"msg_id":4,"type":"echo_ok"}}
+2025/04/20 16:47:48 Received {c11 n2 {"echo":"Please echo 31","type":"echo","msg_id":5}}
+2025/04/20 16:47:48 Sent {"src":"n2","dest":"c11","body":{"echo":"Please echo 31","in_reply_to":5,"msg_id":5,"type":"echo_ok"}}
+2025/04/20 16:47:49 Received {c11 n2 {"echo":"Please echo 18","type":"echo","msg_id":6}}
+2025/04/20 16:47:49 Sent {"src":"n2","dest":"c11","body":{"echo":"Please echo 18","in_reply_to":6,"msg_id":6,"type":"echo_ok"}}
+2025/04/20 16:47:49 Received {c11 n2 {"echo":"Please echo 77","type":"echo","msg_id":7}}
+2025/04/20 16:47:49 Sent {"src":"n2","dest":"c11","body":{"echo":"Please echo 77","in_reply_to":7,"msg_id":7,"type":"echo_ok"}}
+2025/04/20 16:47:52 Received {c11 n2 {"echo":"Please echo 24","type":"echo","msg_id":8}}
+2025/04/20 16:47:52 Sent {"src":"n2","dest":"c11","body":{"echo":"Please echo 24","in_reply_to":8,"msg_id":8,"type":"echo_ok"}}
+2025/04/20 16:47:53 Received {c11 n2 {"echo":"Please echo 14","type":"echo","msg_id":9}}
+2025/04/20 16:47:53 Sent {"src":"n2","dest":"c11","body":{"echo":"Please echo 14","in_reply_to":9,"msg_id":9,"type":"echo_ok"}}
+2025/04/20 16:47:53 Received {c11 n2 {"echo":"Please echo 17","type":"echo","msg_id":10}}
+2025/04/20 16:47:53 Sent {"src":"n2","dest":"c11","body":{"echo":"Please echo 17","in_reply_to":10,"msg_id":10,"type":"echo_ok"}}

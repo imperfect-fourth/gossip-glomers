@@ -1,0 +1,19 @@
+2025/04/20 20:01:24 Received {c0 n1 {"type":"init","node_id":"n1","node_ids":["n0","n1"],"msg_id":1}}
+2025/04/20 20:01:24 Node n1 initialized
+2025/04/20 20:01:24 Sent {"src":"n1","dest":"c0","body":{"in_reply_to":1,"type":"init_ok"}}
+2025/04/20 20:01:24 Received {c3 n1 {"type":"topology","topology":{"n0":["n1"],"n1":["n0"]},"msg_id":1}}
+2025/04/20 20:01:24 Sent {"src":"n1","dest":"c3","body":{"in_reply_to":1,"type":"topology_ok"}}
+2025/04/20 20:01:25 Received {c5 n1 {"type":"broadcast","message":1,"msg_id":1}}
+panic: assignment to entry in nil map
+
+goroutine 9 [running]:
+main.(*Messages).RegisterMessage(0x5e0f40, 0x1, {0x4e4f60, 0xc000184630}, {0xc000184284, 0x2}, {0x0?, 0x0?, 0x0?})
+	/home/divi/git/fly.io/maelstrom_broadcast.go:58 +0x256
+main.main.maelstromBroadcast.func3({{0xc0000144c8, 0x2}, {0xc0000144ca, 0x2}, {0xc00001e1e0, 0x2b, 0x30}})
+	/home/divi/git/fly.io/maelstrom_broadcast.go:120 +0xe5
+github.com/jepsen-io/maelstrom/demo/go.(*Node).handleMessage(0xc000036080, 0x0?, {{0xc0000144c8, 0x2}, {0xc0000144ca, 0x2}, {0xc00001e1e0, 0x2b, 0x30}})
+	/home/divi/go/pkg/mod/github.com/jepsen-io/maelstrom/demo/go@v0.0.0-20250204203845-8263d1dd2b7a/node.go:151 +0x8d
+github.com/jepsen-io/maelstrom/demo/go.(*Node).Run.func2()
+	/home/divi/go/pkg/mod/github.com/jepsen-io/maelstrom/demo/go@v0.0.0-20250204203845-8263d1dd2b7a/node.go:129 +0x77
+created by github.com/jepsen-io/maelstrom/demo/go.(*Node).Run in goroutine 1
+	/home/divi/go/pkg/mod/github.com/jepsen-io/maelstrom/demo/go@v0.0.0-20250204203845-8263d1dd2b7a/node.go:127 +0x4f8

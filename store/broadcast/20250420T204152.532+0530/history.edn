@@ -1,0 +1,10 @@
+{:index 0, :time 16265655, :type :invoke, :process 0, :f :broadcast, :value 0}
+{:index 1, :time 26615904, :type :ok, :process 0, :f :broadcast, :value 0}
+{:index 2, :time 177180563, :type :invoke, :process 0, :f :read, :value nil}
+{:index 3, :time 181808526, :type :ok, :process 0, :f :read, :value [0]}
+{:index 4, :time 804446052, :type :invoke, :process 0, :f :read, :value nil}
+{:index 5, :time 809031061, :type :ok, :process 0, :f :read, :value [0]}
+{:index 6, :time 1835896253, :type :invoke, :process 0, :f :broadcast, :value 1}
+{:index 7, :time 1839824795, :type :ok, :process 0, :f :broadcast, :value 1}
+{:index 8, :time 11841581732, :type :invoke, :process 0, :f :read, :value nil, :final? true}
+{:index 9, :time 11846200831, :type :ok, :process 0, :f :read, :value [0 1], :final? true}

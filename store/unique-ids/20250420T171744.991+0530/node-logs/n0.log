@@ -1,0 +1,19 @@
+2025/04/20 17:17:46 Received {c0 n0 {"type":"init","node_id":"n0","node_ids":["n0"],"msg_id":1}}
+2025/04/20 17:17:46 Node n0 initialized
+2025/04/20 17:17:46 Sent {"src":"n0","dest":"c0","body":{"in_reply_to":1,"type":"init_ok"}}
+2025/04/20 17:17:46 Received {c2 n0 {"type":"generate","msg_id":1}}
+2025/04/20 17:17:46 Sent {"src":"n0","dest":"c2","body":{"id":"73314893-3d2f-4eb2-bf53-509779339b94","in_reply_to":1,"msg_id":1,"type":"generate_ok"}}
+2025/04/20 17:17:46 Received {c2 n0 {"type":"generate","msg_id":2}}
+2025/04/20 17:17:46 Sent {"src":"n0","dest":"c2","body":{"id":"88e6af89-2c11-4970-bbfd-f2117be45b35","in_reply_to":2,"msg_id":2,"type":"generate_ok"}}
+2025/04/20 17:17:46 Received {c2 n0 {"type":"generate","msg_id":3}}
+2025/04/20 17:17:46 Sent {"src":"n0","dest":"c2","body":{"id":"6a3d1412-f214-41b2-b324-35a2918d3146","in_reply_to":3,"msg_id":3,"type":"generate_ok"}}
+2025/04/20 17:17:47 Received {c2 n0 {"type":"generate","msg_id":4}}
+2025/04/20 17:17:47 Sent {"src":"n0","dest":"c2","body":{"id":"45d1bb81-f6da-481d-afad-33b085c3bf3f","in_reply_to":4,"msg_id":4,"type":"generate_ok"}}
+2025/04/20 17:17:47 Received {c2 n0 {"type":"generate","msg_id":5}}
+2025/04/20 17:17:47 Sent {"src":"n0","dest":"c2","body":{"id":"af2740da-2b67-4aef-8f49-89a74ffa88b0","in_reply_to":5,"msg_id":5,"type":"generate_ok"}}
+2025/04/20 17:17:47 Received {c2 n0 {"type":"generate","msg_id":6}}
+2025/04/20 17:17:47 Sent {"src":"n0","dest":"c2","body":{"id":"c972c60d-d5eb-44b0-b73e-5ee20cf50dd7","in_reply_to":6,"msg_id":6,"type":"generate_ok"}}
+2025/04/20 17:17:47 Received {c2 n0 {"type":"generate","msg_id":7}}
+2025/04/20 17:17:47 Sent {"src":"n0","dest":"c2","body":{"id":"eb414d82-6a94-43e2-8930-978a5874823f","in_reply_to":7,"msg_id":7,"type":"generate_ok"}}
+2025/04/20 17:17:47 Received {c2 n0 {"type":"generate","msg_id":8}}
+2025/04/20 17:17:47 Sent {"src":"n0","dest":"c2","body":{"id":"ead0c116-c9ec-45c4-99f3-cb5e1b809280","in_reply_to":8,"msg_id":8,"type":"generate_ok"}}
