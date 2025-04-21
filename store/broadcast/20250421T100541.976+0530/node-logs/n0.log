@@ -1,0 +1,551 @@
+2025/04/21 10:05:43 Received {c4 n0 {"type":"init","node_id":"n0","node_ids":["n0","n1","n2","n3","n4"],"msg_id":1}}
+2025/04/21 10:05:43 Node n0 initialized
+2025/04/21 10:05:43 Sent {"src":"n0","dest":"c4","body":{"in_reply_to":1,"type":"init_ok"}}
+2025/04/21 10:05:43 Received {c5 n0 {"type":"topology","topology":{"n0":["n3","n1"],"n1":["n4","n2","n0"],"n2":["n1"],"n3":["n0","n4"],"n4":["n1","n3"]},"msg_id":1}}
+2025/04/21 10:05:43 Sent {"src":"n0","dest":"c5","body":{"in_reply_to":1,"msg_id":1,"type":"topology_ok"}}
+2025/04/21 10:05:43 Received {c10 n0 {"type":"read","msg_id":1}}
+2025/04/21 10:05:43 Sent {"src":"n0","dest":"c10","body":{"in_reply_to":1,"messages":[],"msg_id":2,"type":"read_ok"}}
+2025/04/21 10:05:44 Received {c10 n0 {"type":"broadcast","message":0,"msg_id":2}}
+2025/04/21 10:05:44 Sent {"src":"n0","dest":"n3","body":{"data_id":"c10_2","message":0,"msg_id":1,"seen_nodes":["n0","n3"],"type":"gossip"}}
+2025/04/21 10:05:44 Sent {"src":"n0","dest":"n1","body":{"data_id":"c10_2","message":0,"msg_id":2,"seen_nodes":["n0","n3","n1"],"type":"gossip"}}
+2025/04/21 10:05:44 Sent {"src":"n0","dest":"c10","body":{"in_reply_to":2,"msg_id":5,"type":"broadcast_ok"}}
+2025/04/21 10:05:44 Received {n3 n0 {"already_seen":false,"in_reply_to":1,"msg_id":4,"seen_nodes":["n3","n0","n4"],"type":"gossip_ok"}}
+2025/04/21 10:05:44 Received {n1 n0 {"already_seen":false,"in_reply_to":2,"msg_id":5,"seen_nodes":["n1","n0","n3","n4","n2"],"type":"gossip_ok"}}
+2025/04/21 10:05:44 Received {c10 n0 {"type":"broadcast","message":1,"msg_id":3}}
+2025/04/21 10:05:44 Sent {"src":"n0","dest":"n3","body":{"data_id":"c10_3","message":1,"msg_id":3,"seen_nodes":["n0","n3"],"type":"gossip"}}
+2025/04/21 10:05:44 Sent {"src":"n0","dest":"n1","body":{"data_id":"c10_3","message":1,"msg_id":4,"seen_nodes":["n0","n3","n1"],"type":"gossip"}}
+2025/04/21 10:05:44 Sent {"src":"n0","dest":"c10","body":{"in_reply_to":3,"msg_id":8,"type":"broadcast_ok"}}
+2025/04/21 10:05:44 Received {n3 n0 {"already_seen":false,"in_reply_to":3,"msg_id":6,"seen_nodes":["n3","n0","n4"],"type":"gossip_ok"}}
+2025/04/21 10:05:44 Received {n1 n0 {"already_seen":false,"in_reply_to":4,"msg_id":9,"seen_nodes":["n1","n0","n3","n4","n2"],"type":"gossip_ok"}}
+2025/04/21 10:05:44 Received {n1 n0 {"data_id":"c11_2","message":2,"msg_id":7,"seen_nodes":["n1","n4","n2","n0"],"type":"gossip"}}
+2025/04/21 10:05:44 Sent {"src":"n0","dest":"n3","body":{"data_id":"c11_2","message":2,"msg_id":5,"seen_nodes":["n0","n1","n4","n2","n3"],"type":"gossip"}}
+2025/04/21 10:05:44 Sent {"src":"n0","dest":"n1","body":{"already_seen":false,"in_reply_to":7,"msg_id":10,"seen_nodes":["n0","n1","n4","n2","n3"],"type":"gossip_ok"}}
+2025/04/21 10:05:44 Received {n3 n0 {"data_id":"c11_2","message":2,"msg_id":3,"seen_nodes":["n3","n4","n1","n0"],"type":"gossip"}}
+2025/04/21 10:05:44 Sent {"src":"n0","dest":"n3","body":{"already_seen":true,"in_reply_to":3,"msg_id":11,"seen_nodes":["n0","n1","n4","n2","n3"],"type":"gossip_ok"}}
+2025/04/21 10:05:44 Received {n3 n0 {"already_seen":true,"in_reply_to":5,"msg_id":9,"seen_nodes":["n3","n4","n1","n0"],"type":"gossip_ok"}}
+2025/04/21 10:05:44 Received {n3 n0 {"data_id":"c13_2","message":3,"msg_id":4,"seen_nodes":["n3","n0"],"type":"gossip"}}
+2025/04/21 10:05:44 Sent {"src":"n0","dest":"n1","body":{"data_id":"c13_2","message":3,"msg_id":6,"seen_nodes":["n0","n3","n1"],"type":"gossip"}}
+2025/04/21 10:05:44 Sent {"src":"n0","dest":"n3","body":{"already_seen":false,"in_reply_to":4,"msg_id":13,"seen_nodes":["n0","n3","n1"],"type":"gossip_ok"}}
+2025/04/21 10:05:44 Received {n1 n0 {"already_seen":true,"in_reply_to":6,"msg_id":17,"seen_nodes":["n1","n4","n3","n0","n2"],"type":"gossip_ok"}}
+2025/04/21 10:05:44 Received {c10 n0 {"type":"read","msg_id":4}}
+2025/04/21 10:05:44 Sent {"src":"n0","dest":"c10","body":{"in_reply_to":4,"messages":[0,1,2,3],"msg_id":14,"type":"read_ok"}}
+2025/04/21 10:05:44 Received {c10 n0 {"type":"read","msg_id":5}}
+2025/04/21 10:05:44 Sent {"src":"n0","dest":"c10","body":{"in_reply_to":5,"messages":[0,1,2,3],"msg_id":15,"type":"read_ok"}}
+2025/04/21 10:05:45 Received {n1 n0 {"data_id":"c12_3","message":4,"msg_id":10,"seen_nodes":["n1","n2","n4","n0"],"type":"gossip"}}
+2025/04/21 10:05:45 Sent {"src":"n0","dest":"n3","body":{"data_id":"c12_3","message":4,"msg_id":7,"seen_nodes":["n0","n1","n2","n4","n3"],"type":"gossip"}}
+2025/04/21 10:05:45 Sent {"src":"n0","dest":"n1","body":{"already_seen":false,"in_reply_to":10,"msg_id":17,"seen_nodes":["n0","n1","n2","n4","n3"],"type":"gossip_ok"}}
+2025/04/21 10:05:45 Received {n3 n0 {"data_id":"c12_3","message":4,"msg_id":6,"seen_nodes":["n3","n4","n1","n2","n0"],"type":"gossip"}}
+2025/04/21 10:05:45 Sent {"src":"n0","dest":"n3","body":{"already_seen":true,"in_reply_to":6,"msg_id":18,"seen_nodes":["n0","n1","n2","n4","n3"],"type":"gossip_ok"}}
+2025/04/21 10:05:45 Received {n3 n0 {"already_seen":true,"in_reply_to":7,"msg_id":15,"seen_nodes":["n3","n4","n1","n2","n0"],"type":"gossip_ok"}}
+2025/04/21 10:05:45 Received {n3 n0 {"data_id":"c14_3","message":5,"msg_id":7,"seen_nodes":["n3","n4","n1","n0"],"type":"gossip"}}
+2025/04/21 10:05:45 Sent {"src":"n0","dest":"n3","body":{"already_seen":false,"in_reply_to":7,"msg_id":19,"seen_nodes":["n0","n3","n4","n1"],"type":"gossip_ok"}}
+2025/04/21 10:05:45 Received {n1 n0 {"data_id":"c14_3","message":5,"msg_id":12,"seen_nodes":["n1","n4","n2","n0"],"type":"gossip"}}
+2025/04/21 10:05:45 Sent {"src":"n0","dest":"n1","body":{"already_seen":true,"in_reply_to":12,"msg_id":20,"seen_nodes":["n0","n3","n4","n1"],"type":"gossip_ok"}}
+2025/04/21 10:05:45 Received {c10 n0 {"type":"read","msg_id":6}}
+2025/04/21 10:05:45 Sent {"src":"n0","dest":"c10","body":{"in_reply_to":6,"messages":[2,3,4,5,0,1],"msg_id":21,"type":"read_ok"}}
+2025/04/21 10:05:45 Received {c10 n0 {"type":"broadcast","message":6,"msg_id":7}}
+2025/04/21 10:05:45 Sent {"src":"n0","dest":"n3","body":{"data_id":"c10_7","message":6,"msg_id":8,"seen_nodes":["n0","n3"],"type":"gossip"}}
+2025/04/21 10:05:45 Sent {"src":"n0","dest":"n1","body":{"data_id":"c10_7","message":6,"msg_id":9,"seen_nodes":["n0","n3","n1"],"type":"gossip"}}
+2025/04/21 10:05:45 Sent {"src":"n0","dest":"c10","body":{"in_reply_to":7,"msg_id":24,"type":"broadcast_ok"}}
+2025/04/21 10:05:45 Received {n3 n0 {"already_seen":false,"in_reply_to":8,"msg_id":20,"seen_nodes":["n3","n0","n4"],"type":"gossip_ok"}}
+2025/04/21 10:05:45 Received {n1 n0 {"already_seen":false,"in_reply_to":9,"msg_id":27,"seen_nodes":["n1","n0","n3","n4","n2"],"type":"gossip_ok"}}
+2025/04/21 10:05:46 Received {n1 n0 {"data_id":"c12_4","message":7,"msg_id":16,"seen_nodes":["n1","n2","n4","n0"],"type":"gossip"}}
+2025/04/21 10:05:46 Sent {"src":"n0","dest":"n3","body":{"data_id":"c12_4","message":7,"msg_id":10,"seen_nodes":["n0","n1","n2","n4","n3"],"type":"gossip"}}
+2025/04/21 10:05:46 Sent {"src":"n0","dest":"n1","body":{"already_seen":false,"in_reply_to":16,"msg_id":26,"seen_nodes":["n0","n1","n2","n4","n3"],"type":"gossip_ok"}}
+2025/04/21 10:05:46 Received {n3 n0 {"data_id":"c12_4","message":7,"msg_id":9,"seen_nodes":["n3","n4","n1","n2","n0"],"type":"gossip"}}
+2025/04/21 10:05:46 Sent {"src":"n0","dest":"n3","body":{"already_seen":true,"in_reply_to":9,"msg_id":27,"seen_nodes":["n0","n1","n2","n4","n3"],"type":"gossip_ok"}}
+2025/04/21 10:05:46 Received {n3 n0 {"already_seen":true,"in_reply_to":10,"msg_id":23,"seen_nodes":["n3","n4","n1","n2","n0"],"type":"gossip_ok"}}
+2025/04/21 10:05:46 Received {n1 n0 {"data_id":"c14_4","message":8,"msg_id":18,"seen_nodes":["n1","n4","n2","n0"],"type":"gossip"}}
+2025/04/21 10:05:46 Sent {"src":"n0","dest":"n3","body":{"data_id":"c14_4","message":8,"msg_id":11,"seen_nodes":["n0","n1","n4","n2","n3"],"type":"gossip"}}
+2025/04/21 10:05:46 Sent {"src":"n0","dest":"n1","body":{"already_seen":false,"in_reply_to":18,"msg_id":29,"seen_nodes":["n0","n1","n4","n2","n3"],"type":"gossip_ok"}}
+2025/04/21 10:05:46 Received {n3 n0 {"data_id":"c14_4","message":8,"msg_id":10,"seen_nodes":["n3","n4","n1","n0"],"type":"gossip"}}
+2025/04/21 10:05:46 Sent {"src":"n0","dest":"n3","body":{"already_seen":true,"in_reply_to":10,"msg_id":30,"seen_nodes":["n0","n1","n4","n2","n3"],"type":"gossip_ok"}}
+2025/04/21 10:05:46 Received {n3 n0 {"already_seen":true,"in_reply_to":11,"msg_id":27,"seen_nodes":["n3","n4","n1","n0"],"type":"gossip_ok"}}
+2025/04/21 10:05:46 Received {c10 n0 {"type":"broadcast","message":9,"msg_id":8}}
+2025/04/21 10:05:46 Sent {"src":"n0","dest":"n3","body":{"data_id":"c10_8","message":9,"msg_id":12,"seen_nodes":["n0","n3"],"type":"gossip"}}
+2025/04/21 10:05:46 Sent {"src":"n0","dest":"n1","body":{"data_id":"c10_8","message":9,"msg_id":13,"seen_nodes":["n0","n3","n1"],"type":"gossip"}}
+2025/04/21 10:05:46 Sent {"src":"n0","dest":"c10","body":{"in_reply_to":8,"msg_id":33,"type":"broadcast_ok"}}
+2025/04/21 10:05:46 Received {n3 n0 {"already_seen":false,"in_reply_to":12,"msg_id":29,"seen_nodes":["n3","n0","n4"],"type":"gossip_ok"}}
+2025/04/21 10:05:46 Received {n1 n0 {"already_seen":false,"in_reply_to":13,"msg_id":38,"seen_nodes":["n1","n0","n3","n4","n2"],"type":"gossip_ok"}}
+2025/04/21 10:05:46 Received {c10 n0 {"type":"read","msg_id":9}}
+2025/04/21 10:05:46 Sent {"src":"n0","dest":"c10","body":{"in_reply_to":9,"messages":[0,1,5,6,7,2,3,4,8,9],"msg_id":34,"type":"read_ok"}}
+2025/04/21 10:05:46 Received {n3 n0 {"data_id":"c13_5","message":10,"msg_id":12,"seen_nodes":["n3","n0"],"type":"gossip"}}
+2025/04/21 10:05:46 Sent {"src":"n0","dest":"n1","body":{"data_id":"c13_5","message":10,"msg_id":14,"seen_nodes":["n0","n3","n1"],"type":"gossip"}}
+2025/04/21 10:05:46 Sent {"src":"n0","dest":"n3","body":{"already_seen":false,"in_reply_to":12,"msg_id":36,"seen_nodes":["n0","n3","n1"],"type":"gossip_ok"}}
+2025/04/21 10:05:46 Received {n1 n0 {"already_seen":false,"in_reply_to":14,"msg_id":43,"seen_nodes":["n1","n0","n3","n4","n2"],"type":"gossip_ok"}}
+2025/04/21 10:05:46 Received {c10 n0 {"type":"read","msg_id":10}}
+2025/04/21 10:05:46 Sent {"src":"n0","dest":"c10","body":{"in_reply_to":10,"messages":[8,9,2,3,4,6,7,10,0,1,5],"msg_id":37,"type":"read_ok"}}
+2025/04/21 10:05:47 Received {c10 n0 {"type":"read","msg_id":11}}
+2025/04/21 10:05:47 Sent {"src":"n0","dest":"c10","body":{"in_reply_to":11,"messages":[9,2,3,4,8,7,10,0,1,5,6],"msg_id":38,"type":"read_ok"}}
+2025/04/21 10:05:47 Received {n1 n0 {"data_id":"c11_6","message":11,"msg_id":25,"seen_nodes":["n1","n4","n2","n0"],"type":"gossip"}}
+2025/04/21 10:05:47 Sent {"src":"n0","dest":"n3","body":{"data_id":"c11_6","message":11,"msg_id":15,"seen_nodes":["n0","n1","n4","n2","n3"],"type":"gossip"}}
+2025/04/21 10:05:47 Sent {"src":"n0","dest":"n1","body":{"already_seen":false,"in_reply_to":25,"msg_id":40,"seen_nodes":["n0","n1","n4","n2","n3"],"type":"gossip_ok"}}
+2025/04/21 10:05:47 Received {n3 n0 {"data_id":"c11_6","message":11,"msg_id":14,"seen_nodes":["n3","n4","n1","n0"],"type":"gossip"}}
+2025/04/21 10:05:47 Sent {"src":"n0","dest":"n3","body":{"already_seen":true,"in_reply_to":14,"msg_id":41,"seen_nodes":["n0","n1","n4","n2","n3"],"type":"gossip_ok"}}
+2025/04/21 10:05:47 Received {n3 n0 {"already_seen":true,"in_reply_to":15,"msg_id":35,"seen_nodes":["n3","n4","n1","n0"],"type":"gossip_ok"}}
+2025/04/21 10:05:47 Received {n1 n0 {"data_id":"c12_6","message":12,"msg_id":27,"seen_nodes":["n1","n2","n4","n0"],"type":"gossip"}}
+2025/04/21 10:05:47 Sent {"src":"n0","dest":"n3","body":{"data_id":"c12_6","message":12,"msg_id":16,"seen_nodes":["n0","n1","n2","n4","n3"],"type":"gossip"}}
+2025/04/21 10:05:47 Sent {"src":"n0","dest":"n1","body":{"already_seen":false,"in_reply_to":27,"msg_id":43,"seen_nodes":["n0","n1","n2","n4","n3"],"type":"gossip_ok"}}
+2025/04/21 10:05:47 Received {n3 n0 {"data_id":"c12_6","message":12,"msg_id":15,"seen_nodes":["n3","n4","n1","n2","n0"],"type":"gossip"}}
+2025/04/21 10:05:47 Sent {"src":"n0","dest":"n3","body":{"already_seen":true,"in_reply_to":15,"msg_id":44,"seen_nodes":["n0","n1","n2","n4","n3"],"type":"gossip_ok"}}
+2025/04/21 10:05:47 Received {n3 n0 {"already_seen":true,"in_reply_to":16,"msg_id":38,"seen_nodes":["n3","n4","n1","n2","n0"],"type":"gossip_ok"}}
+2025/04/21 10:05:47 Received {n3 n0 {"data_id":"c13_6","message":13,"msg_id":16,"seen_nodes":["n3","n0"],"type":"gossip"}}
+2025/04/21 10:05:47 Sent {"src":"n0","dest":"n1","body":{"data_id":"c13_6","message":13,"msg_id":17,"seen_nodes":["n0","n3","n1"],"type":"gossip"}}
+2025/04/21 10:05:47 Sent {"src":"n0","dest":"n3","body":{"already_seen":false,"in_reply_to":16,"msg_id":46,"seen_nodes":["n0","n3","n1"],"type":"gossip_ok"}}
+2025/04/21 10:05:47 Received {n1 n0 {"already_seen":false,"in_reply_to":17,"msg_id":54,"seen_nodes":["n1","n0","n3","n4","n2"],"type":"gossip_ok"}}
+2025/04/21 10:05:47 Received {c10 n0 {"type":"broadcast","message":14,"msg_id":12}}
+2025/04/21 10:05:47 Sent {"src":"n0","dest":"n3","body":{"data_id":"c10_12","message":14,"msg_id":18,"seen_nodes":["n0","n3"],"type":"gossip"}}
+2025/04/21 10:05:47 Sent {"src":"n0","dest":"n1","body":{"data_id":"c10_12","message":14,"msg_id":19,"seen_nodes":["n0","n3","n1"],"type":"gossip"}}
+2025/04/21 10:05:47 Sent {"src":"n0","dest":"c10","body":{"in_reply_to":12,"msg_id":49,"type":"broadcast_ok"}}
+2025/04/21 10:05:47 Received {n3 n0 {"already_seen":false,"in_reply_to":18,"msg_id":43,"seen_nodes":["n3","n0","n4"],"type":"gossip_ok"}}
+2025/04/21 10:05:47 Received {n1 n0 {"already_seen":false,"in_reply_to":19,"msg_id":58,"seen_nodes":["n1","n0","n3","n4","n2"],"type":"gossip_ok"}}
+2025/04/21 10:05:47 Received {c10 n0 {"type":"broadcast","message":15,"msg_id":13}}
+2025/04/21 10:05:47 Sent {"src":"n0","dest":"n3","body":{"data_id":"c10_13","message":15,"msg_id":20,"seen_nodes":["n0","n3"],"type":"gossip"}}
+2025/04/21 10:05:47 Sent {"src":"n0","dest":"n1","body":{"data_id":"c10_13","message":15,"msg_id":21,"seen_nodes":["n0","n3","n1"],"type":"gossip"}}
+2025/04/21 10:05:47 Sent {"src":"n0","dest":"c10","body":{"in_reply_to":13,"msg_id":52,"type":"broadcast_ok"}}
+2025/04/21 10:05:47 Received {n1 n0 {"already_seen":false,"in_reply_to":21,"msg_id":62,"seen_nodes":["n1","n0","n3","n4","n2"],"type":"gossip_ok"}}
+2025/04/21 10:05:47 Received {n3 n0 {"already_seen":false,"in_reply_to":20,"msg_id":45,"seen_nodes":["n3","n0","n4"],"type":"gossip_ok"}}
+2025/04/21 10:05:47 Received {n1 n0 {"data_id":"c11_7","message":16,"msg_id":36,"seen_nodes":["n1","n4","n2","n0"],"type":"gossip"}}
+2025/04/21 10:05:47 Sent {"src":"n0","dest":"n3","body":{"data_id":"c11_7","message":16,"msg_id":22,"seen_nodes":["n0","n1","n4","n2","n3"],"type":"gossip"}}
+2025/04/21 10:05:47 Sent {"src":"n0","dest":"n1","body":{"already_seen":false,"in_reply_to":36,"msg_id":54,"seen_nodes":["n0","n1","n4","n2","n3"],"type":"gossip_ok"}}
+2025/04/21 10:05:47 Received {n3 n0 {"data_id":"c11_7","message":16,"msg_id":20,"seen_nodes":["n3","n4","n1","n0"],"type":"gossip"}}
+2025/04/21 10:05:47 Sent {"src":"n0","dest":"n3","body":{"already_seen":true,"in_reply_to":20,"msg_id":55,"seen_nodes":["n0","n1","n4","n2","n3"],"type":"gossip_ok"}}
+2025/04/21 10:05:47 Received {n3 n0 {"already_seen":true,"in_reply_to":22,"msg_id":48,"seen_nodes":["n3","n4","n1","n0"],"type":"gossip_ok"}}
+2025/04/21 10:05:47 Received {n1 n0 {"data_id":"c12_7","message":17,"msg_id":38,"seen_nodes":["n1","n2","n4","n0"],"type":"gossip"}}
+2025/04/21 10:05:47 Sent {"src":"n0","dest":"n3","body":{"data_id":"c12_7","message":17,"msg_id":23,"seen_nodes":["n0","n1","n2","n4","n3"],"type":"gossip"}}
+2025/04/21 10:05:47 Sent {"src":"n0","dest":"n1","body":{"already_seen":false,"in_reply_to":38,"msg_id":57,"seen_nodes":["n0","n1","n2","n4","n3"],"type":"gossip_ok"}}
+2025/04/21 10:05:47 Received {n3 n0 {"data_id":"c12_7","message":17,"msg_id":21,"seen_nodes":["n3","n4","n1","n2","n0"],"type":"gossip"}}
+2025/04/21 10:05:47 Received {n3 n0 {"already_seen":true,"in_reply_to":23,"msg_id":50,"seen_nodes":["n3","n4","n1","n2","n0"],"type":"gossip_ok"}}
+2025/04/21 10:05:47 Sent {"src":"n0","dest":"n3","body":{"already_seen":true,"in_reply_to":21,"msg_id":58,"seen_nodes":["n0","n1","n2","n4","n3"],"type":"gossip_ok"}}
+2025/04/21 10:05:48 Received {n3 n0 {"data_id":"c14_7","message":18,"msg_id":22,"seen_nodes":["n3","n4","n1","n0"],"type":"gossip"}}
+2025/04/21 10:05:48 Received {n1 n0 {"data_id":"c14_7","message":18,"msg_id":40,"seen_nodes":["n1","n4","n2","n0"],"type":"gossip"}}
+2025/04/21 10:05:48 Sent {"src":"n0","dest":"n3","body":{"already_seen":false,"in_reply_to":22,"msg_id":59,"seen_nodes":["n0","n3","n4","n1"],"type":"gossip_ok"}}
+2025/04/21 10:05:48 Sent {"src":"n0","dest":"n1","body":{"already_seen":true,"in_reply_to":40,"msg_id":60,"seen_nodes":["n0","n3","n4","n1"],"type":"gossip_ok"}}
+2025/04/21 10:05:48 Received {c10 n0 {"type":"broadcast","message":19,"msg_id":14}}
+2025/04/21 10:05:48 Sent {"src":"n0","dest":"n3","body":{"data_id":"c10_14","message":19,"msg_id":24,"seen_nodes":["n0","n3"],"type":"gossip"}}
+2025/04/21 10:05:48 Sent {"src":"n0","dest":"n1","body":{"data_id":"c10_14","message":19,"msg_id":25,"seen_nodes":["n0","n3","n1"],"type":"gossip"}}
+2025/04/21 10:05:48 Sent {"src":"n0","dest":"c10","body":{"in_reply_to":14,"msg_id":63,"type":"broadcast_ok"}}
+2025/04/21 10:05:48 Received {n3 n0 {"already_seen":false,"in_reply_to":24,"msg_id":56,"seen_nodes":["n3","n0","n4"],"type":"gossip_ok"}}
+2025/04/21 10:05:48 Received {n1 n0 {"already_seen":false,"in_reply_to":25,"msg_id":75,"seen_nodes":["n1","n0","n3","n4","n2"],"type":"gossip_ok"}}
+2025/04/21 10:05:48 Received {c10 n0 {"type":"read","msg_id":15}}
+2025/04/21 10:05:48 Sent {"src":"n0","dest":"c10","body":{"in_reply_to":15,"messages":[19,13,1,6,10,17,0,3,4,8,9,12,14,15,2,18,7,11,16,5],"msg_id":64,"type":"read_ok"}}
+2025/04/21 10:05:48 Received {n1 n0 {"data_id":"c12_8","message":20,"msg_id":44,"seen_nodes":["n1","n2","n4","n0"],"type":"gossip"}}
+2025/04/21 10:05:48 Sent {"src":"n0","dest":"n3","body":{"data_id":"c12_8","message":20,"msg_id":26,"seen_nodes":["n0","n1","n2","n4","n3"],"type":"gossip"}}
+2025/04/21 10:05:48 Sent {"src":"n0","dest":"n1","body":{"already_seen":false,"in_reply_to":44,"msg_id":66,"seen_nodes":["n0","n1","n2","n4","n3"],"type":"gossip_ok"}}
+2025/04/21 10:05:48 Received {n3 n0 {"data_id":"c12_8","message":20,"msg_id":24,"seen_nodes":["n3","n4","n1","n2","n0"],"type":"gossip"}}
+2025/04/21 10:05:48 Received {n3 n0 {"already_seen":true,"in_reply_to":26,"msg_id":58,"seen_nodes":["n3","n4","n1","n2","n0"],"type":"gossip_ok"}}
+2025/04/21 10:05:48 Sent {"src":"n0","dest":"n3","body":{"already_seen":true,"in_reply_to":24,"msg_id":67,"seen_nodes":["n0","n1","n2","n4","n3"],"type":"gossip_ok"}}
+2025/04/21 10:05:48 Received {n1 n0 {"data_id":"c14_8","message":21,"msg_id":46,"seen_nodes":["n1","n4","n2","n0"],"type":"gossip"}}
+2025/04/21 10:05:48 Received {n3 n0 {"data_id":"c14_8","message":21,"msg_id":25,"seen_nodes":["n3","n4","n1","n0"],"type":"gossip"}}
+2025/04/21 10:05:48 Sent {"src":"n0","dest":"n3","body":{"data_id":"c14_8","message":21,"msg_id":27,"seen_nodes":["n0","n1","n4","n2","n3"],"type":"gossip"}}
+2025/04/21 10:05:48 Sent {"src":"n0","dest":"n1","body":{"already_seen":false,"in_reply_to":46,"msg_id":69,"seen_nodes":["n0","n1","n4","n2","n3"],"type":"gossip_ok"}}
+2025/04/21 10:05:48 Sent {"src":"n0","dest":"n3","body":{"already_seen":true,"in_reply_to":25,"msg_id":70,"seen_nodes":["n0","n1","n4","n2","n3"],"type":"gossip_ok"}}
+2025/04/21 10:05:48 Received {n3 n0 {"already_seen":true,"in_reply_to":27,"msg_id":63,"seen_nodes":["n3","n4","n1","n0"],"type":"gossip_ok"}}
+2025/04/21 10:05:48 Received {c10 n0 {"type":"read","msg_id":16}}
+2025/04/21 10:05:48 Sent {"src":"n0","dest":"c10","body":{"in_reply_to":16,"messages":[13,19,21,17,0,1,6,10,9,12,14,15,2,3,4,8,18,20,5,7,11,16],"msg_id":71,"type":"read_ok"}}
+2025/04/21 10:05:48 Received {c10 n0 {"type":"read","msg_id":17}}
+2025/04/21 10:05:48 Sent {"src":"n0","dest":"c10","body":{"in_reply_to":17,"messages":[5,7,11,16,13,19,21,0,1,6,10,17,2,3,4,8,9,12,14,15,18,20],"msg_id":72,"type":"read_ok"}}
+2025/04/21 10:05:49 Received {n1 n0 {"data_id":"c11_9","message":22,"msg_id":49,"seen_nodes":["n1","n4","n2","n0"],"type":"gossip"}}
+2025/04/21 10:05:49 Sent {"src":"n0","dest":"n3","body":{"data_id":"c11_9","message":22,"msg_id":28,"seen_nodes":["n0","n1","n4","n2","n3"],"type":"gossip"}}
+2025/04/21 10:05:49 Sent {"src":"n0","dest":"n1","body":{"already_seen":false,"in_reply_to":49,"msg_id":74,"seen_nodes":["n0","n1","n4","n2","n3"],"type":"gossip_ok"}}
+2025/04/21 10:05:49 Received {n3 n0 {"data_id":"c11_9","message":22,"msg_id":26,"seen_nodes":["n3","n4","n1","n0"],"type":"gossip"}}
+2025/04/21 10:05:49 Sent {"src":"n0","dest":"n3","body":{"already_seen":true,"in_reply_to":26,"msg_id":75,"seen_nodes":["n0","n1","n4","n2","n3"],"type":"gossip_ok"}}
+2025/04/21 10:05:49 Received {n3 n0 {"already_seen":true,"in_reply_to":28,"msg_id":65,"seen_nodes":["n3","n4","n1","n0"],"type":"gossip_ok"}}
+2025/04/21 10:05:49 Received {n3 n0 {"data_id":"c13_9","message":23,"msg_id":27,"seen_nodes":["n3","n0"],"type":"gossip"}}
+2025/04/21 10:05:49 Sent {"src":"n0","dest":"n1","body":{"data_id":"c13_9","message":23,"msg_id":29,"seen_nodes":["n0","n3","n1"],"type":"gossip"}}
+2025/04/21 10:05:49 Sent {"src":"n0","dest":"n3","body":{"already_seen":false,"in_reply_to":27,"msg_id":77,"seen_nodes":["n0","n3","n1"],"type":"gossip_ok"}}
+2025/04/21 10:05:49 Received {n1 n0 {"already_seen":false,"in_reply_to":29,"msg_id":91,"seen_nodes":["n1","n0","n3","n4","n2"],"type":"gossip_ok"}}
+2025/04/21 10:05:49 Received {c10 n0 {"type":"broadcast","message":24,"msg_id":18}}
+2025/04/21 10:05:49 Sent {"src":"n0","dest":"n3","body":{"data_id":"c10_18","message":24,"msg_id":30,"seen_nodes":["n0","n3"],"type":"gossip"}}
+2025/04/21 10:05:49 Sent {"src":"n0","dest":"n1","body":{"data_id":"c10_18","message":24,"msg_id":31,"seen_nodes":["n0","n3","n1"],"type":"gossip"}}
+2025/04/21 10:05:49 Sent {"src":"n0","dest":"c10","body":{"in_reply_to":18,"msg_id":80,"type":"broadcast_ok"}}
+2025/04/21 10:05:49 Received {n3 n0 {"already_seen":false,"in_reply_to":30,"msg_id":71,"seen_nodes":["n3","n0","n4"],"type":"gossip_ok"}}
+2025/04/21 10:05:49 Received {n1 n0 {"already_seen":false,"in_reply_to":31,"msg_id":94,"seen_nodes":["n1","n0","n3","n4","n2"],"type":"gossip_ok"}}
+2025/04/21 10:05:49 Received {c10 n0 {"type":"read","msg_id":19}}
+2025/04/21 10:05:49 Sent {"src":"n0","dest":"c10","body":{"in_reply_to":19,"messages":[13,19,21,17,22,0,1,6,10,9,12,14,15,2,3,4,8,18,20,24,23,5,7,11,16],"msg_id":81,"type":"read_ok"}}
+2025/04/21 10:05:49 Received {n1 n0 {"data_id":"c11_10","message":25,"msg_id":56,"seen_nodes":["n1","n4","n2","n0"],"type":"gossip"}}
+2025/04/21 10:05:49 Sent {"src":"n0","dest":"n3","body":{"data_id":"c11_10","message":25,"msg_id":32,"seen_nodes":["n0","n1","n4","n2","n3"],"type":"gossip"}}
+2025/04/21 10:05:49 Sent {"src":"n0","dest":"n1","body":{"already_seen":false,"in_reply_to":56,"msg_id":83,"seen_nodes":["n0","n1","n4","n2","n3"],"type":"gossip_ok"}}
+2025/04/21 10:05:49 Received {n3 n0 {"data_id":"c11_10","message":25,"msg_id":30,"seen_nodes":["n3","n4","n1","n0"],"type":"gossip"}}
+2025/04/21 10:05:49 Sent {"src":"n0","dest":"n3","body":{"already_seen":true,"in_reply_to":30,"msg_id":84,"seen_nodes":["n0","n1","n4","n2","n3"],"type":"gossip_ok"}}
+2025/04/21 10:05:49 Received {n3 n0 {"already_seen":true,"in_reply_to":32,"msg_id":74,"seen_nodes":["n3","n4","n1","n0"],"type":"gossip_ok"}}
+2025/04/21 10:05:49 Received {n1 n0 {"data_id":"c12_10","message":26,"msg_id":58,"seen_nodes":["n1","n2","n4","n0"],"type":"gossip"}}
+2025/04/21 10:05:49 Sent {"src":"n0","dest":"n3","body":{"data_id":"c12_10","message":26,"msg_id":33,"seen_nodes":["n0","n1","n2","n4","n3"],"type":"gossip"}}
+2025/04/21 10:05:49 Sent {"src":"n0","dest":"n1","body":{"already_seen":false,"in_reply_to":58,"msg_id":86,"seen_nodes":["n0","n1","n2","n4","n3"],"type":"gossip_ok"}}
+2025/04/21 10:05:49 Received {n3 n0 {"data_id":"c12_10","message":26,"msg_id":31,"seen_nodes":["n3","n4","n1","n2","n0"],"type":"gossip"}}
+2025/04/21 10:05:49 Received {n3 n0 {"already_seen":true,"in_reply_to":33,"msg_id":76,"seen_nodes":["n3","n4","n1","n2","n0"],"type":"gossip_ok"}}
+2025/04/21 10:05:49 Sent {"src":"n0","dest":"n3","body":{"already_seen":true,"in_reply_to":31,"msg_id":87,"seen_nodes":["n0","n1","n2","n4","n3"],"type":"gossip_ok"}}
+2025/04/21 10:05:50 Received {n3 n0 {"data_id":"c14_10","message":27,"msg_id":32,"seen_nodes":["n3","n4","n1","n0"],"type":"gossip"}}
+2025/04/21 10:05:50 Received {n1 n0 {"data_id":"c14_10","message":27,"msg_id":60,"seen_nodes":["n1","n4","n2","n0"],"type":"gossip"}}
+2025/04/21 10:05:50 Sent {"src":"n0","dest":"n3","body":{"already_seen":false,"in_reply_to":32,"msg_id":88,"seen_nodes":["n0","n3","n4","n1"],"type":"gossip_ok"}}
+2025/04/21 10:05:50 Sent {"src":"n0","dest":"n1","body":{"already_seen":true,"in_reply_to":60,"msg_id":89,"seen_nodes":["n0","n3","n4","n1"],"type":"gossip_ok"}}
+2025/04/21 10:05:50 Received {c10 n0 {"type":"read","msg_id":20}}
+2025/04/21 10:05:50 Sent {"src":"n0","dest":"c10","body":{"in_reply_to":20,"messages":[0,17,22,25,26,24,2,3,4,8,9,12,20,5,11,16,23,19,1,6,10,14,15,18,27,7,13,21],"msg_id":90,"type":"read_ok"}}
+2025/04/21 10:05:50 Received {c10 n0 {"type":"broadcast","message":28,"msg_id":21}}
+2025/04/21 10:05:50 Sent {"src":"n0","dest":"n3","body":{"data_id":"c10_21","message":28,"msg_id":34,"seen_nodes":["n0","n3"],"type":"gossip"}}
+2025/04/21 10:05:50 Sent {"src":"n0","dest":"n1","body":{"data_id":"c10_21","message":28,"msg_id":35,"seen_nodes":["n0","n3","n1"],"type":"gossip"}}
+2025/04/21 10:05:50 Sent {"src":"n0","dest":"c10","body":{"in_reply_to":21,"msg_id":93,"type":"broadcast_ok"}}
+2025/04/21 10:05:50 Received {n3 n0 {"already_seen":false,"in_reply_to":34,"msg_id":82,"seen_nodes":["n3","n0","n4"],"type":"gossip_ok"}}
+2025/04/21 10:05:50 Received {n1 n0 {"already_seen":false,"in_reply_to":35,"msg_id":108,"seen_nodes":["n1","n0","n3","n4","n2"],"type":"gossip_ok"}}
+2025/04/21 10:05:50 Received {n3 n0 {"data_id":"c13_11","message":29,"msg_id":34,"seen_nodes":["n3","n0"],"type":"gossip"}}
+2025/04/21 10:05:50 Sent {"src":"n0","dest":"n1","body":{"data_id":"c13_11","message":29,"msg_id":36,"seen_nodes":["n0","n3","n1"],"type":"gossip"}}
+2025/04/21 10:05:50 Sent {"src":"n0","dest":"n3","body":{"already_seen":false,"in_reply_to":34,"msg_id":95,"seen_nodes":["n0","n3","n1"],"type":"gossip_ok"}}
+2025/04/21 10:05:50 Received {n1 n0 {"already_seen":false,"in_reply_to":36,"msg_id":114,"seen_nodes":["n1","n0","n3","n4","n2"],"type":"gossip_ok"}}
+2025/04/21 10:05:51 Received {c10 n0 {"type":"read","msg_id":22}}
+2025/04/21 10:05:51 Sent {"src":"n0","dest":"c10","body":{"in_reply_to":22,"messages":[19,1,6,10,29,14,15,18,27,7,13,21,26,0,17,22,25,9,12,20,24,2,3,4,8,28,5,11,16,23],"msg_id":96,"type":"read_ok"}}
+2025/04/21 10:05:51 Received {c10 n0 {"type":"read","msg_id":23}}
+2025/04/21 10:05:51 Sent {"src":"n0","dest":"c10","body":{"in_reply_to":23,"messages":[2,3,4,8,9,12,20,24,5,11,16,23,28,19,1,6,10,14,15,18,27,29,7,13,21,0,17,22,25,26],"msg_id":97,"type":"read_ok"}}
+2025/04/21 10:05:51 Received {n1 n0 {"data_id":"c11_12","message":30,"msg_id":67,"seen_nodes":["n1","n4","n2","n0"],"type":"gossip"}}
+2025/04/21 10:05:51 Sent {"src":"n0","dest":"n3","body":{"data_id":"c11_12","message":30,"msg_id":37,"seen_nodes":["n0","n1","n4","n2","n3"],"type":"gossip"}}
+2025/04/21 10:05:51 Sent {"src":"n0","dest":"n1","body":{"already_seen":false,"in_reply_to":67,"msg_id":99,"seen_nodes":["n0","n1","n4","n2","n3"],"type":"gossip_ok"}}
+2025/04/21 10:05:51 Received {n3 n0 {"data_id":"c11_12","message":30,"msg_id":36,"seen_nodes":["n3","n4","n1","n0"],"type":"gossip"}}
+2025/04/21 10:05:51 Sent {"src":"n0","dest":"n3","body":{"already_seen":true,"in_reply_to":36,"msg_id":100,"seen_nodes":["n0","n1","n4","n2","n3"],"type":"gossip_ok"}}
+2025/04/21 10:05:51 Received {n3 n0 {"already_seen":true,"in_reply_to":37,"msg_id":88,"seen_nodes":["n3","n4","n1","n0"],"type":"gossip_ok"}}
+2025/04/21 10:05:51 Received {n1 n0 {"data_id":"c12_12","message":31,"msg_id":69,"seen_nodes":["n1","n2","n4","n0"],"type":"gossip"}}
+2025/04/21 10:05:51 Sent {"src":"n0","dest":"n3","body":{"data_id":"c12_12","message":31,"msg_id":38,"seen_nodes":["n0","n1","n2","n4","n3"],"type":"gossip"}}
+2025/04/21 10:05:51 Sent {"src":"n0","dest":"n1","body":{"already_seen":false,"in_reply_to":69,"msg_id":102,"seen_nodes":["n0","n1","n2","n4","n3"],"type":"gossip_ok"}}
+2025/04/21 10:05:51 Received {n3 n0 {"already_seen":false,"in_reply_to":38,"msg_id":89,"seen_nodes":["n3","n0","n1","n2","n4"],"type":"gossip_ok"}}
+2025/04/21 10:05:51 Received {c10 n0 {"type":"broadcast","message":32,"msg_id":24}}
+2025/04/21 10:05:51 Sent {"src":"n0","dest":"n3","body":{"data_id":"c10_24","message":32,"msg_id":39,"seen_nodes":["n0","n3"],"type":"gossip"}}
+2025/04/21 10:05:51 Sent {"src":"n0","dest":"n1","body":{"data_id":"c10_24","message":32,"msg_id":40,"seen_nodes":["n0","n3","n1"],"type":"gossip"}}
+2025/04/21 10:05:51 Sent {"src":"n0","dest":"c10","body":{"in_reply_to":24,"msg_id":105,"type":"broadcast_ok"}}
+2025/04/21 10:05:51 Received {n3 n0 {"already_seen":false,"in_reply_to":39,"msg_id":93,"seen_nodes":["n3","n0","n4"],"type":"gossip_ok"}}
+2025/04/21 10:05:51 Received {n1 n0 {"already_seen":false,"in_reply_to":40,"msg_id":124,"seen_nodes":["n1","n0","n3","n4","n2"],"type":"gossip_ok"}}
+2025/04/21 10:05:51 Received {c10 n0 {"type":"read","msg_id":25}}
+2025/04/21 10:05:51 Sent {"src":"n0","dest":"c10","body":{"in_reply_to":25,"messages":[15,18,27,29,14,7,21,31,13,17,22,25,26,0,3,4,8,9,12,20,24,2,11,16,23,28,5,30,32,19,6,10,1],"msg_id":106,"type":"read_ok"}}
+2025/04/21 10:05:51 Received {n1 n0 {"data_id":"c12_13","message":33,"msg_id":73,"seen_nodes":["n1","n2","n4","n0"],"type":"gossip"}}
+2025/04/21 10:05:51 Sent {"src":"n0","dest":"n3","body":{"data_id":"c12_13","message":33,"msg_id":41,"seen_nodes":["n0","n1","n2","n4","n3"],"type":"gossip"}}
+2025/04/21 10:05:51 Sent {"src":"n0","dest":"n1","body":{"already_seen":false,"in_reply_to":73,"msg_id":108,"seen_nodes":["n0","n1","n2","n4","n3"],"type":"gossip_ok"}}
+2025/04/21 10:05:51 Received {n3 n0 {"data_id":"c12_13","message":33,"msg_id":38,"seen_nodes":["n3","n4","n1","n2","n0"],"type":"gossip"}}
+2025/04/21 10:05:51 Received {n3 n0 {"already_seen":true,"in_reply_to":41,"msg_id":95,"seen_nodes":["n3","n4","n1","n2","n0"],"type":"gossip_ok"}}
+2025/04/21 10:05:51 Sent {"src":"n0","dest":"n3","body":{"already_seen":true,"in_reply_to":38,"msg_id":109,"seen_nodes":["n0","n1","n2","n4","n3"],"type":"gossip_ok"}}
+2025/04/21 10:05:51 Received {n3 n0 {"data_id":"c13_13","message":34,"msg_id":39,"seen_nodes":["n3","n0"],"type":"gossip"}}
+2025/04/21 10:05:51 Sent {"src":"n0","dest":"n1","body":{"data_id":"c13_13","message":34,"msg_id":42,"seen_nodes":["n0","n3","n1"],"type":"gossip"}}
+2025/04/21 10:05:51 Sent {"src":"n0","dest":"n3","body":{"already_seen":false,"in_reply_to":39,"msg_id":111,"seen_nodes":["n0","n3","n1"],"type":"gossip_ok"}}
+2025/04/21 10:05:51 Received {n1 n0 {"already_seen":false,"in_reply_to":42,"msg_id":133,"seen_nodes":["n1","n0","n3","n4","n2"],"type":"gossip_ok"}}
+2025/04/21 10:05:52 Received {n3 n0 {"data_id":"c14_13","message":35,"msg_id":41,"seen_nodes":["n3","n4","n1","n0"],"type":"gossip"}}
+2025/04/21 10:05:52 Received {n1 n0 {"data_id":"c14_13","message":35,"msg_id":77,"seen_nodes":["n1","n4","n2","n0"],"type":"gossip"}}
+2025/04/21 10:05:52 Sent {"src":"n0","dest":"n3","body":{"already_seen":false,"in_reply_to":41,"msg_id":112,"seen_nodes":["n0","n3","n4","n1"],"type":"gossip_ok"}}
+2025/04/21 10:05:52 Sent {"src":"n0","dest":"n1","body":{"already_seen":true,"in_reply_to":77,"msg_id":113,"seen_nodes":["n0","n3","n4","n1"],"type":"gossip_ok"}}
+2025/04/21 10:05:52 Received {c10 n0 {"type":"broadcast","message":36,"msg_id":26}}
+2025/04/21 10:05:52 Sent {"src":"n0","dest":"n3","body":{"data_id":"c10_26","message":36,"msg_id":43,"seen_nodes":["n0","n3"],"type":"gossip"}}
+2025/04/21 10:05:52 Sent {"src":"n0","dest":"n1","body":{"data_id":"c10_26","message":36,"msg_id":44,"seen_nodes":["n0","n3","n1"],"type":"gossip"}}
+2025/04/21 10:05:52 Sent {"src":"n0","dest":"c10","body":{"in_reply_to":26,"msg_id":116,"type":"broadcast_ok"}}
+2025/04/21 10:05:52 Received {n3 n0 {"already_seen":false,"in_reply_to":43,"msg_id":103,"seen_nodes":["n3","n0","n4"],"type":"gossip_ok"}}
+2025/04/21 10:05:52 Received {n1 n0 {"already_seen":false,"in_reply_to":44,"msg_id":139,"seen_nodes":["n1","n0","n3","n4","n2"],"type":"gossip_ok"}}
+2025/04/21 10:05:52 Received {c10 n0 {"type":"read","msg_id":27}}
+2025/04/21 10:05:52 Sent {"src":"n0","dest":"c10","body":{"in_reply_to":27,"messages":[14,15,18,27,29,7,13,21,31,0,17,22,25,26,33,34,24,2,3,4,8,9,12,20,36,5,11,16,23,28,35,19,30,32,1,6,10],"msg_id":117,"type":"read_ok"}}
+2025/04/21 10:05:52 Received {n1 n0 {"data_id":"c11_14","message":37,"msg_id":82,"seen_nodes":["n1","n4","n2","n0"],"type":"gossip"}}
+2025/04/21 10:05:52 Sent {"src":"n0","dest":"n3","body":{"data_id":"c11_14","message":37,"msg_id":45,"seen_nodes":["n0","n1","n4","n2","n3"],"type":"gossip"}}
+2025/04/21 10:05:52 Sent {"src":"n0","dest":"n1","body":{"already_seen":false,"in_reply_to":82,"msg_id":119,"seen_nodes":["n0","n1","n4","n2","n3"],"type":"gossip_ok"}}
+2025/04/21 10:05:52 Received {n3 n0 {"data_id":"c11_14","message":37,"msg_id":43,"seen_nodes":["n3","n4","n1","n0"],"type":"gossip"}}
+2025/04/21 10:05:52 Received {n3 n0 {"already_seen":true,"in_reply_to":45,"msg_id":106,"seen_nodes":["n3","n4","n1","n0"],"type":"gossip_ok"}}
+2025/04/21 10:05:52 Sent {"src":"n0","dest":"n3","body":{"already_seen":true,"in_reply_to":43,"msg_id":120,"seen_nodes":["n0","n1","n4","n2","n3"],"type":"gossip_ok"}}
+2025/04/21 10:05:52 Received {n1 n0 {"data_id":"c12_14","message":38,"msg_id":84,"seen_nodes":["n1","n2","n4","n0"],"type":"gossip"}}
+2025/04/21 10:05:52 Sent {"src":"n0","dest":"n3","body":{"data_id":"c12_14","message":38,"msg_id":46,"seen_nodes":["n0","n1","n2","n4","n3"],"type":"gossip"}}
+2025/04/21 10:05:52 Sent {"src":"n0","dest":"n1","body":{"already_seen":false,"in_reply_to":84,"msg_id":122,"seen_nodes":["n0","n1","n2","n4","n3"],"type":"gossip_ok"}}
+2025/04/21 10:05:52 Received {n3 n0 {"data_id":"c12_14","message":38,"msg_id":44,"seen_nodes":["n3","n4","n1","n2","n0"],"type":"gossip"}}
+2025/04/21 10:05:52 Received {n3 n0 {"already_seen":true,"in_reply_to":46,"msg_id":108,"seen_nodes":["n3","n4","n1","n2","n0"],"type":"gossip_ok"}}
+2025/04/21 10:05:52 Sent {"src":"n0","dest":"n3","body":{"already_seen":true,"in_reply_to":44,"msg_id":123,"seen_nodes":["n0","n1","n2","n4","n3"],"type":"gossip_ok"}}
+2025/04/21 10:05:52 Received {c10 n0 {"type":"broadcast","message":39,"msg_id":28}}
+2025/04/21 10:05:52 Sent {"src":"n0","dest":"n3","body":{"data_id":"c10_28","message":39,"msg_id":47,"seen_nodes":["n0","n3"],"type":"gossip"}}
+2025/04/21 10:05:52 Sent {"src":"n0","dest":"n1","body":{"data_id":"c10_28","message":39,"msg_id":48,"seen_nodes":["n0","n3","n1"],"type":"gossip"}}
+2025/04/21 10:05:52 Sent {"src":"n0","dest":"c10","body":{"in_reply_to":28,"msg_id":126,"type":"broadcast_ok"}}
+2025/04/21 10:05:52 Received {n3 n0 {"already_seen":false,"in_reply_to":47,"msg_id":112,"seen_nodes":["n3","n0","n4"],"type":"gossip_ok"}}
+2025/04/21 10:05:52 Received {n1 n0 {"already_seen":false,"in_reply_to":48,"msg_id":149,"seen_nodes":["n1","n0","n3","n4","n2"],"type":"gossip_ok"}}
+2025/04/21 10:05:53 Received {c10 n0 {"type":"broadcast","message":40,"msg_id":29}}
+2025/04/21 10:05:53 Sent {"src":"n0","dest":"n3","body":{"data_id":"c10_29","message":40,"msg_id":49,"seen_nodes":["n0","n3"],"type":"gossip"}}
+2025/04/21 10:05:53 Sent {"src":"n0","dest":"n1","body":{"data_id":"c10_29","message":40,"msg_id":50,"seen_nodes":["n0","n3","n1"],"type":"gossip"}}
+2025/04/21 10:05:53 Sent {"src":"n0","dest":"c10","body":{"in_reply_to":29,"msg_id":129,"type":"broadcast_ok"}}
+2025/04/21 10:05:53 Received {n3 n0 {"already_seen":false,"in_reply_to":49,"msg_id":114,"seen_nodes":["n3","n0","n4"],"type":"gossip_ok"}}
+2025/04/21 10:05:53 Received {n1 n0 {"already_seen":false,"in_reply_to":50,"msg_id":153,"seen_nodes":["n1","n0","n3","n4","n2"],"type":"gossip_ok"}}
+2025/04/21 10:05:53 Received {n1 n0 {"data_id":"c11_15","message":41,"msg_id":91,"seen_nodes":["n1","n4","n2","n0"],"type":"gossip"}}
+2025/04/21 10:05:53 Sent {"src":"n0","dest":"n3","body":{"data_id":"c11_15","message":41,"msg_id":51,"seen_nodes":["n0","n1","n4","n2","n3"],"type":"gossip"}}
+2025/04/21 10:05:53 Sent {"src":"n0","dest":"n1","body":{"already_seen":false,"in_reply_to":91,"msg_id":131,"seen_nodes":["n0","n1","n4","n2","n3"],"type":"gossip_ok"}}
+2025/04/21 10:05:53 Received {n3 n0 {"already_seen":false,"in_reply_to":51,"msg_id":116,"seen_nodes":["n3","n0","n1","n4","n2"],"type":"gossip_ok"}}
+2025/04/21 10:05:53 Received {n1 n0 {"data_id":"c12_15","message":42,"msg_id":93,"seen_nodes":["n1","n2","n4","n0"],"type":"gossip"}}
+2025/04/21 10:05:53 Sent {"src":"n0","dest":"n3","body":{"data_id":"c12_15","message":42,"msg_id":52,"seen_nodes":["n0","n1","n2","n4","n3"],"type":"gossip"}}
+2025/04/21 10:05:53 Sent {"src":"n0","dest":"n1","body":{"already_seen":false,"in_reply_to":93,"msg_id":133,"seen_nodes":["n0","n1","n2","n4","n3"],"type":"gossip_ok"}}
+2025/04/21 10:05:53 Received {n3 n0 {"already_seen":false,"in_reply_to":52,"msg_id":117,"seen_nodes":["n3","n0","n1","n2","n4"],"type":"gossip_ok"}}
+2025/04/21 10:05:53 Received {n3 n0 {"data_id":"c13_15","message":43,"msg_id":47,"seen_nodes":["n3","n0"],"type":"gossip"}}
+2025/04/21 10:05:53 Sent {"src":"n0","dest":"n1","body":{"data_id":"c13_15","message":43,"msg_id":53,"seen_nodes":["n0","n3","n1"],"type":"gossip"}}
+2025/04/21 10:05:53 Sent {"src":"n0","dest":"n3","body":{"already_seen":false,"in_reply_to":47,"msg_id":135,"seen_nodes":["n0","n3","n1"],"type":"gossip_ok"}}
+2025/04/21 10:05:53 Received {n1 n0 {"already_seen":false,"in_reply_to":53,"msg_id":164,"seen_nodes":["n1","n0","n3","n4","n2"],"type":"gossip_ok"}}
+2025/04/21 10:05:53 Received {c10 n0 {"type":"read","msg_id":30}}
+2025/04/21 10:05:53 Sent {"src":"n0","dest":"c10","body":{"in_reply_to":30,"messages":[7,39,13,21,31,41,0,17,22,25,26,33,34,37,2,3,4,8,9,12,20,24,36,42,43,5,11,16,23,28,35,19,30,32,1,6,10,14,15,18,27,29,38,40],"msg_id":136,"type":"read_ok"}}
+2025/04/21 10:05:53 Received {c10 n0 {"type":"read","msg_id":31}}
+2025/04/21 10:05:53 Sent {"src":"n0","dest":"c10","body":{"in_reply_to":31,"messages":[33,34,37,0,17,22,25,26,12,20,24,2,3,4,8,9,36,42,43,35,5,11,16,23,28,19,30,32,1,6,10,38,40,14,15,18,27,29,7,39,13,21,31,41],"msg_id":137,"type":"read_ok"}}
+2025/04/21 10:05:54 Received {n3 n0 {"data_id":"c14_16","message":44,"msg_id":49,"seen_nodes":["n3","n4","n1","n0"],"type":"gossip"}}
+2025/04/21 10:05:54 Received {n1 n0 {"data_id":"c14_16","message":44,"msg_id":97,"seen_nodes":["n1","n4","n2","n0"],"type":"gossip"}}
+2025/04/21 10:05:54 Sent {"src":"n0","dest":"n3","body":{"data_id":"c14_16","message":44,"msg_id":54,"seen_nodes":["n0","n1","n4","n2","n3"],"type":"gossip"}}
+2025/04/21 10:05:54 Sent {"src":"n0","dest":"n3","body":{"already_seen":true,"in_reply_to":49,"msg_id":139,"seen_nodes":["n0","n1","n4","n2","n3"],"type":"gossip_ok"}}
+2025/04/21 10:05:54 Sent {"src":"n0","dest":"n1","body":{"already_seen":false,"in_reply_to":97,"msg_id":140,"seen_nodes":["n0","n1","n4","n2","n3"],"type":"gossip_ok"}}
+2025/04/21 10:05:54 Received {n3 n0 {"already_seen":true,"in_reply_to":54,"msg_id":125,"seen_nodes":["n3","n4","n1","n0"],"type":"gossip_ok"}}
+2025/04/21 10:05:54 Received {c10 n0 {"type":"broadcast","message":45,"msg_id":32}}
+2025/04/21 10:05:54 Sent {"src":"n0","dest":"n3","body":{"data_id":"c10_32","message":45,"msg_id":55,"seen_nodes":["n0","n3"],"type":"gossip"}}
+2025/04/21 10:05:54 Sent {"src":"n0","dest":"n1","body":{"data_id":"c10_32","message":45,"msg_id":56,"seen_nodes":["n0","n3","n1"],"type":"gossip"}}
+2025/04/21 10:05:54 Sent {"src":"n0","dest":"c10","body":{"in_reply_to":32,"msg_id":143,"type":"broadcast_ok"}}
+2025/04/21 10:05:54 Received {n3 n0 {"already_seen":false,"in_reply_to":55,"msg_id":127,"seen_nodes":["n3","n0","n4"],"type":"gossip_ok"}}
+2025/04/21 10:05:54 Received {n1 n0 {"already_seen":false,"in_reply_to":56,"msg_id":172,"seen_nodes":["n1","n0","n3","n4","n2"],"type":"gossip_ok"}}
+2025/04/21 10:05:54 Received {n1 n0 {"data_id":"c11_17","message":46,"msg_id":102,"seen_nodes":["n1","n4","n2","n0"],"type":"gossip"}}
+2025/04/21 10:05:54 Sent {"src":"n0","dest":"n3","body":{"data_id":"c11_17","message":46,"msg_id":57,"seen_nodes":["n0","n1","n4","n2","n3"],"type":"gossip"}}
+2025/04/21 10:05:54 Sent {"src":"n0","dest":"n1","body":{"already_seen":false,"in_reply_to":102,"msg_id":145,"seen_nodes":["n0","n1","n4","n2","n3"],"type":"gossip_ok"}}
+2025/04/21 10:05:54 Received {n3 n0 {"already_seen":false,"in_reply_to":57,"msg_id":128,"seen_nodes":["n3","n0","n1","n4","n2"],"type":"gossip_ok"}}
+2025/04/21 10:05:54 Received {n1 n0 {"data_id":"c11_18","message":47,"msg_id":105,"seen_nodes":["n1","n4","n2","n0"],"type":"gossip"}}
+2025/04/21 10:05:54 Sent {"src":"n0","dest":"n3","body":{"data_id":"c11_18","message":47,"msg_id":58,"seen_nodes":["n0","n1","n4","n2","n3"],"type":"gossip"}}
+2025/04/21 10:05:54 Sent {"src":"n0","dest":"n1","body":{"already_seen":false,"in_reply_to":105,"msg_id":147,"seen_nodes":["n0","n1","n4","n2","n3"],"type":"gossip_ok"}}
+2025/04/21 10:05:54 Received {n3 n0 {"data_id":"c11_18","message":47,"msg_id":51,"seen_nodes":["n3","n4","n1","n0"],"type":"gossip"}}
+2025/04/21 10:05:54 Received {n3 n0 {"already_seen":true,"in_reply_to":58,"msg_id":131,"seen_nodes":["n3","n4","n1","n0"],"type":"gossip_ok"}}
+2025/04/21 10:05:54 Sent {"src":"n0","dest":"n3","body":{"already_seen":true,"in_reply_to":51,"msg_id":148,"seen_nodes":["n0","n1","n4","n2","n3"],"type":"gossip_ok"}}
+2025/04/21 10:05:54 Received {n1 n0 {"data_id":"c12_17","message":48,"msg_id":107,"seen_nodes":["n1","n2","n4","n0"],"type":"gossip"}}
+2025/04/21 10:05:54 Sent {"src":"n0","dest":"n3","body":{"data_id":"c12_17","message":48,"msg_id":59,"seen_nodes":["n0","n1","n2","n4","n3"],"type":"gossip"}}
+2025/04/21 10:05:54 Sent {"src":"n0","dest":"n1","body":{"already_seen":false,"in_reply_to":107,"msg_id":150,"seen_nodes":["n0","n1","n2","n4","n3"],"type":"gossip_ok"}}
+2025/04/21 10:05:54 Received {n3 n0 {"data_id":"c12_17","message":48,"msg_id":52,"seen_nodes":["n3","n4","n1","n2","n0"],"type":"gossip"}}
+2025/04/21 10:05:54 Received {n3 n0 {"already_seen":true,"in_reply_to":59,"msg_id":134,"seen_nodes":["n3","n4","n1","n2","n0"],"type":"gossip_ok"}}
+2025/04/21 10:05:54 Sent {"src":"n0","dest":"n3","body":{"already_seen":true,"in_reply_to":52,"msg_id":151,"seen_nodes":["n0","n1","n2","n4","n3"],"type":"gossip_ok"}}
+2025/04/21 10:05:54 Received {n3 n0 {"data_id":"c13_17","message":49,"msg_id":53,"seen_nodes":["n3","n0"],"type":"gossip"}}
+2025/04/21 10:05:54 Sent {"src":"n0","dest":"n1","body":{"data_id":"c13_17","message":49,"msg_id":60,"seen_nodes":["n0","n3","n1"],"type":"gossip"}}
+2025/04/21 10:05:54 Sent {"src":"n0","dest":"n3","body":{"already_seen":false,"in_reply_to":53,"msg_id":153,"seen_nodes":["n0","n3","n1"],"type":"gossip_ok"}}
+2025/04/21 10:05:54 Received {n1 n0 {"already_seen":false,"in_reply_to":60,"msg_id":188,"seen_nodes":["n1","n0","n3","n4","n2"],"type":"gossip_ok"}}
+2025/04/21 10:05:54 Received {n3 n0 {"data_id":"c14_17","message":50,"msg_id":55,"seen_nodes":["n3","n4","n1","n0"],"type":"gossip"}}
+2025/04/21 10:05:54 Received {n1 n0 {"data_id":"c14_17","message":50,"msg_id":111,"seen_nodes":["n1","n4","n2","n0"],"type":"gossip"}}
+2025/04/21 10:05:54 Sent {"src":"n0","dest":"n3","body":{"already_seen":false,"in_reply_to":55,"msg_id":154,"seen_nodes":["n0","n3","n4","n1"],"type":"gossip_ok"}}
+2025/04/21 10:05:54 Sent {"src":"n0","dest":"n1","body":{"already_seen":true,"in_reply_to":111,"msg_id":155,"seen_nodes":["n0","n3","n4","n1"],"type":"gossip_ok"}}
+2025/04/21 10:05:54 Received {c10 n0 {"type":"read","msg_id":33}}
+2025/04/21 10:05:54 Sent {"src":"n0","dest":"c10","body":{"in_reply_to":33,"messages":[39,7,21,31,41,49,13,17,22,25,26,33,34,37,0,45,46,44,3,4,8,9,12,20,24,2,42,43,48,50,36,11,16,23,28,35,5,30,32,19,6,10,1,15,18,27,29,38,40,47,14],"msg_id":156,"type":"read_ok"}}
+2025/04/21 10:05:55 Received {c10 n0 {"type":"broadcast","message":51,"msg_id":34}}
+2025/04/21 10:05:55 Sent {"src":"n0","dest":"n3","body":{"data_id":"c10_34","message":51,"msg_id":61,"seen_nodes":["n0","n3"],"type":"gossip"}}
+2025/04/21 10:05:55 Sent {"src":"n0","dest":"n1","body":{"data_id":"c10_34","message":51,"msg_id":62,"seen_nodes":["n0","n3","n1"],"type":"gossip"}}
+2025/04/21 10:05:55 Sent {"src":"n0","dest":"c10","body":{"in_reply_to":34,"msg_id":159,"type":"broadcast_ok"}}
+2025/04/21 10:05:55 Received {n3 n0 {"already_seen":false,"in_reply_to":61,"msg_id":142,"seen_nodes":["n3","n0","n4"],"type":"gossip_ok"}}
+2025/04/21 10:05:55 Received {n1 n0 {"already_seen":false,"in_reply_to":62,"msg_id":194,"seen_nodes":["n1","n0","n3","n4","n2"],"type":"gossip_ok"}}
+2025/04/21 10:05:55 Received {n1 n0 {"data_id":"c11_19","message":52,"msg_id":116,"seen_nodes":["n1","n4","n2","n0"],"type":"gossip"}}
+2025/04/21 10:05:55 Sent {"src":"n0","dest":"n3","body":{"data_id":"c11_19","message":52,"msg_id":63,"seen_nodes":["n0","n1","n4","n2","n3"],"type":"gossip"}}
+2025/04/21 10:05:55 Sent {"src":"n0","dest":"n1","body":{"already_seen":false,"in_reply_to":116,"msg_id":161,"seen_nodes":["n0","n1","n4","n2","n3"],"type":"gossip_ok"}}
+2025/04/21 10:05:55 Received {n3 n0 {"already_seen":false,"in_reply_to":63,"msg_id":143,"seen_nodes":["n3","n0","n1","n4","n2"],"type":"gossip_ok"}}
+2025/04/21 10:05:55 Received {n3 n0 {"data_id":"c13_18","message":53,"msg_id":57,"seen_nodes":["n3","n0"],"type":"gossip"}}
+2025/04/21 10:05:55 Sent {"src":"n0","dest":"n1","body":{"data_id":"c13_18","message":53,"msg_id":64,"seen_nodes":["n0","n3","n1"],"type":"gossip"}}
+2025/04/21 10:05:55 Sent {"src":"n0","dest":"n3","body":{"already_seen":false,"in_reply_to":57,"msg_id":163,"seen_nodes":["n0","n3","n1"],"type":"gossip_ok"}}
+2025/04/21 10:05:55 Received {n1 n0 {"already_seen":false,"in_reply_to":64,"msg_id":203,"seen_nodes":["n1","n0","n3","n4","n2"],"type":"gossip_ok"}}
+2025/04/21 10:05:55 Received {n3 n0 {"data_id":"c14_18","message":54,"msg_id":59,"seen_nodes":["n3","n4","n1","n0"],"type":"gossip"}}
+2025/04/21 10:05:55 Received {n1 n0 {"data_id":"c14_18","message":54,"msg_id":120,"seen_nodes":["n1","n4","n2","n0"],"type":"gossip"}}
+2025/04/21 10:05:55 Sent {"src":"n0","dest":"n3","body":{"already_seen":false,"in_reply_to":59,"msg_id":164,"seen_nodes":["n0","n3","n4","n1"],"type":"gossip_ok"}}
+2025/04/21 10:05:55 Sent {"src":"n0","dest":"n1","body":{"already_seen":true,"in_reply_to":120,"msg_id":165,"seen_nodes":["n0","n3","n4","n1"],"type":"gossip_ok"}}
+2025/04/21 10:05:55 Received {c10 n0 {"type":"read","msg_id":35}}
+2025/04/21 10:05:55 Sent {"src":"n0","dest":"c10","body":{"in_reply_to":35,"messages":[10,15,27,53,39,13,41,33,34,37,0,17,25,44,46,20,24,48,54,4,8,9,12,5,11,28,1,6,40,47,14,18,29,38,7,21,31,49,51,26,22,45,43,50,2,3,36,42,16,23,35,52,19,30,32],"msg_id":166,"type":"read_ok"}}
+2025/04/21 10:05:55 Received {c10 n0 {"type":"read","msg_id":36}}
+2025/04/21 10:05:55 Sent {"src":"n0","dest":"c10","body":{"in_reply_to":36,"messages":[1,6,29,38,40,47,14,18,7,49,51,21,31,22,26,45,36,42,43,50,2,3,35,52,16,23,32,19,30,10,53,15,27,39,13,41,25,33,34,37,0,17,46,44,9,12,20,24,48,54,4,8,28,5,11],"msg_id":167,"type":"read_ok"}}
+2025/04/21 10:05:55 Received {n1 n0 {"data_id":"c11_20","message":55,"msg_id":123,"seen_nodes":["n1","n4","n2","n0"],"type":"gossip"}}
+2025/04/21 10:05:55 Sent {"src":"n0","dest":"n3","body":{"data_id":"c11_20","message":55,"msg_id":65,"seen_nodes":["n0","n1","n4","n2","n3"],"type":"gossip"}}
+2025/04/21 10:05:55 Sent {"src":"n0","dest":"n1","body":{"already_seen":false,"in_reply_to":123,"msg_id":169,"seen_nodes":["n0","n1","n4","n2","n3"],"type":"gossip_ok"}}
+2025/04/21 10:05:55 Received {n3 n0 {"data_id":"c11_20","message":55,"msg_id":60,"seen_nodes":["n3","n4","n1","n0"],"type":"gossip"}}
+2025/04/21 10:05:55 Received {n3 n0 {"already_seen":true,"in_reply_to":65,"msg_id":151,"seen_nodes":["n3","n4","n1","n0"],"type":"gossip_ok"}}
+2025/04/21 10:05:55 Sent {"src":"n0","dest":"n3","body":{"already_seen":true,"in_reply_to":60,"msg_id":170,"seen_nodes":["n0","n1","n4","n2","n3"],"type":"gossip_ok"}}
+2025/04/21 10:05:56 Received {n1 n0 {"data_id":"c12_19","message":56,"msg_id":125,"seen_nodes":["n1","n2","n4","n0"],"type":"gossip"}}
+2025/04/21 10:05:56 Sent {"src":"n0","dest":"n3","body":{"data_id":"c12_19","message":56,"msg_id":66,"seen_nodes":["n0","n1","n2","n4","n3"],"type":"gossip"}}
+2025/04/21 10:05:56 Sent {"src":"n0","dest":"n1","body":{"already_seen":false,"in_reply_to":125,"msg_id":172,"seen_nodes":["n0","n1","n2","n4","n3"],"type":"gossip_ok"}}
+2025/04/21 10:05:56 Received {n3 n0 {"data_id":"c12_19","message":56,"msg_id":61,"seen_nodes":["n3","n4","n1","n2","n0"],"type":"gossip"}}
+2025/04/21 10:05:56 Sent {"src":"n0","dest":"n3","body":{"already_seen":true,"in_reply_to":61,"msg_id":173,"seen_nodes":["n0","n1","n2","n4","n3"],"type":"gossip_ok"}}
+2025/04/21 10:05:56 Received {n3 n0 {"already_seen":true,"in_reply_to":66,"msg_id":155,"seen_nodes":["n3","n4","n1","n2","n0"],"type":"gossip_ok"}}
+2025/04/21 10:05:56 Received {n3 n0 {"data_id":"c14_19","message":57,"msg_id":62,"seen_nodes":["n3","n4","n1","n0"],"type":"gossip"}}
+2025/04/21 10:05:56 Received {n1 n0 {"data_id":"c14_19","message":57,"msg_id":127,"seen_nodes":["n1","n4","n2","n0"],"type":"gossip"}}
+2025/04/21 10:05:56 Sent {"src":"n0","dest":"n3","body":{"already_seen":false,"in_reply_to":62,"msg_id":174,"seen_nodes":["n0","n3","n4","n1"],"type":"gossip_ok"}}
+2025/04/21 10:05:56 Sent {"src":"n0","dest":"n1","body":{"already_seen":true,"in_reply_to":127,"msg_id":175,"seen_nodes":["n0","n3","n4","n1"],"type":"gossip_ok"}}
+2025/04/21 10:05:56 Received {c10 n0 {"type":"read","msg_id":37}}
+2025/04/21 10:05:56 Sent {"src":"n0","dest":"c10","body":{"in_reply_to":37,"messages":[19,30,32,10,15,27,53,39,13,41,34,37,44,46,0,17,25,33,20,24,48,54,4,8,9,12,57,5,11,28,1,6,40,47,56,14,18,29,38,7,21,31,49,51,22,26,45,55,43,50,2,3,36,42,16,23,35,52],"msg_id":176,"type":"read_ok"}}
+2025/04/21 10:05:56 Received {n1 n0 {"data_id":"c11_22","message":58,"msg_id":130,"seen_nodes":["n1","n4","n2","n0"],"type":"gossip"}}
+2025/04/21 10:05:56 Sent {"src":"n0","dest":"n3","body":{"data_id":"c11_22","message":58,"msg_id":67,"seen_nodes":["n0","n1","n4","n2","n3"],"type":"gossip"}}
+2025/04/21 10:05:56 Sent {"src":"n0","dest":"n1","body":{"already_seen":false,"in_reply_to":130,"msg_id":178,"seen_nodes":["n0","n1","n4","n2","n3"],"type":"gossip_ok"}}
+2025/04/21 10:05:56 Received {n3 n0 {"already_seen":true,"in_reply_to":67,"msg_id":159,"seen_nodes":["n3","n4","n1"],"type":"gossip_ok"}}
+2025/04/21 10:05:56 Received {n3 n0 {"data_id":"c11_22","message":58,"msg_id":63,"seen_nodes":["n3","n4","n1","n0"],"type":"gossip"}}
+2025/04/21 10:05:56 Sent {"src":"n0","dest":"n3","body":{"already_seen":true,"in_reply_to":63,"msg_id":179,"seen_nodes":["n0","n1","n4","n2","n3"],"type":"gossip_ok"}}
+2025/04/21 10:05:56 Received {c10 n0 {"type":"read","msg_id":38}}
+2025/04/21 10:05:56 Sent {"src":"n0","dest":"c10","body":{"in_reply_to":38,"messages":[40,47,56,14,18,29,38,7,21,31,49,51,22,26,45,55,43,50,2,3,36,42,16,23,35,52,19,30,32,10,15,27,53,58,39,13,41,34,37,44,46,0,17,25,33,20,24,48,54,4,8,9,12,57,5,11,28,1,6],"msg_id":180,"type":"read_ok"}}
+2025/04/21 10:05:57 Received {c10 n0 {"type":"read","msg_id":39}}
+2025/04/21 10:05:57 Sent {"src":"n0","dest":"c10","body":{"in_reply_to":39,"messages":[16,23,35,52,19,30,32,10,15,27,53,58,39,13,41,0,17,25,33,34,37,44,46,4,8,9,12,20,24,48,54,57,5,11,28,1,6,14,18,29,38,40,47,56,7,21,31,49,51,22,26,45,55,2,3,36,42,43,50],"msg_id":181,"type":"read_ok"}}
+2025/04/21 10:05:57 Received {n1 n0 {"data_id":"c12_21","message":59,"msg_id":132,"seen_nodes":["n1","n2","n4","n0"],"type":"gossip"}}
+2025/04/21 10:05:57 Sent {"src":"n0","dest":"n3","body":{"data_id":"c12_21","message":59,"msg_id":68,"seen_nodes":["n0","n1","n2","n4","n3"],"type":"gossip"}}
+2025/04/21 10:05:57 Sent {"src":"n0","dest":"n1","body":{"already_seen":false,"in_reply_to":132,"msg_id":183,"seen_nodes":["n0","n1","n2","n4","n3"],"type":"gossip_ok"}}
+2025/04/21 10:05:57 Received {n3 n0 {"data_id":"c12_21","message":59,"msg_id":64,"seen_nodes":["n3","n4","n1","n2","n0"],"type":"gossip"}}
+2025/04/21 10:05:57 Received {n3 n0 {"already_seen":true,"in_reply_to":68,"msg_id":164,"seen_nodes":["n3","n4","n1","n2","n0"],"type":"gossip_ok"}}
+2025/04/21 10:05:57 Sent {"src":"n0","dest":"n3","body":{"already_seen":true,"in_reply_to":64,"msg_id":184,"seen_nodes":["n0","n1","n2","n4","n3"],"type":"gossip_ok"}}
+2025/04/21 10:05:57 Received {n3 n0 {"data_id":"c14_21","message":60,"msg_id":65,"seen_nodes":["n3","n4","n1","n0"],"type":"gossip"}}
+2025/04/21 10:05:57 Received {n1 n0 {"data_id":"c14_21","message":60,"msg_id":134,"seen_nodes":["n1","n4","n2","n0"],"type":"gossip"}}
+2025/04/21 10:05:57 Sent {"src":"n0","dest":"n3","body":{"already_seen":false,"in_reply_to":65,"msg_id":185,"seen_nodes":["n0","n3","n4","n1"],"type":"gossip_ok"}}
+2025/04/21 10:05:57 Sent {"src":"n0","dest":"n1","body":{"already_seen":true,"in_reply_to":134,"msg_id":186,"seen_nodes":["n0","n3","n4","n1"],"type":"gossip_ok"}}
+2025/04/21 10:05:57 Received {c10 n0 {"type":"broadcast","message":61,"msg_id":40}}
+2025/04/21 10:05:57 Sent {"src":"n0","dest":"n3","body":{"data_id":"c10_40","message":61,"msg_id":69,"seen_nodes":["n0","n3"],"type":"gossip"}}
+2025/04/21 10:05:57 Sent {"src":"n0","dest":"n1","body":{"data_id":"c10_40","message":61,"msg_id":70,"seen_nodes":["n0","n3","n1"],"type":"gossip"}}
+2025/04/21 10:05:57 Sent {"src":"n0","dest":"c10","body":{"in_reply_to":40,"msg_id":189,"type":"broadcast_ok"}}
+2025/04/21 10:05:57 Received {n3 n0 {"already_seen":false,"in_reply_to":69,"msg_id":170,"seen_nodes":["n3","n0","n4"],"type":"gossip_ok"}}
+2025/04/21 10:05:57 Received {n1 n0 {"already_seen":false,"in_reply_to":70,"msg_id":231,"seen_nodes":["n1","n0","n3","n4","n2"],"type":"gossip_ok"}}
+2025/04/21 10:05:57 Received {c10 n0 {"type":"read","msg_id":41}}
+2025/04/21 10:05:57 Sent {"src":"n0","dest":"c10","body":{"in_reply_to":41,"messages":[7,21,31,49,51,22,26,45,55,2,3,36,42,43,50,16,23,35,52,19,30,32,10,15,27,53,58,60,39,13,41,59,44,46,0,17,25,33,34,37,48,54,4,8,9,12,20,24,57,5,11,28,61,1,6,56,14,18,29,38,40,47],"msg_id":190,"type":"read_ok"}}
+2025/04/21 10:05:58 Received {n3 n0 {"data_id":"c13_22","message":62,"msg_id":67,"seen_nodes":["n3","n0"],"type":"gossip"}}
+2025/04/21 10:05:58 Sent {"src":"n0","dest":"n1","body":{"data_id":"c13_22","message":62,"msg_id":71,"seen_nodes":["n0","n3","n1"],"type":"gossip"}}
+2025/04/21 10:05:58 Sent {"src":"n0","dest":"n3","body":{"already_seen":false,"in_reply_to":67,"msg_id":192,"seen_nodes":["n0","n3","n1"],"type":"gossip_ok"}}
+2025/04/21 10:05:58 Received {n1 n0 {"already_seen":false,"in_reply_to":71,"msg_id":237,"seen_nodes":["n1","n0","n3","n4","n2"],"type":"gossip_ok"}}
+2025/04/21 10:05:58 Received {n1 n0 {"data_id":"c14_22","message":63,"msg_id":140,"seen_nodes":["n1","n4","n2","n0"],"type":"gossip"}}
+2025/04/21 10:05:58 Received {n3 n0 {"data_id":"c14_22","message":63,"msg_id":69,"seen_nodes":["n3","n4","n1","n0"],"type":"gossip"}}
+2025/04/21 10:05:58 Sent {"src":"n0","dest":"n3","body":{"data_id":"c14_22","message":63,"msg_id":72,"seen_nodes":["n0","n1","n4","n2","n3"],"type":"gossip"}}
+2025/04/21 10:05:58 Sent {"src":"n0","dest":"n3","body":{"already_seen":true,"in_reply_to":69,"msg_id":194,"seen_nodes":["n0","n1","n4","n2","n3"],"type":"gossip_ok"}}
+2025/04/21 10:05:58 Sent {"src":"n0","dest":"n1","body":{"already_seen":false,"in_reply_to":140,"msg_id":195,"seen_nodes":["n0","n1","n4","n2","n3"],"type":"gossip_ok"}}
+2025/04/21 10:05:58 Received {n3 n0 {"already_seen":true,"in_reply_to":72,"msg_id":176,"seen_nodes":["n3","n4","n1","n0"],"type":"gossip_ok"}}
+2025/04/21 10:05:58 Received {c10 n0 {"type":"broadcast","message":64,"msg_id":42}}
+2025/04/21 10:05:58 Sent {"src":"n0","dest":"n3","body":{"data_id":"c10_42","message":64,"msg_id":73,"seen_nodes":["n0","n3"],"type":"gossip"}}
+2025/04/21 10:05:58 Sent {"src":"n0","dest":"n1","body":{"data_id":"c10_42","message":64,"msg_id":74,"seen_nodes":["n0","n3","n1"],"type":"gossip"}}
+2025/04/21 10:05:58 Sent {"src":"n0","dest":"c10","body":{"in_reply_to":42,"msg_id":198,"type":"broadcast_ok"}}
+2025/04/21 10:05:58 Received {n3 n0 {"already_seen":false,"in_reply_to":73,"msg_id":178,"seen_nodes":["n3","n0","n4"],"type":"gossip_ok"}}
+2025/04/21 10:05:58 Received {n1 n0 {"already_seen":false,"in_reply_to":74,"msg_id":243,"seen_nodes":["n1","n0","n3","n4","n2"],"type":"gossip_ok"}}
+2025/04/21 10:05:58 Received {c10 n0 {"type":"read","msg_id":43}}
+2025/04/21 10:05:58 Sent {"src":"n0","dest":"c10","body":{"in_reply_to":43,"messages":[59,13,41,25,33,34,37,44,46,0,17,9,12,20,24,48,54,4,8,57,28,61,5,11,1,6,29,38,40,47,56,14,18,7,62,49,51,21,31,45,55,22,26,36,42,43,50,2,3,35,52,64,16,23,32,19,30,10,63,53,58,60,15,27,39],"msg_id":199,"type":"read_ok"}}
+2025/04/21 10:05:58 Received {n3 n0 {"data_id":"c13_23","message":65,"msg_id":71,"seen_nodes":["n3","n0"],"type":"gossip"}}
+2025/04/21 10:05:58 Sent {"src":"n0","dest":"n1","body":{"data_id":"c13_23","message":65,"msg_id":75,"seen_nodes":["n0","n3","n1"],"type":"gossip"}}
+2025/04/21 10:05:58 Sent {"src":"n0","dest":"n3","body":{"already_seen":false,"in_reply_to":71,"msg_id":201,"seen_nodes":["n0","n3","n1"],"type":"gossip_ok"}}
+2025/04/21 10:05:58 Received {n1 n0 {"already_seen":false,"in_reply_to":75,"msg_id":248,"seen_nodes":["n1","n0","n3","n4","n2"],"type":"gossip_ok"}}
+2025/04/21 10:05:58 Received {n3 n0 {"data_id":"c14_23","message":66,"msg_id":73,"seen_nodes":["n3","n4","n1","n0"],"type":"gossip"}}
+2025/04/21 10:05:58 Received {n1 n0 {"data_id":"c14_23","message":66,"msg_id":146,"seen_nodes":["n1","n4","n2","n0"],"type":"gossip"}}
+2025/04/21 10:05:58 Sent {"src":"n0","dest":"n3","body":{"already_seen":false,"in_reply_to":73,"msg_id":202,"seen_nodes":["n0","n3","n4","n1"],"type":"gossip_ok"}}
+2025/04/21 10:05:58 Sent {"src":"n0","dest":"n1","body":{"already_seen":true,"in_reply_to":146,"msg_id":203,"seen_nodes":["n0","n3","n4","n1"],"type":"gossip_ok"}}
+2025/04/21 10:05:58 Received {c10 n0 {"type":"read","msg_id":44}}
+2025/04/21 10:05:58 Sent {"src":"n0","dest":"c10","body":{"in_reply_to":44,"messages":[2,3,36,42,43,50,16,23,35,52,64,65,19,30,32,10,63,15,27,53,58,60,39,13,41,59,44,46,0,17,25,33,34,37,48,54,4,8,9,12,20,24,57,5,11,28,61,1,6,56,14,18,29,38,40,47,7,62,66,21,31,49,51,22,26,45,55],"msg_id":204,"type":"read_ok"}}
+2025/04/21 10:05:59 Received {c10 n0 {"type":"read","msg_id":45}}
+2025/04/21 10:05:59 Sent {"src":"n0","dest":"c10","body":{"in_reply_to":45,"messages":[6,1,18,29,38,40,47,56,14,62,66,7,31,49,51,21,26,45,55,22,3,36,42,43,50,2,23,35,52,64,65,16,30,32,19,63,10,27,53,58,60,15,39,41,59,13,17,25,33,34,37,44,46,0,8,9,12,20,24,48,54,4,57,11,28,61,5],"msg_id":205,"type":"read_ok"}}
+2025/04/21 10:05:59 Received {n1 n0 {"data_id":"c11_26","message":67,"msg_id":149,"seen_nodes":["n1","n4","n2","n0"],"type":"gossip"}}
+2025/04/21 10:05:59 Sent {"src":"n0","dest":"n3","body":{"data_id":"c11_26","message":67,"msg_id":76,"seen_nodes":["n0","n1","n4","n2","n3"],"type":"gossip"}}
+2025/04/21 10:05:59 Sent {"src":"n0","dest":"n1","body":{"already_seen":false,"in_reply_to":149,"msg_id":207,"seen_nodes":["n0","n1","n4","n2","n3"],"type":"gossip_ok"}}
+2025/04/21 10:05:59 Received {n3 n0 {"already_seen":false,"in_reply_to":76,"msg_id":184,"seen_nodes":["n3","n0","n1","n4","n2"],"type":"gossip_ok"}}
+2025/04/21 10:05:59 Received {n1 n0 {"data_id":"c12_24","message":68,"msg_id":151,"seen_nodes":["n1","n2","n4","n0"],"type":"gossip"}}
+2025/04/21 10:05:59 Sent {"src":"n0","dest":"n3","body":{"data_id":"c12_24","message":68,"msg_id":77,"seen_nodes":["n0","n1","n2","n4","n3"],"type":"gossip"}}
+2025/04/21 10:05:59 Sent {"src":"n0","dest":"n1","body":{"already_seen":false,"in_reply_to":151,"msg_id":209,"seen_nodes":["n0","n1","n2","n4","n3"],"type":"gossip_ok"}}
+2025/04/21 10:05:59 Received {n3 n0 {"data_id":"c12_24","message":68,"msg_id":74,"seen_nodes":["n3","n4","n1","n2","n0"],"type":"gossip"}}
+2025/04/21 10:05:59 Received {n3 n0 {"already_seen":true,"in_reply_to":77,"msg_id":187,"seen_nodes":["n3","n4","n1","n2","n0"],"type":"gossip_ok"}}
+2025/04/21 10:05:59 Sent {"src":"n0","dest":"n3","body":{"already_seen":true,"in_reply_to":74,"msg_id":210,"seen_nodes":["n0","n1","n2","n4","n3"],"type":"gossip_ok"}}
+2025/04/21 10:05:59 Received {n3 n0 {"data_id":"c13_24","message":69,"msg_id":75,"seen_nodes":["n3","n0"],"type":"gossip"}}
+2025/04/21 10:05:59 Sent {"src":"n0","dest":"n1","body":{"data_id":"c13_24","message":69,"msg_id":78,"seen_nodes":["n0","n3","n1"],"type":"gossip"}}
+2025/04/21 10:05:59 Sent {"src":"n0","dest":"n3","body":{"already_seen":false,"in_reply_to":75,"msg_id":212,"seen_nodes":["n0","n3","n1"],"type":"gossip_ok"}}
+2025/04/21 10:05:59 Received {n1 n0 {"already_seen":true,"in_reply_to":78,"msg_id":261,"seen_nodes":["n1","n4","n3","n0","n2"],"type":"gossip_ok"}}
+2025/04/21 10:05:59 Received {c10 n0 {"type":"broadcast","message":70,"msg_id":46}}
+2025/04/21 10:05:59 Sent {"src":"n0","dest":"n3","body":{"data_id":"c10_46","message":70,"msg_id":79,"seen_nodes":["n0","n3"],"type":"gossip"}}
+2025/04/21 10:05:59 Sent {"src":"n0","dest":"n1","body":{"data_id":"c10_46","message":70,"msg_id":80,"seen_nodes":["n0","n3","n1"],"type":"gossip"}}
+2025/04/21 10:05:59 Sent {"src":"n0","dest":"c10","body":{"in_reply_to":46,"msg_id":215,"type":"broadcast_ok"}}
+2025/04/21 10:05:59 Received {n3 n0 {"already_seen":false,"in_reply_to":79,"msg_id":193,"seen_nodes":["n3","n0","n4"],"type":"gossip_ok"}}
+2025/04/21 10:05:59 Received {n1 n0 {"already_seen":false,"in_reply_to":80,"msg_id":265,"seen_nodes":["n1","n0","n3","n4","n2"],"type":"gossip_ok"}}
+2025/04/21 10:05:59 Received {c10 n0 {"type":"read","msg_id":47}}
+2025/04/21 10:05:59 Sent {"src":"n0","dest":"c10","body":{"in_reply_to":47,"messages":[7,62,66,21,31,49,51,22,26,45,55,2,3,36,42,43,50,67,16,23,35,52,64,65,19,30,32,10,63,68,15,27,53,58,60,39,13,41,59,46,0,17,25,33,34,37,44,54,4,8,9,12,20,24,48,57,69,70,5,11,28,61,1,6,14,18,29,38,40,47,56],"msg_id":216,"type":"read_ok"}}
+2025/04/21 10:06:00 Received {n1 n0 {"data_id":"c12_25","message":71,"msg_id":156,"seen_nodes":["n1","n2","n4","n0"],"type":"gossip"}}
+2025/04/21 10:06:00 Sent {"src":"n0","dest":"n3","body":{"data_id":"c12_25","message":71,"msg_id":81,"seen_nodes":["n0","n1","n2","n4","n3"],"type":"gossip"}}
+2025/04/21 10:06:00 Sent {"src":"n0","dest":"n1","body":{"already_seen":false,"in_reply_to":156,"msg_id":218,"seen_nodes":["n0","n1","n2","n4","n3"],"type":"gossip_ok"}}
+2025/04/21 10:06:00 Received {n3 n0 {"already_seen":false,"in_reply_to":81,"msg_id":194,"seen_nodes":["n3","n0","n1","n2","n4"],"type":"gossip_ok"}}
+2025/04/21 10:06:00 Received {n3 n0 {"data_id":"c13_25","message":72,"msg_id":78,"seen_nodes":["n3","n0"],"type":"gossip"}}
+2025/04/21 10:06:00 Sent {"src":"n0","dest":"n1","body":{"data_id":"c13_25","message":72,"msg_id":82,"seen_nodes":["n0","n3","n1"],"type":"gossip"}}
+2025/04/21 10:06:00 Sent {"src":"n0","dest":"n3","body":{"already_seen":false,"in_reply_to":78,"msg_id":220,"seen_nodes":["n0","n3","n1"],"type":"gossip_ok"}}
+2025/04/21 10:06:00 Received {n1 n0 {"already_seen":false,"in_reply_to":82,"msg_id":273,"seen_nodes":["n1","n0","n3","n4","n2"],"type":"gossip_ok"}}
+2025/04/21 10:06:00 Received {c10 n0 {"type":"read","msg_id":48}}
+2025/04/21 10:06:00 Sent {"src":"n0","dest":"c10","body":{"in_reply_to":48,"messages":[10,63,68,15,27,53,58,60,39,13,41,59,44,46,0,17,25,33,34,37,48,54,4,8,9,12,20,24,57,69,70,5,11,28,61,1,6,56,71,14,18,29,38,40,47,7,62,66,21,31,49,51,72,22,26,45,55,67,2,3,36,42,43,50,16,23,35,52,64,65,19,30,32],"msg_id":221,"type":"read_ok"}}
+2025/04/21 10:06:00 Received {c10 n0 {"type":"read","msg_id":49}}
+2025/04/21 10:06:00 Sent {"src":"n0","dest":"c10","body":{"in_reply_to":49,"messages":[22,26,45,55,43,50,67,2,3,36,42,64,65,16,23,35,52,19,30,32,10,63,68,60,15,27,53,58,39,13,41,59,34,37,44,46,0,17,25,33,20,24,48,54,4,8,9,12,57,69,70,5,11,28,61,1,6,40,47,56,71,14,18,29,38,7,62,66,72,21,31,49,51],"msg_id":222,"type":"read_ok"}}
+2025/04/21 10:06:00 Received {n1 n0 {"data_id":"c12_26","message":73,"msg_id":160,"seen_nodes":["n1","n2","n4","n0"],"type":"gossip"}}
+2025/04/21 10:06:00 Sent {"src":"n0","dest":"n3","body":{"data_id":"c12_26","message":73,"msg_id":83,"seen_nodes":["n0","n1","n2","n4","n3"],"type":"gossip"}}
+2025/04/21 10:06:00 Sent {"src":"n0","dest":"n1","body":{"already_seen":false,"in_reply_to":160,"msg_id":224,"seen_nodes":["n0","n1","n2","n4","n3"],"type":"gossip_ok"}}
+2025/04/21 10:06:00 Received {n3 n0 {"data_id":"c12_26","message":73,"msg_id":80,"seen_nodes":["n3","n4","n1","n2","n0"],"type":"gossip"}}
+2025/04/21 10:06:00 Received {n3 n0 {"already_seen":true,"in_reply_to":83,"msg_id":200,"seen_nodes":["n3","n4","n1","n2","n0"],"type":"gossip_ok"}}
+2025/04/21 10:06:00 Sent {"src":"n0","dest":"n3","body":{"already_seen":true,"in_reply_to":80,"msg_id":225,"seen_nodes":["n0","n1","n2","n4","n3"],"type":"gossip_ok"}}
+2025/04/21 10:06:00 Received {n3 n0 {"data_id":"c14_26","message":74,"msg_id":81,"seen_nodes":["n3","n4","n1","n0"],"type":"gossip"}}
+2025/04/21 10:06:00 Received {n1 n0 {"data_id":"c14_26","message":74,"msg_id":162,"seen_nodes":["n1","n4","n2","n0"],"type":"gossip"}}
+2025/04/21 10:06:00 Sent {"src":"n0","dest":"n3","body":{"already_seen":false,"in_reply_to":81,"msg_id":226,"seen_nodes":["n0","n3","n4","n1"],"type":"gossip_ok"}}
+2025/04/21 10:06:00 Sent {"src":"n0","dest":"n1","body":{"already_seen":true,"in_reply_to":162,"msg_id":227,"seen_nodes":["n0","n3","n4","n1"],"type":"gossip_ok"}}
+2025/04/21 10:06:00 Received {c10 n0 {"type":"broadcast","message":75,"msg_id":50}}
+2025/04/21 10:06:00 Sent {"src":"n0","dest":"n3","body":{"data_id":"c10_50","message":75,"msg_id":84,"seen_nodes":["n0","n3"],"type":"gossip"}}
+2025/04/21 10:06:00 Sent {"src":"n0","dest":"n1","body":{"data_id":"c10_50","message":75,"msg_id":85,"seen_nodes":["n0","n3","n1"],"type":"gossip"}}
+2025/04/21 10:06:00 Sent {"src":"n0","dest":"c10","body":{"in_reply_to":50,"msg_id":230,"type":"broadcast_ok"}}
+2025/04/21 10:06:00 Received {n3 n0 {"already_seen":false,"in_reply_to":84,"msg_id":206,"seen_nodes":["n3","n0","n4"],"type":"gossip_ok"}}
+2025/04/21 10:06:00 Received {n1 n0 {"already_seen":false,"in_reply_to":85,"msg_id":283,"seen_nodes":["n1","n0","n3","n4","n2"],"type":"gossip_ok"}}
+2025/04/21 10:06:01 Received {c10 n0 {"type":"broadcast","message":76,"msg_id":51}}
+2025/04/21 10:06:01 Sent {"src":"n0","dest":"n3","body":{"data_id":"c10_51","message":76,"msg_id":86,"seen_nodes":["n0","n3"],"type":"gossip"}}
+2025/04/21 10:06:01 Sent {"src":"n0","dest":"n1","body":{"data_id":"c10_51","message":76,"msg_id":87,"seen_nodes":["n0","n3","n1"],"type":"gossip"}}
+2025/04/21 10:06:01 Sent {"src":"n0","dest":"c10","body":{"in_reply_to":51,"msg_id":233,"type":"broadcast_ok"}}
+2025/04/21 10:06:01 Received {n3 n0 {"already_seen":false,"in_reply_to":86,"msg_id":208,"seen_nodes":["n3","n0","n4"],"type":"gossip_ok"}}
+2025/04/21 10:06:01 Received {n1 n0 {"already_seen":false,"in_reply_to":87,"msg_id":287,"seen_nodes":["n1","n0","n3","n4","n2"],"type":"gossip_ok"}}
+2025/04/21 10:06:01 Received {n1 n0 {"data_id":"c11_29","message":77,"msg_id":169,"seen_nodes":["n1","n4","n2","n0"],"type":"gossip"}}
+2025/04/21 10:06:01 Sent {"src":"n0","dest":"n3","body":{"data_id":"c11_29","message":77,"msg_id":88,"seen_nodes":["n0","n1","n4","n2","n3"],"type":"gossip"}}
+2025/04/21 10:06:01 Sent {"src":"n0","dest":"n1","body":{"already_seen":false,"in_reply_to":169,"msg_id":235,"seen_nodes":["n0","n1","n4","n2","n3"],"type":"gossip_ok"}}
+2025/04/21 10:06:01 Received {n3 n0 {"data_id":"c11_29","message":77,"msg_id":84,"seen_nodes":["n3","n4","n1","n0"],"type":"gossip"}}
+2025/04/21 10:06:01 Received {n3 n0 {"already_seen":true,"in_reply_to":88,"msg_id":210,"seen_nodes":["n3","n4","n1","n0"],"type":"gossip_ok"}}
+2025/04/21 10:06:01 Sent {"src":"n0","dest":"n3","body":{"already_seen":true,"in_reply_to":84,"msg_id":236,"seen_nodes":["n0","n1","n4","n2","n3"],"type":"gossip_ok"}}
+2025/04/21 10:06:01 Received {n1 n0 {"data_id":"c14_27","message":78,"msg_id":171,"seen_nodes":["n1","n4","n2","n0"],"type":"gossip"}}
+2025/04/21 10:06:01 Received {n3 n0 {"data_id":"c14_27","message":78,"msg_id":85,"seen_nodes":["n3","n4","n1","n0"],"type":"gossip"}}
+2025/04/21 10:06:01 Sent {"src":"n0","dest":"n3","body":{"data_id":"c14_27","message":78,"msg_id":89,"seen_nodes":["n0","n1","n4","n2","n3"],"type":"gossip"}}
+2025/04/21 10:06:01 Sent {"src":"n0","dest":"n1","body":{"already_seen":false,"in_reply_to":171,"msg_id":238,"seen_nodes":["n0","n1","n4","n2","n3"],"type":"gossip_ok"}}
+2025/04/21 10:06:01 Sent {"src":"n0","dest":"n3","body":{"already_seen":true,"in_reply_to":85,"msg_id":239,"seen_nodes":["n0","n1","n4","n2","n3"],"type":"gossip_ok"}}
+2025/04/21 10:06:01 Received {n3 n0 {"already_seen":true,"in_reply_to":89,"msg_id":215,"seen_nodes":["n3","n4","n1","n0"],"type":"gossip_ok"}}
+2025/04/21 10:06:01 Received {c10 n0 {"type":"read","msg_id":52}}
+2025/04/21 10:06:01 Sent {"src":"n0","dest":"c10","body":{"in_reply_to":52,"messages":[7,62,66,21,31,49,51,72,74,22,26,45,55,2,3,36,42,43,50,67,16,23,35,52,64,65,19,30,32,10,63,68,77,15,27,53,58,60,76,39,13,41,59,78,46,0,17,25,33,34,37,44,54,4,8,9,12,20,24,48,57,69,70,5,11,28,61,73,75,1,6,71,14,18,29,38,40,47,56],"msg_id":240,"type":"read_ok"}}
+2025/04/21 10:06:01 Received {c10 n0 {"type":"broadcast","message":79,"msg_id":53}}
+2025/04/21 10:06:01 Sent {"src":"n0","dest":"n3","body":{"data_id":"c10_53","message":79,"msg_id":90,"seen_nodes":["n0","n3"],"type":"gossip"}}
+2025/04/21 10:06:01 Sent {"src":"n0","dest":"n1","body":{"data_id":"c10_53","message":79,"msg_id":91,"seen_nodes":["n0","n3","n1"],"type":"gossip"}}
+2025/04/21 10:06:01 Sent {"src":"n0","dest":"c10","body":{"in_reply_to":53,"msg_id":243,"type":"broadcast_ok"}}
+2025/04/21 10:06:01 Received {n3 n0 {"already_seen":false,"in_reply_to":90,"msg_id":217,"seen_nodes":["n3","n0","n4"],"type":"gossip_ok"}}
+2025/04/21 10:06:01 Received {n1 n0 {"already_seen":false,"in_reply_to":91,"msg_id":298,"seen_nodes":["n1","n0","n3","n4","n2"],"type":"gossip_ok"}}
+2025/04/21 10:06:02 Received {n1 n0 {"data_id":"c12_28","message":80,"msg_id":175,"seen_nodes":["n1","n2","n4","n0"],"type":"gossip"}}
+2025/04/21 10:06:02 Sent {"src":"n0","dest":"n3","body":{"data_id":"c12_28","message":80,"msg_id":92,"seen_nodes":["n0","n1","n2","n4","n3"],"type":"gossip"}}
+2025/04/21 10:06:02 Sent {"src":"n0","dest":"n1","body":{"already_seen":false,"in_reply_to":175,"msg_id":245,"seen_nodes":["n0","n1","n2","n4","n3"],"type":"gossip_ok"}}
+2025/04/21 10:06:02 Received {n3 n0 {"already_seen":false,"in_reply_to":92,"msg_id":218,"seen_nodes":["n3","n0","n1","n2","n4"],"type":"gossip_ok"}}
+2025/04/21 10:06:02 Received {n3 n0 {"data_id":"c13_28","message":81,"msg_id":87,"seen_nodes":["n3","n0"],"type":"gossip"}}
+2025/04/21 10:06:02 Sent {"src":"n0","dest":"n1","body":{"data_id":"c13_28","message":81,"msg_id":93,"seen_nodes":["n0","n3","n1"],"type":"gossip"}}
+2025/04/21 10:06:02 Sent {"src":"n0","dest":"n3","body":{"already_seen":false,"in_reply_to":87,"msg_id":247,"seen_nodes":["n0","n3","n1"],"type":"gossip_ok"}}
+2025/04/21 10:06:02 Received {n1 n0 {"already_seen":false,"in_reply_to":93,"msg_id":307,"seen_nodes":["n1","n0","n3","n4","n2"],"type":"gossip_ok"}}
+2025/04/21 10:06:02 Received {n3 n0 {"data_id":"c14_28","message":82,"msg_id":89,"seen_nodes":["n3","n4","n1","n0"],"type":"gossip"}}
+2025/04/21 10:06:02 Received {n1 n0 {"data_id":"c14_28","message":82,"msg_id":179,"seen_nodes":["n1","n4","n2","n0"],"type":"gossip"}}
+2025/04/21 10:06:02 Sent {"src":"n0","dest":"n3","body":{"data_id":"c14_28","message":82,"msg_id":94,"seen_nodes":["n0","n1","n4","n2","n3"],"type":"gossip"}}
+2025/04/21 10:06:02 Sent {"src":"n0","dest":"n3","body":{"already_seen":true,"in_reply_to":89,"msg_id":249,"seen_nodes":["n0","n1","n4","n2","n3"],"type":"gossip_ok"}}
+2025/04/21 10:06:02 Sent {"src":"n0","dest":"n1","body":{"already_seen":false,"in_reply_to":179,"msg_id":250,"seen_nodes":["n0","n1","n4","n2","n3"],"type":"gossip_ok"}}
+2025/04/21 10:06:02 Received {n3 n0 {"already_seen":true,"in_reply_to":94,"msg_id":225,"seen_nodes":["n3","n4","n1","n0"],"type":"gossip_ok"}}
+2025/04/21 10:06:02 Received {c10 n0 {"type":"read","msg_id":54}}
+2025/04/21 10:06:02 Sent {"src":"n0","dest":"c10","body":{"in_reply_to":54,"messages":[10,63,68,77,76,79,15,27,53,58,60,39,13,41,59,78,80,37,44,46,0,17,25,33,34,24,48,54,4,8,9,12,20,57,69,70,75,5,11,28,61,73,1,6,47,56,71,14,18,29,38,40,7,62,66,74,21,31,49,51,72,22,26,45,55,50,67,81,2,3,36,42,43,65,16,23,35,52,64,19,30,32,82],"msg_id":251,"type":"read_ok"}}
+2025/04/21 10:06:02 Received {c10 n0 {"type":"broadcast","message":83,"msg_id":55}}
+2025/04/21 10:06:02 Sent {"src":"n0","dest":"n3","body":{"data_id":"c10_55","message":83,"msg_id":95,"seen_nodes":["n0","n3"],"type":"gossip"}}
+2025/04/21 10:06:02 Sent {"src":"n0","dest":"n1","body":{"data_id":"c10_55","message":83,"msg_id":96,"seen_nodes":["n0","n3","n1"],"type":"gossip"}}
+2025/04/21 10:06:02 Sent {"src":"n0","dest":"c10","body":{"in_reply_to":55,"msg_id":254,"type":"broadcast_ok"}}
+2025/04/21 10:06:02 Received {n3 n0 {"already_seen":false,"in_reply_to":95,"msg_id":227,"seen_nodes":["n3","n0","n4"],"type":"gossip_ok"}}
+2025/04/21 10:06:02 Received {n1 n0 {"already_seen":false,"in_reply_to":96,"msg_id":313,"seen_nodes":["n1","n0","n3","n4","n2"],"type":"gossip_ok"}}
+2025/04/21 10:06:02 Received {n1 n0 {"data_id":"c11_31","message":84,"msg_id":184,"seen_nodes":["n1","n4","n2","n0"],"type":"gossip"}}
+2025/04/21 10:06:02 Sent {"src":"n0","dest":"n3","body":{"data_id":"c11_31","message":84,"msg_id":97,"seen_nodes":["n0","n1","n4","n2","n3"],"type":"gossip"}}
+2025/04/21 10:06:02 Sent {"src":"n0","dest":"n1","body":{"already_seen":false,"in_reply_to":184,"msg_id":256,"seen_nodes":["n0","n1","n4","n2","n3"],"type":"gossip_ok"}}
+2025/04/21 10:06:02 Received {n3 n0 {"already_seen":false,"in_reply_to":97,"msg_id":228,"seen_nodes":["n3","n0","n1","n4","n2"],"type":"gossip_ok"}}
+2025/04/21 10:06:02 Received {n3 n0 {"data_id":"c14_29","message":85,"msg_id":91,"seen_nodes":["n3","n4","n1","n0"],"type":"gossip"}}
+2025/04/21 10:06:02 Received {n1 n0 {"data_id":"c14_29","message":85,"msg_id":186,"seen_nodes":["n1","n4","n2","n0"],"type":"gossip"}}
+2025/04/21 10:06:02 Sent {"src":"n0","dest":"n3","body":{"already_seen":false,"in_reply_to":91,"msg_id":257,"seen_nodes":["n0","n3","n4","n1"],"type":"gossip_ok"}}
+2025/04/21 10:06:02 Sent {"src":"n0","dest":"n1","body":{"already_seen":true,"in_reply_to":186,"msg_id":258,"seen_nodes":["n0","n3","n4","n1"],"type":"gossip_ok"}}
+2025/04/21 10:06:02 Received {c10 n0 {"type":"read","msg_id":56}}
+2025/04/21 10:06:02 Sent {"src":"n0","dest":"c10","body":{"in_reply_to":56,"messages":[1,6,85,14,18,29,38,40,47,56,71,7,62,66,21,31,49,51,72,74,22,26,45,55,2,3,36,42,43,50,67,81,16,23,35,52,64,65,19,30,32,82,10,63,68,77,15,27,53,58,60,76,79,83,39,13,41,59,78,80,84,0,17,25,33,34,37,44,46,4,8,9,12,20,24,48,54,57,69,70,5,11,28,61,73,75],"msg_id":259,"type":"read_ok"}}
+2025/04/21 10:06:02 Received {c10 n0 {"type":"broadcast","message":86,"msg_id":57}}
+2025/04/21 10:06:02 Sent {"src":"n0","dest":"n3","body":{"data_id":"c10_57","message":86,"msg_id":98,"seen_nodes":["n0","n3"],"type":"gossip"}}
+2025/04/21 10:06:02 Sent {"src":"n0","dest":"n1","body":{"data_id":"c10_57","message":86,"msg_id":99,"seen_nodes":["n0","n3","n1"],"type":"gossip"}}
+2025/04/21 10:06:02 Sent {"src":"n0","dest":"c10","body":{"in_reply_to":57,"msg_id":262,"type":"broadcast_ok"}}
+2025/04/21 10:06:02 Received {n1 n0 {"already_seen":false,"in_reply_to":99,"msg_id":324,"seen_nodes":["n1","n0","n3","n4","n2"],"type":"gossip_ok"}}
+2025/04/21 10:06:02 Received {n3 n0 {"already_seen":false,"in_reply_to":98,"msg_id":234,"seen_nodes":["n3","n0","n4"],"type":"gossip_ok"}}
+2025/04/21 10:06:03 Received {n1 n0 {"data_id":"c11_32","message":87,"msg_id":191,"seen_nodes":["n1","n4","n2","n0"],"type":"gossip"}}
+2025/04/21 10:06:03 Sent {"src":"n0","dest":"n3","body":{"data_id":"c11_32","message":87,"msg_id":100,"seen_nodes":["n0","n1","n4","n2","n3"],"type":"gossip"}}
+2025/04/21 10:06:03 Sent {"src":"n0","dest":"n1","body":{"already_seen":false,"in_reply_to":191,"msg_id":264,"seen_nodes":["n0","n1","n4","n2","n3"],"type":"gossip_ok"}}
+2025/04/21 10:06:03 Received {n3 n0 {"data_id":"c11_32","message":87,"msg_id":93,"seen_nodes":["n3","n4","n1","n0"],"type":"gossip"}}
+2025/04/21 10:06:03 Received {n3 n0 {"already_seen":true,"in_reply_to":100,"msg_id":236,"seen_nodes":["n3","n4","n1","n0"],"type":"gossip_ok"}}
+2025/04/21 10:06:03 Sent {"src":"n0","dest":"n3","body":{"already_seen":true,"in_reply_to":93,"msg_id":265,"seen_nodes":["n0","n1","n4","n2","n3"],"type":"gossip_ok"}}
+2025/04/21 10:06:03 Received {n3 n0 {"data_id":"c13_30","message":88,"msg_id":94,"seen_nodes":["n3","n0"],"type":"gossip"}}
+2025/04/21 10:06:03 Sent {"src":"n0","dest":"n1","body":{"data_id":"c13_30","message":88,"msg_id":101,"seen_nodes":["n0","n3","n1"],"type":"gossip"}}
+2025/04/21 10:06:03 Sent {"src":"n0","dest":"n3","body":{"already_seen":false,"in_reply_to":94,"msg_id":267,"seen_nodes":["n0","n3","n1"],"type":"gossip_ok"}}
+2025/04/21 10:06:03 Received {n1 n0 {"already_seen":false,"in_reply_to":101,"msg_id":332,"seen_nodes":["n1","n0","n3","n4","n2"],"type":"gossip_ok"}}
+2025/04/21 10:06:03 Received {n3 n0 {"data_id":"c14_30","message":89,"msg_id":96,"seen_nodes":["n3","n4","n1","n0"],"type":"gossip"}}
+2025/04/21 10:06:03 Received {n1 n0 {"data_id":"c14_30","message":89,"msg_id":195,"seen_nodes":["n1","n4","n2","n0"],"type":"gossip"}}
+2025/04/21 10:06:03 Sent {"src":"n0","dest":"n3","body":{"already_seen":false,"in_reply_to":96,"msg_id":268,"seen_nodes":["n0","n3","n4","n1"],"type":"gossip_ok"}}
+2025/04/21 10:06:03 Sent {"src":"n0","dest":"n1","body":{"already_seen":true,"in_reply_to":195,"msg_id":269,"seen_nodes":["n0","n3","n4","n1"],"type":"gossip_ok"}}
+2025/04/21 10:06:03 Received {c10 n0 {"type":"broadcast","message":90,"msg_id":58}}
+2025/04/21 10:06:03 Sent {"src":"n0","dest":"n3","body":{"data_id":"c10_58","message":90,"msg_id":102,"seen_nodes":["n0","n3"],"type":"gossip"}}
+2025/04/21 10:06:03 Sent {"src":"n0","dest":"n1","body":{"data_id":"c10_58","message":90,"msg_id":103,"seen_nodes":["n0","n3","n1"],"type":"gossip"}}
+2025/04/21 10:06:03 Sent {"src":"n0","dest":"c10","body":{"in_reply_to":58,"msg_id":272,"type":"broadcast_ok"}}
+2025/04/21 10:06:03 Received {n3 n0 {"already_seen":false,"in_reply_to":102,"msg_id":244,"seen_nodes":["n3","n0","n4"],"type":"gossip_ok"}}
+2025/04/21 10:06:03 Received {n1 n0 {"already_seen":false,"in_reply_to":103,"msg_id":338,"seen_nodes":["n1","n0","n3","n4","n2"],"type":"gossip_ok"}}
+2025/04/21 10:06:03 Received {c10 n0 {"type":"read","msg_id":59}}
+2025/04/21 10:06:03 Sent {"src":"n0","dest":"c10","body":{"in_reply_to":59,"messages":[86,90,22,26,45,55,43,50,67,81,2,3,36,42,64,65,16,23,35,52,19,30,32,82,10,63,68,77,60,76,79,83,15,27,53,58,39,80,84,13,41,59,78,34,37,44,46,0,17,25,33,20,24,48,54,4,8,9,12,57,69,70,89,73,75,5,11,28,61,1,6,85,88,40,47,56,71,14,18,29,38,7,62,66,87,72,74,21,31,49,51],"msg_id":273,"type":"read_ok"}}
+2025/04/21 10:06:13 Received {c10 n0 {"type":"read","msg_id":60}}
+2025/04/21 10:06:13 Sent {"src":"n0","dest":"c10","body":{"in_reply_to":60,"messages":[1,6,85,88,40,47,56,71,14,18,29,38,7,62,66,87,72,74,21,31,49,51,86,90,22,26,45,55,43,50,67,81,2,3,36,42,64,65,16,23,35,52,19,30,32,82,10,63,68,77,60,76,79,83,15,27,53,58,39,80,84,13,41,59,78,34,37,44,46,0,17,25,33,20,24,48,54,4,8,9,12,57,69,70,89,73,75,5,11,28,61],"msg_id":274,"type":"read_ok"}}

@@ -1,0 +1,16 @@
+{:index 0, :time 16602087, :type :info, :process :nemesis, :f :start-partition, :value :minority-third}
+{:index 1, :time 19541797, :type :invoke, :process 1, :f :broadcast, :value 0}
+{:index 2, :time 25001119, :type :info, :process :nemesis, :f :start-partition, :value [:isolated {"n3" #{"n2" "n1" "n4" "n0"}, "n2" #{"n3"}, "n1" #{"n3"}, "n4" #{"n3"}, "n0" #{"n3"}}]}
+{:index 3, :time 26930917, :type :ok, :process 1, :f :broadcast, :value 0}
+{:index 4, :time 27049717, :type :info, :process :nemesis, :f :stop-partition, :value nil}
+{:index 5, :time 28173821, :type :info, :process :nemesis, :f :stop-partition, :value :network-healed}
+{:index 6, :time 10029210864, :type :invoke, :process 3, :f :read, :value nil, :final? true}
+{:index 7, :time 10031858985, :type :invoke, :process 1, :f :read, :value nil, :final? true}
+{:index 8, :time 10032340125, :type :invoke, :process 0, :f :read, :value nil, :final? true}
+{:index 9, :time 10032712102, :type :invoke, :process 4, :f :read, :value nil, :final? true}
+{:index 10, :time 10032993006, :type :invoke, :process 2, :f :read, :value nil, :final? true}
+{:index 11, :time 10034612986, :type :ok, :process 1, :f :read, :value [0], :final? true}
+{:index 12, :time 10035176679, :type :ok, :process 0, :f :read, :value [0], :final? true}
+{:index 13, :time 10035969732, :type :ok, :process 3, :f :read, :value [], :final? true}
+{:index 14, :time 10036380541, :type :ok, :process 4, :f :read, :value [0], :final? true}
+{:index 15, :time 10036492707, :type :ok, :process 2, :f :read, :value [0], :final? true}

@@ -1,0 +1,482 @@
+2025-04-21 09:48:17,094{GMT}	INFO	[jepsen test runner] jepsen.core: Test version 6fa3a09e65632bfed86e2d92449604cb4c985c06 (plus uncommitted changes)
+2025-04-21 09:48:17,095{GMT}	INFO	[jepsen test runner] jepsen.core: Command line:
+lein run test -w broadcast --bin fly-io --node-count 5 --time-limit 5 --rate 2 --nemesis partition --log-stderr true
+2025-04-21 09:48:17,189{GMT}	INFO	[jepsen test runner] jepsen.core: Running test:
+{:args ["true"]
+ :remote
+ #jepsen.control.retry.Remote{:remote #jepsen.control.scp.Remote{:cmd-remote #jepsen.control.sshj.SSHJRemote{:concurrency-limit 6,
+                                                                                                             :conn-spec nil,
+                                                                                                             :client nil,
+                                                                                                             :semaphore nil},
+                                                                 :conn-spec nil},
+                              :conn nil}
+ :log-net-send false
+ :node-count 5
+ :availability nil
+ :max-txn-length 4
+ :concurrency 5
+ :db
+ #object[maelstrom.db$db$reify__16612
+         "0x4b954cbb"
+         "maelstrom.db$db$reify__16612@4b954cbb"]
+ :max-writes-per-key 16
+ :leave-db-running? false
+ :name "broadcast"
+ :logging-json? false
+ :start-time
+ #object[org.joda.time.DateTime "0xbec2d81" "2025-04-21T09:48:17.042+05:30"]
+ :nemesis-interval 10
+ :net
+ #object[maelstrom.net$jepsen_net$reify__15721
+         "0x5f04449a"
+         "maelstrom.net$jepsen_net$reify__15721@5f04449a"]
+ :client
+ #object[maelstrom.workload.broadcast$client$reify__17142
+         "0x5634c26c"
+         "maelstrom.workload.broadcast$client$reify__17142@5634c26c"]
+ :barrier
+ #object[java.util.concurrent.CyclicBarrier
+         "0x37a5ac85"
+         "java.util.concurrent.CyclicBarrier@37a5ac85"]
+ :log-stderr true
+ :pure-generators true
+ :ssh {:dummy? true}
+ :rate 2.0
+ :checker
+ #object[jepsen.checker$compose$reify__11089
+         "0x5d4f0fd5"
+         "jepsen.checker$compose$reify__11089@5d4f0fd5"]
+ :argv
+ ("test"
+  "-w"
+  "broadcast"
+  "--bin"
+  "fly-io"
+  "--node-count"
+  "5"
+  "--time-limit"
+  "5"
+  "--rate"
+  "2"
+  "--nemesis"
+  "partition"
+  "--log-stderr"
+  "true")
+ :nemesis
+ (jepsen.nemesis.ReflCompose
+  {:fm {:start-partition 0,
+        :stop-partition 0,
+        :kill 1,
+        :start 1,
+        :pause 1,
+        :resume 1},
+   :nemeses [#unprintable "jepsen.nemesis.combined$partition_nemesis$reify__16905@2092b072"
+             #unprintable "jepsen.nemesis.combined$db_nemesis$reify__16886@504521ae"]})
+ :nodes ["n0" "n1" "n2" "n3" "n4"]
+ :test-count 1
+ :latency {:mean 0, :dist :constant}
+ :bin "fly-io"
+ :generator
+ #object[jepsen.util.Forgettable
+         "0x53a65166"
+         ((jepsen.generator.Synchronize
+           {:gen (jepsen.generator.TimeLimit
+                  {:limit 5000000000,
+                   :cutoff nil,
+                   :gen (jepsen.generator.Any
+                         {:gens [(jepsen.generator.OnThreads
+                                  {:f #{:nemesis},
+                                   :context-filter #object[jepsen.generator.context$make_thread_filter$lazy_filter__12077
+                                                           "0x3d45ea17"
+                                                           "jepsen.generator.context$make_thread_filter$lazy_filter__12077@3d45ea17"],
+                                   :gen (jepsen.generator.Stagger
+                                         {:dt 20000000000,
+                                          :next-time nil,
+                                          :gen (jepsen.generator.FlipFlop
+                                                {:gens [#object[jepsen.nemesis.combined$partition_package$start__16909
+                                                                "0x685efb22"
+                                                                "jepsen.nemesis.combined$partition_package$start__16909@685efb22"]
+                                                        (jepsen.generator.Repeat
+                                                         {:remaining -1,
+                                                          :gen {:type :info,
+                                                                :f :stop-partition,
+                                                                :value nil}})],
+                                                 :i 0})})})
+                                 (jepsen.generator.OnThreads
+                                  {:f #jepsen.generator.context.AllBut{:element :nemesis},
+                                   :context-filter #object[jepsen.generator.context$make_thread_filter$lazy_filter__12077
+                                                           "0x24a696c0"
+                                                           "jepsen.generator.context$make_thread_filter$lazy_filter__12077@24a696c0"],
+                                   :gen (jepsen.generator.Stagger
+                                         {:dt 1000000000,
+                                          :next-time nil,
+                                          :gen (jepsen.generator.Mix
+                                                {:i 0,
+                                                 :gens [({:f :broadcast,
+                                                          :value 0}
+                                                         {:f :broadcast,
+                                                          :value 1}
+                                                         {:f :broadcast,
+                                                          :value 2}
+                                                         {:f :broadcast,
+                                                          :value 3}
+                                                         {:f :broadcast,
+                                                          :value 4}
+                                                         {:f :broadcast,
+                                                          :value 5}
+                                                         {:f :broadcast,
+                                                          :value 6}
+                                                         {:f :broadcast,
+                                                          :value 7}
+                                                         ...)
+                                                        ({:f :read}
+                                                         {:f :read}
+                                                         {:f :read}
+                                                         {:f :read}
+                                                         {:f :read}
+                                                         {:f :read}
+                                                         {:f :read}
+                                                         {:f :read}
+                                                         ...)]})})})]})})})
+          (jepsen.generator.Synchronize
+           {:gen (jepsen.generator.OnThreads
+                  {:f #{:nemesis},
+                   :context-filter #object[jepsen.generator.context$make_thread_filter$lazy_filter__12077
+                                           "0x6a7c1725"
+                                           "jepsen.generator.context$make_thread_filter$lazy_filter__12077@6a7c1725"],
+                   :gen ({:type :info, :f :stop-partition, :value nil})})})
+          (jepsen.generator.Synchronize
+           {:gen {:type :log, :value "Waiting for recovery..."}})
+          (jepsen.generator.Synchronize {:gen {:type :sleep, :value 10}})
+          (jepsen.generator.Synchronize
+           {:gen (jepsen.generator.OnThreads
+                  {:f #jepsen.generator.context.AllBut{:element :nemesis},
+                   :context-filter #object[jepsen.generator.context$make_thread_filter$lazy_filter__12077
+                                           "0x756476a3"
+                                           "jepsen.generator.context$make_thread_filter$lazy_filter__12077@756476a3"],
+                   :gen (jepsen.generator.EachThread
+                         {:fresh-gen {:f :read, :final? true},
+                          :context-filters #object[clojure.core$promise$reify__8621
+                                                   "0x65e4ee59"
+                                                   {:status :pending, :val nil}],
+                          :gens {}})})}))]
+ :log-net-recv false
+ :os
+ #object[maelstrom.net$jepsen_os$reify__15724
+         "0x4746d52d"
+         "maelstrom.net$jepsen_os$reify__15724@4746d52d"]
+ :time-limit 5
+ :workload :broadcast
+ :consistency-models [:strict-serializable]
+ :topology :grid}
+
+2025-04-21 09:48:18,772{GMT}	INFO	[jepsen node n0] maelstrom.net: Starting Maelstrom network
+2025-04-21 09:48:18,774{GMT}	INFO	[jepsen test runner] jepsen.db: Tearing down DB
+2025-04-21 09:48:18,776{GMT}	INFO	[jepsen test runner] jepsen.db: Setting up DB
+2025-04-21 09:48:18,777{GMT}	INFO	[jepsen node n2] maelstrom.db: Setting up n2
+2025-04-21 09:48:18,777{GMT}	INFO	[jepsen node n4] maelstrom.db: Setting up n4
+2025-04-21 09:48:18,777{GMT}	INFO	[jepsen node n3] maelstrom.db: Setting up n3
+2025-04-21 09:48:18,777{GMT}	INFO	[jepsen node n1] maelstrom.db: Setting up n1
+2025-04-21 09:48:18,779{GMT}	INFO	[jepsen node n0] maelstrom.service: Starting services: (lin-kv lin-tso lww-kv seq-kv)
+2025-04-21 09:48:18,779{GMT}	INFO	[jepsen node n2] maelstrom.process: launching fly-io ["true"]
+2025-04-21 09:48:18,779{GMT}	INFO	[jepsen node n3] maelstrom.process: launching fly-io ["true"]
+2025-04-21 09:48:18,779{GMT}	INFO	[jepsen node n1] maelstrom.process: launching fly-io ["true"]
+2025-04-21 09:48:18,779{GMT}	INFO	[jepsen node n4] maelstrom.process: launching fly-io ["true"]
+2025-04-21 09:48:18,780{GMT}	INFO	[jepsen node n0] maelstrom.db: Setting up n0
+2025-04-21 09:48:18,781{GMT}	INFO	[jepsen node n0] maelstrom.process: launching fly-io ["true"]
+2025-04-21 09:48:18,804{GMT}	INFO	[n2 stderr] maelstrom.process: 2025/04/21 09:48:18 Received {c2 n2 {"type":"init","node_id":"n2","node_ids":["n0","n1","n2","n3","n4"],"msg_id":1}}
+2025-04-21 09:48:18,804{GMT}	INFO	[n1 stderr] maelstrom.process: 2025/04/21 09:48:18 Received {c3 n1 {"type":"init","node_id":"n1","node_ids":["n0","n1","n2","n3","n4"],"msg_id":1}}
+2025-04-21 09:48:18,804{GMT}	INFO	[n4 stderr] maelstrom.process: 2025/04/21 09:48:18 Received {c4 n4 {"type":"init","node_id":"n4","node_ids":["n0","n1","n2","n3","n4"],"msg_id":1}}
+2025-04-21 09:48:18,804{GMT}	INFO	[n0 stderr] maelstrom.process: 2025/04/21 09:48:18 Received {c1 n0 {"type":"init","node_id":"n0","node_ids":["n0","n1","n2","n3","n4"],"msg_id":1}}
+2025-04-21 09:48:18,804{GMT}	INFO	[n3 stderr] maelstrom.process: 2025/04/21 09:48:18 Received {c0 n3 {"type":"init","node_id":"n3","node_ids":["n0","n1","n2","n3","n4"],"msg_id":1}}
+2025-04-21 09:48:18,804{GMT}	INFO	[n2 stderr] maelstrom.process: 2025/04/21 09:48:18 Node n2 initialized
+2025-04-21 09:48:18,804{GMT}	INFO	[n4 stderr] maelstrom.process: 2025/04/21 09:48:18 Node n4 initialized
+2025-04-21 09:48:18,804{GMT}	INFO	[n1 stderr] maelstrom.process: 2025/04/21 09:48:18 Node n1 initialized
+2025-04-21 09:48:18,805{GMT}	INFO	[n0 stderr] maelstrom.process: 2025/04/21 09:48:18 Node n0 initialized
+2025-04-21 09:48:18,805{GMT}	INFO	[n1 stderr] maelstrom.process: 2025/04/21 09:48:18 Sent {"src":"n1","dest":"c3","body":{"in_reply_to":1,"type":"init_ok"}}
+2025-04-21 09:48:18,805{GMT}	INFO	[n3 stderr] maelstrom.process: 2025/04/21 09:48:18 Node n3 initialized
+2025-04-21 09:48:18,805{GMT}	INFO	[n4 stderr] maelstrom.process: 2025/04/21 09:48:18 Sent {"src":"n4","dest":"c4","body":{"in_reply_to":1,"type":"init_ok"}}
+2025-04-21 09:48:18,805{GMT}	INFO	[n2 stderr] maelstrom.process: 2025/04/21 09:48:18 Sent {"src":"n2","dest":"c2","body":{"in_reply_to":1,"type":"init_ok"}}
+2025-04-21 09:48:18,805{GMT}	INFO	[n0 stderr] maelstrom.process: 2025/04/21 09:48:18 Sent {"src":"n0","dest":"c1","body":{"in_reply_to":1,"type":"init_ok"}}
+2025-04-21 09:48:18,805{GMT}	INFO	[n3 stderr] maelstrom.process: 2025/04/21 09:48:18 Sent {"src":"n3","dest":"c0","body":{"in_reply_to":1,"type":"init_ok"}}
+2025-04-21 09:48:18,814{GMT}	INFO	[jepsen test runner] jepsen.core: Relative time begins now
+2025-04-21 09:48:18,821{GMT}	INFO	[n0 stderr] maelstrom.process: 2025/04/21 09:48:18 Received {c5 n0 {"type":"topology","topology":{"n0":["n3","n1"],"n1":["n4","n2","n0"],"n2":["n1"],"n3":["n0","n4"],"n4":["n1","n3"]},"msg_id":1}}
+2025-04-21 09:48:18,821{GMT}	INFO	[n3 stderr] maelstrom.process: 2025/04/21 09:48:18 Received {c8 n3 {"type":"topology","topology":{"n0":["n3","n1"],"n1":["n4","n2","n0"],"n2":["n1"],"n3":["n0","n4"],"n4":["n1","n3"]},"msg_id":1}}
+2025-04-21 09:48:18,821{GMT}	INFO	[n1 stderr] maelstrom.process: 2025/04/21 09:48:18 Received {c6 n1 {"type":"topology","topology":{"n0":["n3","n1"],"n1":["n4","n2","n0"],"n2":["n1"],"n3":["n0","n4"],"n4":["n1","n3"]},"msg_id":1}}
+2025-04-21 09:48:18,821{GMT}	INFO	[n2 stderr] maelstrom.process: 2025/04/21 09:48:18 Received {c7 n2 {"type":"topology","topology":{"n0":["n3","n1"],"n1":["n4","n2","n0"],"n2":["n1"],"n3":["n0","n4"],"n4":["n1","n3"]},"msg_id":1}}
+2025-04-21 09:48:18,821{GMT}	INFO	[n4 stderr] maelstrom.process: 2025/04/21 09:48:18 Received {c9 n4 {"type":"topology","topology":{"n0":["n3","n1"],"n1":["n4","n2","n0"],"n2":["n1"],"n3":["n0","n4"],"n4":["n1","n3"]},"msg_id":1}}
+2025-04-21 09:48:18,822{GMT}	INFO	[n4 stderr] maelstrom.process: 2025/04/21 09:48:18 Sent {"src":"n4","dest":"c9","body":{"in_reply_to":1,"msg_id":1,"type":"topology_ok"}}
+2025-04-21 09:48:18,822{GMT}	INFO	[n0 stderr] maelstrom.process: 2025/04/21 09:48:18 Sent {"src":"n0","dest":"c5","body":{"in_reply_to":1,"msg_id":1,"type":"topology_ok"}}
+2025-04-21 09:48:18,822{GMT}	INFO	[n3 stderr] maelstrom.process: 2025/04/21 09:48:18 Sent {"src":"n3","dest":"c8","body":{"in_reply_to":1,"msg_id":1,"type":"topology_ok"}}
+2025-04-21 09:48:18,822{GMT}	INFO	[n1 stderr] maelstrom.process: 2025/04/21 09:48:18 Sent {"src":"n1","dest":"c6","body":{"in_reply_to":1,"msg_id":1,"type":"topology_ok"}}
+2025-04-21 09:48:18,822{GMT}	INFO	[n2 stderr] maelstrom.process: 2025/04/21 09:48:18 Sent {"src":"n2","dest":"c7","body":{"in_reply_to":1,"msg_id":1,"type":"topology_ok"}}
+2025-04-21 09:48:18,835{GMT}	INFO	[jepsen worker nemesis] jepsen.util: :nemesis	:info	:start-partition	:minority-third
+2025-04-21 09:48:18,835{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:broadcast	0
+2025-04-21 09:48:18,840{GMT}	INFO	[n0 stderr] maelstrom.process: 2025/04/21 09:48:18 Received {c10 n0 {"type":"broadcast","message":0,"msg_id":1}}
+2025-04-21 09:48:18,840{GMT}	INFO	[n0 stderr] maelstrom.process: 2025/04/21 09:48:18 Sent {"src":"n0","dest":"n3","body":{"data_id":"c10_1","message":0,"msg_id":1,"seen_nodes":["n0","n3"],"type":"gossip"}}
+2025-04-21 09:48:18,841{GMT}	INFO	[n0 stderr] maelstrom.process: 2025/04/21 09:48:18 Sent {"src":"n0","dest":"n1","body":{"data_id":"c10_1","message":0,"msg_id":2,"seen_nodes":["n0","n3","n1"],"type":"gossip"}}
+2025-04-21 09:48:18,841{GMT}	INFO	[n0 stderr] maelstrom.process: 2025/04/21 09:48:18 Sent {"src":"n0","dest":"c10","body":{"in_reply_to":1,"msg_id":4,"type":"broadcast_ok"}}
+2025-04-21 09:48:18,842{GMT}	INFO	[n3 stderr] maelstrom.process: 2025/04/21 09:48:18 Received {n0 n3 {"data_id":"c10_1","message":0,"msg_id":1,"seen_nodes":["n0","n3"],"type":"gossip"}}
+2025-04-21 09:48:18,842{GMT}	INFO	[jepsen worker nemesis] jepsen.util: :nemesis	:info	:start-partition	[:isolated {"n1" #{"n2" "n4" "n0" "n3"}, "n2" #{"n1"}, "n4" #{"n1"}, "n0" #{"n1"}, "n3" #{"n1"}}]
+2025-04-21 09:48:18,842{GMT}	INFO	[n3 stderr] maelstrom.process: 2025/04/21 09:48:18 Sent {"src":"n3","dest":"n4","body":{"data_id":"c10_1","message":0,"msg_id":1,"seen_nodes":["n3","n0","n4"],"type":"gossip"}}
+2025-04-21 09:48:18,843{GMT}	INFO	[n3 stderr] maelstrom.process: 2025/04/21 09:48:18 Sent {"src":"n3","dest":"n0","body":{"already_seen":false,"in_reply_to":1,"msg_id":3,"seen_nodes":["n3","n0","n4"],"type":"gossip_ok"}}
+2025-04-21 09:48:18,843{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:broadcast	0
+2025-04-21 09:48:18,844{GMT}	INFO	[n4 stderr] maelstrom.process: 2025/04/21 09:48:18 Received {n3 n4 {"data_id":"c10_1","message":0,"msg_id":1,"seen_nodes":["n3","n0","n4"],"type":"gossip"}}
+2025-04-21 09:48:18,844{GMT}	INFO	[n0 stderr] maelstrom.process: 2025/04/21 09:48:18 Received {n3 n0 {"already_seen":false,"in_reply_to":1,"msg_id":3,"seen_nodes":["n3","n0","n4"],"type":"gossip_ok"}}
+2025-04-21 09:48:18,844{GMT}	INFO	[n4 stderr] maelstrom.process: 2025/04/21 09:48:18 Sent {"src":"n4","dest":"n1","body":{"data_id":"c10_1","message":0,"msg_id":1,"seen_nodes":["n4","n3","n0","n1"],"type":"gossip"}}
+2025-04-21 09:48:18,844{GMT}	INFO	[n4 stderr] maelstrom.process: 2025/04/21 09:48:18 Sent {"src":"n4","dest":"n3","body":{"already_seen":false,"in_reply_to":1,"msg_id":3,"seen_nodes":["n4","n3","n0","n1"],"type":"gossip_ok"}}
+2025-04-21 09:48:18,846{GMT}	INFO	[n3 stderr] maelstrom.process: 2025/04/21 09:48:18 Received {n4 n3 {"already_seen":false,"in_reply_to":1,"msg_id":3,"seen_nodes":["n4","n3","n0","n1"],"type":"gossip_ok"}}
+2025-04-21 09:48:19,322{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:invoke	:read	nil
+2025-04-21 09:48:19,325{GMT}	INFO	[n2 stderr] maelstrom.process: 2025/04/21 09:48:19 Received {c11 n2 {"type":"read","msg_id":1}}
+2025-04-21 09:48:19,325{GMT}	INFO	[n2 stderr] maelstrom.process: 2025/04/21 09:48:19 Sent {"src":"n2","dest":"c11","body":{"in_reply_to":1,"messages":[],"msg_id":2,"type":"read_ok"}}
+2025-04-21 09:48:19,327{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:ok	:read	[]
+2025-04-21 09:48:19,565{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:broadcast	1
+2025-04-21 09:48:19,567{GMT}	INFO	[n3 stderr] maelstrom.process: 2025/04/21 09:48:19 Received {c12 n3 {"type":"broadcast","message":1,"msg_id":1}}
+2025-04-21 09:48:19,568{GMT}	INFO	[n3 stderr] maelstrom.process: 2025/04/21 09:48:19 Sent {"src":"n3","dest":"n0","body":{"data_id":"c12_1","message":1,"msg_id":2,"seen_nodes":["n3","n0"],"type":"gossip"}}
+2025-04-21 09:48:19,568{GMT}	INFO	[n3 stderr] maelstrom.process: 2025/04/21 09:48:19 Sent {"src":"n3","dest":"n4","body":{"data_id":"c12_1","message":1,"msg_id":3,"seen_nodes":["n3","n0","n4"],"type":"gossip"}}
+2025-04-21 09:48:19,568{GMT}	INFO	[n3 stderr] maelstrom.process: 2025/04/21 09:48:19 Sent {"src":"n3","dest":"c12","body":{"in_reply_to":1,"msg_id":6,"type":"broadcast_ok"}}
+2025-04-21 09:48:19,569{GMT}	INFO	[n0 stderr] maelstrom.process: 2025/04/21 09:48:19 Received {n3 n0 {"data_id":"c12_1","message":1,"msg_id":2,"seen_nodes":["n3","n0"],"type":"gossip"}}
+2025-04-21 09:48:19,569{GMT}	INFO	[n4 stderr] maelstrom.process: 2025/04/21 09:48:19 Received {n3 n4 {"data_id":"c12_1","message":1,"msg_id":3,"seen_nodes":["n3","n0","n4"],"type":"gossip"}}
+2025-04-21 09:48:19,570{GMT}	INFO	[n0 stderr] maelstrom.process: 2025/04/21 09:48:19 Sent {"src":"n0","dest":"n1","body":{"data_id":"c12_1","message":1,"msg_id":3,"seen_nodes":["n0","n3","n1"],"type":"gossip"}}
+2025-04-21 09:48:19,570{GMT}	INFO	[n4 stderr] maelstrom.process: 2025/04/21 09:48:19 Sent {"src":"n4","dest":"n1","body":{"data_id":"c12_1","message":1,"msg_id":2,"seen_nodes":["n4","n3","n0","n1"],"type":"gossip"}}
+2025-04-21 09:48:19,570{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:ok	:broadcast	1
+2025-04-21 09:48:19,570{GMT}	INFO	[n4 stderr] maelstrom.process: 2025/04/21 09:48:19 Sent {"src":"n4","dest":"n3","body":{"already_seen":false,"in_reply_to":3,"msg_id":5,"seen_nodes":["n4","n3","n0","n1"],"type":"gossip_ok"}}
+2025-04-21 09:48:19,570{GMT}	INFO	[n0 stderr] maelstrom.process: 2025/04/21 09:48:19 Sent {"src":"n0","dest":"n3","body":{"already_seen":false,"in_reply_to":2,"msg_id":6,"seen_nodes":["n0","n3","n1"],"type":"gossip_ok"}}
+2025-04-21 09:48:19,571{GMT}	INFO	[n3 stderr] maelstrom.process: 2025/04/21 09:48:19 Received {n0 n3 {"already_seen":false,"in_reply_to":2,"msg_id":6,"seen_nodes":["n0","n3","n1"],"type":"gossip_ok"}}
+2025-04-21 09:48:19,572{GMT}	INFO	[n3 stderr] maelstrom.process: 2025/04/21 09:48:19 Received {n4 n3 {"already_seen":false,"in_reply_to":3,"msg_id":5,"seen_nodes":["n4","n3","n0","n1"],"type":"gossip_ok"}}
+2025-04-21 09:48:20,138{GMT}	INFO	[jepsen worker 4] jepsen.util: 4	:invoke	:read	nil
+2025-04-21 09:48:20,141{GMT}	INFO	[n4 stderr] maelstrom.process: 2025/04/21 09:48:20 Received {c13 n4 {"type":"read","msg_id":1}}
+2025-04-21 09:48:20,142{GMT}	INFO	[n4 stderr] maelstrom.process: 2025/04/21 09:48:20 Sent {"src":"n4","dest":"c13","body":{"in_reply_to":1,"messages":[0,1],"msg_id":6,"type":"read_ok"}}
+2025-04-21 09:48:20,143{GMT}	INFO	[jepsen worker 4] jepsen.util: 4	:ok	:read	[0 1]
+2025-04-21 09:48:20,808{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:broadcast	2
+2025-04-21 09:48:20,810{GMT}	INFO	[n0 stderr] maelstrom.process: 2025/04/21 09:48:20 Received {c10 n0 {"type":"broadcast","message":2,"msg_id":2}}
+2025-04-21 09:48:20,811{GMT}	INFO	[n0 stderr] maelstrom.process: 2025/04/21 09:48:20 Sent {"src":"n0","dest":"n3","body":{"data_id":"c10_2","message":2,"msg_id":4,"seen_nodes":["n0","n3"],"type":"gossip"}}
+2025-04-21 09:48:20,811{GMT}	INFO	[n0 stderr] maelstrom.process: 2025/04/21 09:48:20 Sent {"src":"n0","dest":"n1","body":{"data_id":"c10_2","message":2,"msg_id":5,"seen_nodes":["n0","n3","n1"],"type":"gossip"}}
+2025-04-21 09:48:20,811{GMT}	INFO	[n3 stderr] maelstrom.process: 2025/04/21 09:48:20 Received {n0 n3 {"data_id":"c10_2","message":2,"msg_id":4,"seen_nodes":["n0","n3"],"type":"gossip"}}
+2025-04-21 09:48:20,811{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:broadcast	2
+2025-04-21 09:48:20,811{GMT}	INFO	[n3 stderr] maelstrom.process: 2025/04/21 09:48:20 Sent {"src":"n3","dest":"n4","body":{"data_id":"c10_2","message":2,"msg_id":4,"seen_nodes":["n3","n0","n4"],"type":"gossip"}}
+2025-04-21 09:48:20,811{GMT}	INFO	[n0 stderr] maelstrom.process: 2025/04/21 09:48:20 Sent {"src":"n0","dest":"c10","body":{"in_reply_to":2,"msg_id":9,"type":"broadcast_ok"}}
+2025-04-21 09:48:20,812{GMT}	INFO	[n3 stderr] maelstrom.process: 2025/04/21 09:48:20 Sent {"src":"n3","dest":"n0","body":{"already_seen":false,"in_reply_to":4,"msg_id":8,"seen_nodes":["n3","n0","n4"],"type":"gossip_ok"}}
+2025-04-21 09:48:20,813{GMT}	INFO	[n0 stderr] maelstrom.process: 2025/04/21 09:48:20 Received {n3 n0 {"already_seen":false,"in_reply_to":4,"msg_id":8,"seen_nodes":["n3","n0","n4"],"type":"gossip_ok"}}
+2025-04-21 09:48:20,813{GMT}	INFO	[n4 stderr] maelstrom.process: 2025/04/21 09:48:20 Received {n3 n4 {"data_id":"c10_2","message":2,"msg_id":4,"seen_nodes":["n3","n0","n4"],"type":"gossip"}}
+2025-04-21 09:48:20,814{GMT}	INFO	[n4 stderr] maelstrom.process: 2025/04/21 09:48:20 Sent {"src":"n4","dest":"n1","body":{"data_id":"c10_2","message":2,"msg_id":3,"seen_nodes":["n4","n3","n0","n1"],"type":"gossip"}}
+2025-04-21 09:48:20,814{GMT}	INFO	[n4 stderr] maelstrom.process: 2025/04/21 09:48:20 Sent {"src":"n4","dest":"n3","body":{"already_seen":false,"in_reply_to":4,"msg_id":8,"seen_nodes":["n4","n3","n0","n1"],"type":"gossip_ok"}}
+2025-04-21 09:48:20,816{GMT}	INFO	[n3 stderr] maelstrom.process: 2025/04/21 09:48:20 Received {n4 n3 {"already_seen":false,"in_reply_to":4,"msg_id":8,"seen_nodes":["n4","n3","n0","n1"],"type":"gossip_ok"}}
+2025-04-21 09:48:21,299{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:broadcast	3
+2025-04-21 09:48:21,301{GMT}	INFO	[n0 stderr] maelstrom.process: 2025/04/21 09:48:21 Received {c10 n0 {"type":"broadcast","message":3,"msg_id":3}}
+2025-04-21 09:48:21,302{GMT}	INFO	[n0 stderr] maelstrom.process: 2025/04/21 09:48:21 Sent {"src":"n0","dest":"n3","body":{"data_id":"c10_3","message":3,"msg_id":6,"seen_nodes":["n0","n3"],"type":"gossip"}}
+2025-04-21 09:48:21,302{GMT}	INFO	[n0 stderr] maelstrom.process: 2025/04/21 09:48:21 Sent {"src":"n0","dest":"n1","body":{"data_id":"c10_3","message":3,"msg_id":7,"seen_nodes":["n0","n3","n1"],"type":"gossip"}}
+2025-04-21 09:48:21,302{GMT}	INFO	[n0 stderr] maelstrom.process: 2025/04/21 09:48:21 Sent {"src":"n0","dest":"c10","body":{"in_reply_to":3,"msg_id":12,"type":"broadcast_ok"}}
+2025-04-21 09:48:21,303{GMT}	INFO	[n3 stderr] maelstrom.process: 2025/04/21 09:48:21 Received {n0 n3 {"data_id":"c10_3","message":3,"msg_id":6,"seen_nodes":["n0","n3"],"type":"gossip"}}
+2025-04-21 09:48:21,304{GMT}	INFO	[n3 stderr] maelstrom.process: 2025/04/21 09:48:21 Sent {"src":"n3","dest":"n4","body":{"data_id":"c10_3","message":3,"msg_id":5,"seen_nodes":["n3","n0","n4"],"type":"gossip"}}
+2025-04-21 09:48:21,304{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:broadcast	3
+2025-04-21 09:48:21,304{GMT}	INFO	[n3 stderr] maelstrom.process: 2025/04/21 09:48:21 Sent {"src":"n3","dest":"n0","body":{"already_seen":false,"in_reply_to":6,"msg_id":10,"seen_nodes":["n3","n0","n4"],"type":"gossip_ok"}}
+2025-04-21 09:48:21,305{GMT}	INFO	[n4 stderr] maelstrom.process: 2025/04/21 09:48:21 Received {n3 n4 {"data_id":"c10_3","message":3,"msg_id":5,"seen_nodes":["n3","n0","n4"],"type":"gossip"}}
+2025-04-21 09:48:21,305{GMT}	INFO	[n0 stderr] maelstrom.process: 2025/04/21 09:48:21 Received {n3 n0 {"already_seen":false,"in_reply_to":6,"msg_id":10,"seen_nodes":["n3","n0","n4"],"type":"gossip_ok"}}
+2025-04-21 09:48:21,305{GMT}	INFO	[n4 stderr] maelstrom.process: 2025/04/21 09:48:21 Sent {"src":"n4","dest":"n1","body":{"data_id":"c10_3","message":3,"msg_id":4,"seen_nodes":["n4","n3","n0","n1"],"type":"gossip"}}
+2025-04-21 09:48:21,305{GMT}	INFO	[n4 stderr] maelstrom.process: 2025/04/21 09:48:21 Sent {"src":"n4","dest":"n3","body":{"already_seen":false,"in_reply_to":5,"msg_id":10,"seen_nodes":["n4","n3","n0","n1"],"type":"gossip_ok"}}
+2025-04-21 09:48:21,307{GMT}	INFO	[n3 stderr] maelstrom.process: 2025/04/21 09:48:21 Received {n4 n3 {"already_seen":false,"in_reply_to":5,"msg_id":10,"seen_nodes":["n4","n3","n0","n1"],"type":"gossip_ok"}}
+2025-04-21 09:48:21,751{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:invoke	:broadcast	4
+2025-04-21 09:48:21,753{GMT}	INFO	[n1 stderr] maelstrom.process: 2025/04/21 09:48:21 Received {c14 n1 {"type":"broadcast","message":4,"msg_id":1}}
+2025-04-21 09:48:21,754{GMT}	INFO	[n1 stderr] maelstrom.process: 2025/04/21 09:48:21 Sent {"src":"n1","dest":"n4","body":{"data_id":"c14_1","message":4,"msg_id":1,"seen_nodes":["n1","n4"],"type":"gossip"}}
+2025-04-21 09:48:21,754{GMT}	INFO	[n1 stderr] maelstrom.process: 2025/04/21 09:48:21 Sent {"src":"n1","dest":"n2","body":{"data_id":"c14_1","message":4,"msg_id":2,"seen_nodes":["n1","n4","n2"],"type":"gossip"}}
+2025-04-21 09:48:21,755{GMT}	INFO	[n1 stderr] maelstrom.process: 2025/04/21 09:48:21 Sent {"src":"n1","dest":"n0","body":{"data_id":"c14_1","message":4,"msg_id":3,"seen_nodes":["n1","n4","n2","n0"],"type":"gossip"}}
+2025-04-21 09:48:21,755{GMT}	INFO	[n1 stderr] maelstrom.process: 2025/04/21 09:48:21 Sent {"src":"n1","dest":"c14","body":{"in_reply_to":1,"msg_id":5,"type":"broadcast_ok"}}
+2025-04-21 09:48:21,756{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:ok	:broadcast	4
+2025-04-21 09:48:22,447{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:invoke	:broadcast	5
+2025-04-21 09:48:22,448{GMT}	INFO	[n2 stderr] maelstrom.process: 2025/04/21 09:48:22 Received {c11 n2 {"type":"broadcast","message":5,"msg_id":2}}
+2025-04-21 09:48:22,449{GMT}	INFO	[n2 stderr] maelstrom.process: 2025/04/21 09:48:22 Sent {"src":"n2","dest":"n1","body":{"data_id":"c11_2","message":5,"msg_id":1,"seen_nodes":["n2","n1"],"type":"gossip"}}
+2025-04-21 09:48:22,450{GMT}	INFO	[n2 stderr] maelstrom.process: 2025/04/21 09:48:22 Sent {"src":"n2","dest":"c11","body":{"in_reply_to":2,"msg_id":4,"type":"broadcast_ok"}}
+2025-04-21 09:48:22,450{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:ok	:broadcast	5
+2025-04-21 09:48:23,321{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:broadcast	6
+2025-04-21 09:48:23,322{GMT}	INFO	[n3 stderr] maelstrom.process: 2025/04/21 09:48:23 Received {c12 n3 {"type":"broadcast","message":6,"msg_id":2}}
+2025-04-21 09:48:23,323{GMT}	INFO	[n3 stderr] maelstrom.process: 2025/04/21 09:48:23 Sent {"src":"n3","dest":"n0","body":{"data_id":"c12_2","message":6,"msg_id":6,"seen_nodes":["n3","n0"],"type":"gossip"}}
+2025-04-21 09:48:23,323{GMT}	INFO	[n3 stderr] maelstrom.process: 2025/04/21 09:48:23 Sent {"src":"n3","dest":"n4","body":{"data_id":"c12_2","message":6,"msg_id":7,"seen_nodes":["n3","n0","n4"],"type":"gossip"}}
+2025-04-21 09:48:23,323{GMT}	INFO	[n3 stderr] maelstrom.process: 2025/04/21 09:48:23 Sent {"src":"n3","dest":"c12","body":{"in_reply_to":2,"msg_id":13,"type":"broadcast_ok"}}
+2025-04-21 09:48:23,324{GMT}	INFO	[n0 stderr] maelstrom.process: 2025/04/21 09:48:23 Received {n3 n0 {"data_id":"c12_2","message":6,"msg_id":6,"seen_nodes":["n3","n0"],"type":"gossip"}}
+2025-04-21 09:48:23,324{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:ok	:broadcast	6
+2025-04-21 09:48:23,324{GMT}	INFO	[n4 stderr] maelstrom.process: 2025/04/21 09:48:23 Received {n3 n4 {"data_id":"c12_2","message":6,"msg_id":7,"seen_nodes":["n3","n0","n4"],"type":"gossip"}}
+2025-04-21 09:48:23,325{GMT}	INFO	[n0 stderr] maelstrom.process: 2025/04/21 09:48:23 Sent {"src":"n0","dest":"n1","body":{"data_id":"c12_2","message":6,"msg_id":8,"seen_nodes":["n0","n3","n1"],"type":"gossip"}}
+2025-04-21 09:48:23,325{GMT}	INFO	[n4 stderr] maelstrom.process: 2025/04/21 09:48:23 Sent {"src":"n4","dest":"n1","body":{"data_id":"c12_2","message":6,"msg_id":5,"seen_nodes":["n4","n3","n0","n1"],"type":"gossip"}}
+2025-04-21 09:48:23,325{GMT}	INFO	[n0 stderr] maelstrom.process: 2025/04/21 09:48:23 Sent {"src":"n0","dest":"n3","body":{"already_seen":false,"in_reply_to":6,"msg_id":14,"seen_nodes":["n0","n3","n1"],"type":"gossip_ok"}}
+2025-04-21 09:48:23,325{GMT}	INFO	[n3 stderr] maelstrom.process: 2025/04/21 09:48:23 Received {n0 n3 {"already_seen":false,"in_reply_to":6,"msg_id":14,"seen_nodes":["n0","n3","n1"],"type":"gossip_ok"}}
+2025-04-21 09:48:23,325{GMT}	INFO	[n4 stderr] maelstrom.process: 2025/04/21 09:48:23 Sent {"src":"n4","dest":"n3","body":{"already_seen":false,"in_reply_to":7,"msg_id":12,"seen_nodes":["n4","n3","n0","n1"],"type":"gossip_ok"}}
+2025-04-21 09:48:23,326{GMT}	INFO	[n3 stderr] maelstrom.process: 2025/04/21 09:48:23 Received {n4 n3 {"already_seen":false,"in_reply_to":7,"msg_id":12,"seen_nodes":["n4","n3","n0","n1"],"type":"gossip_ok"}}
+2025-04-21 09:48:23,339{GMT}	INFO	[jepsen worker 4] jepsen.util: 4	:invoke	:read	nil
+2025-04-21 09:48:23,340{GMT}	INFO	[n4 stderr] maelstrom.process: 2025/04/21 09:48:23 Received {c13 n4 {"type":"read","msg_id":2}}
+2025-04-21 09:48:23,340{GMT}	INFO	[n4 stderr] maelstrom.process: 2025/04/21 09:48:23 Sent {"src":"n4","dest":"c13","body":{"in_reply_to":2,"messages":[0,1,2,3,6],"msg_id":13,"type":"read_ok"}}
+2025-04-21 09:48:23,341{GMT}	INFO	[jepsen worker 4] jepsen.util: 4	:ok	:read	[0 1 2 3 6]
+2025-04-21 09:48:23,342{GMT}	INFO	[jepsen worker nemesis] jepsen.util: :nemesis	:info	:stop-partition	nil
+2025-04-21 09:48:23,342{GMT}	INFO	[jepsen worker nemesis] jepsen.util: :nemesis	:info	:stop-partition	:network-healed
+2025-04-21 09:48:23,343{GMT}	INFO	[jepsen worker 0] jepsen.generator.interpreter: Waiting for recovery...
+2025-04-21 09:48:33,347{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:read	nil
+2025-04-21 09:48:33,348{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:invoke	:read	nil
+2025-04-21 09:48:33,348{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:invoke	:read	nil
+2025-04-21 09:48:33,349{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:invoke	:read	nil
+2025-04-21 09:48:33,349{GMT}	INFO	[jepsen worker 4] jepsen.util: 4	:invoke	:read	nil
+2025-04-21 09:48:33,350{GMT}	INFO	[n3 stderr] maelstrom.process: 2025/04/21 09:48:33 Received {c12 n3 {"type":"read","msg_id":3}}
+2025-04-21 09:48:33,350{GMT}	INFO	[n1 stderr] maelstrom.process: 2025/04/21 09:48:33 Received {c14 n1 {"type":"read","msg_id":2}}
+2025-04-21 09:48:33,350{GMT}	INFO	[n4 stderr] maelstrom.process: 2025/04/21 09:48:33 Received {c13 n4 {"type":"read","msg_id":3}}
+2025-04-21 09:48:33,350{GMT}	INFO	[n0 stderr] maelstrom.process: 2025/04/21 09:48:33 Received {c10 n0 {"type":"read","msg_id":4}}
+2025-04-21 09:48:33,350{GMT}	INFO	[n2 stderr] maelstrom.process: 2025/04/21 09:48:33 Received {c11 n2 {"type":"read","msg_id":3}}
+2025-04-21 09:48:33,350{GMT}	INFO	[n1 stderr] maelstrom.process: 2025/04/21 09:48:33 Sent {"src":"n1","dest":"c14","body":{"in_reply_to":2,"messages":[4],"msg_id":6,"type":"read_ok"}}
+2025-04-21 09:48:33,350{GMT}	INFO	[n3 stderr] maelstrom.process: 2025/04/21 09:48:33 Sent {"src":"n3","dest":"c12","body":{"in_reply_to":3,"messages":[2,3,6,0,1],"msg_id":14,"type":"read_ok"}}
+2025-04-21 09:48:33,350{GMT}	INFO	[n2 stderr] maelstrom.process: 2025/04/21 09:48:33 Sent {"src":"n2","dest":"c11","body":{"in_reply_to":3,"messages":[5],"msg_id":5,"type":"read_ok"}}
+2025-04-21 09:48:33,350{GMT}	INFO	[n4 stderr] maelstrom.process: 2025/04/21 09:48:33 Sent {"src":"n4","dest":"c13","body":{"in_reply_to":3,"messages":[0,1,2,3,6],"msg_id":14,"type":"read_ok"}}
+2025-04-21 09:48:33,350{GMT}	INFO	[n0 stderr] maelstrom.process: 2025/04/21 09:48:33 Sent {"src":"n0","dest":"c10","body":{"in_reply_to":4,"messages":[6,0,1,2,3],"msg_id":15,"type":"read_ok"}}
+2025-04-21 09:48:33,352{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:read	[6 0 1 2 3]
+2025-04-21 09:48:33,352{GMT}	INFO	[jepsen worker 3] jepsen.util: 3	:ok	:read	[2 3 6 0 1]
+2025-04-21 09:48:33,352{GMT}	INFO	[jepsen worker 1] jepsen.util: 1	:ok	:read	[4]
+2025-04-21 09:48:33,352{GMT}	INFO	[jepsen worker 2] jepsen.util: 2	:ok	:read	[5]
+2025-04-21 09:48:33,352{GMT}	INFO	[jepsen worker 4] jepsen.util: 4	:ok	:read	[0 1 2 3 6]
+2025-04-21 09:48:33,371{GMT}	INFO	[jepsen test runner] jepsen.core: Run complete, writing
+2025-04-21 09:48:33,423{GMT}	INFO	[jepsen node n0] maelstrom.db: Tearing down n0
+2025-04-21 09:48:33,424{GMT}	INFO	[jepsen node n2] maelstrom.db: Tearing down n2
+2025-04-21 09:48:33,423{GMT}	INFO	[jepsen node n1] maelstrom.db: Tearing down n1
+2025-04-21 09:48:33,424{GMT}	INFO	[jepsen node n3] maelstrom.db: Tearing down n3
+2025-04-21 09:48:33,424{GMT}	INFO	[jepsen node n4] maelstrom.db: Tearing down n4
+2025-04-21 09:48:34,787{GMT}	INFO	[jepsen node n0] maelstrom.net: Shutting down Maelstrom network
+2025-04-21 09:48:34,788{GMT}	INFO	[jepsen test runner] jepsen.core: Analyzing...
+2025-04-21 09:48:34,982{GMT}	INFO	[jepsen test runner] jepsen.core: Analysis complete
+2025-04-21 09:48:35,008{GMT}	INFO	[jepsen results] jepsen.store: Wrote /home/divi/git/fly.io/store/broadcast/20250421T094817.042+0530/results.edn
+2025-04-21 09:48:35,039{GMT}	INFO	[jepsen test runner] jepsen.core: {:perf {:latency-graph {:valid? true},
+        :rate-graph {:valid? true},
+        :valid? true},
+ :timeline {:valid? true},
+ :exceptions {:valid? true},
+ :stats {:valid? true,
+         :count 15,
+         :ok-count 15,
+         :fail-count 0,
+         :info-count 0,
+         :by-f {:broadcast {:valid? true,
+                            :count 7,
+                            :ok-count 7,
+                            :fail-count 0,
+                            :info-count 0},
+                :read {:valid? true,
+                       :count 8,
+                       :ok-count 8,
+                       :fail-count 0,
+                       :info-count 0}}},
+ :availability {:valid? true, :ok-fraction 1.0},
+ :net {:all {:send-count 84,
+             :recv-count 70,
+             :msg-count 84,
+             :msgs-per-op 5.6},
+       :clients {:send-count 50, :recv-count 50, :msg-count 50},
+       :servers {:send-count 34,
+                 :recv-count 20,
+                 :msg-count 34,
+                 :msgs-per-op 2.2666667},
+       :valid? true},
+ :workload {:worst-stale ({:element 0,
+                           :outcome :stable,
+                           :stable-latency 14505,
+                           :lost-latency nil,
+                           :known #jepsen.history.Op{:index 3,
+                                                     :time 30091015,
+                                                     :type :ok,
+                                                     :process 0,
+                                                     :f :add,
+                                                     :value 0},
+                           :last-absent #jepsen.history.Op{:index 27,
+                                                           :time 14535181036,
+                                                           :type :invoke,
+                                                           :process 1,
+                                                           :f :read,
+                                                           :value nil,
+                                                           :final? true}}
+                          {:element 1,
+                           :outcome :stable,
+                           :stable-latency 13778,
+                           :lost-latency nil,
+                           :known #jepsen.history.Op{:index 7,
+                                                     :time 756648260,
+                                                     :type :ok,
+                                                     :process 3,
+                                                     :f :add,
+                                                     :value 1},
+                           :last-absent #jepsen.history.Op{:index 27,
+                                                           :time 14535181036,
+                                                           :type :invoke,
+                                                           :process 1,
+                                                           :f :read,
+                                                           :value nil,
+                                                           :final? true}}
+                          {:element 2,
+                           :outcome :stable,
+                           :stable-latency 12536,
+                           :lost-latency nil,
+                           :known #jepsen.history.Op{:index 11,
+                                                     :time 1998402637,
+                                                     :type :ok,
+                                                     :process 0,
+                                                     :f :add,
+                                                     :value 2},
+                           :last-absent #jepsen.history.Op{:index 27,
+                                                           :time 14535181036,
+                                                           :type :invoke,
+                                                           :process 1,
+                                                           :f :read,
+                                                           :value nil,
+                                                           :final? true}}
+                          {:element 3,
+                           :outcome :stable,
+                           :stable-latency 12044,
+                           :lost-latency nil,
+                           :known #jepsen.history.Op{:index 13,
+                                                     :time 2490642838,
+                                                     :type :ok,
+                                                     :process 0,
+                                                     :f :add,
+                                                     :value 3},
+                           :last-absent #jepsen.history.Op{:index 27,
+                                                           :time 14535181036,
+                                                           :type :invoke,
+                                                           :process 1,
+                                                           :f :read,
+                                                           :value nil,
+                                                           :final? true}}
+                          {:element 6,
+                           :outcome :stable,
+                           :stable-latency 10023,
+                           :lost-latency nil,
+                           :known #jepsen.history.Op{:index 19,
+                                                     :time 4511517140,
+                                                     :type :ok,
+                                                     :process 3,
+                                                     :f :add,
+                                                     :value 6},
+                           :last-absent #jepsen.history.Op{:index 27,
+                                                           :time 14535181036,
+                                                           :type :invoke,
+                                                           :process 1,
+                                                           :f :read,
+                                                           :value nil,
+                                                           :final? true}}),
+            :duplicated-count 0,
+            :valid? false,
+            :lost-count 2,
+            :lost (4 5),
+            :stable-count 5,
+            :stale-count 5,
+            :stale (0 1 2 3 6),
+            :never-read-count 0,
+            :stable-latencies {0 10023,
+                               0.5 12536,
+                               0.95 14505,
+                               0.99 14505,
+                               1 14505},
+            :attempt-count 7,
+            :lost-latencies {0 10897,
+                             0.5 11591,
+                             0.95 11591,
+                             0.99 11591,
+                             1 11591},
+            :never-read (),
+            :duplicated {}},
+ :valid? false}
+
+
+Analysis invalid! (ﾉಥ益ಥ）ﾉ ┻━┻

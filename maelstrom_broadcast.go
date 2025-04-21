@@ -61,6 +61,8 @@ func (s *DataStore) SaveData(currNodeID, dataID string, msg any) (bool, *Data) {
 }
 
 func (s *DataStore) Read() []any {
+	s.Lock()
+	defer s.Unlock()
 	res := make([]any, len(s.dataLookup))
 	i := 0
 	for _, data := range s.dataLookup {
