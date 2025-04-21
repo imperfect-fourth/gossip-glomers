@@ -1,8 +1,0 @@
-0	:invoke	:broadcast	0
-1	:invoke	:read	nil
-1	:ok	:read	[]
-0	:info	:broadcast	0	:net-timeout
-1	:invoke	:read	nil
-2	:invoke	:read	nil
-1	:ok	:read	[]
-2	:fail	:read	nil	:net-timeout

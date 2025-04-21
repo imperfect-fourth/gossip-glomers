@@ -1,6 +1,0 @@
-{:index 0, :time 14699932, :type :invoke, :process 0, :f :read, :value nil}
-{:index 1, :time 23285591, :type :ok, :process 0, :f :read, :value []}
-{:index 2, :time 710300482, :type :invoke, :process 0, :f :broadcast, :value 0}
-{:index 3, :time 714634346, :type :ok, :process 0, :f :broadcast, :value 0}
-{:index 4, :time 10716246375, :type :invoke, :process 0, :f :read, :value nil, :final? true}
-{:index 5, :time 10721746580, :type :ok, :process 0, :f :read, :value [0], :final? true}

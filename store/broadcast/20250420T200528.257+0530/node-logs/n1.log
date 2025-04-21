@@ -1,7 +1,0 @@
-2025/04/20 20:05:29 Received {c0 n1 {"type":"init","node_id":"n1","node_ids":["n0","n1"],"msg_id":1}}
-2025/04/20 20:05:29 Node n1 initialized
-2025/04/20 20:05:29 Sent {"src":"n1","dest":"c0","body":{"in_reply_to":1,"type":"init_ok"}}
-2025/04/20 20:05:29 Received {c3 n1 {"type":"topology","topology":{"n0":["n1"],"n1":["n0"]},"msg_id":1}}
-2025/04/20 20:05:29 Sent {"src":"n1","dest":"c3","body":{"in_reply_to":1,"type":"topology_ok"}}
-2025/04/20 20:05:29 Received {n0 n1 {"message":0,"msg_id":1,"seen_nodes":["n0","n1"],"type":"gossip"}}
-2025/04/20 20:05:29 No handler for {"id":9,"src":"n0","dest":"n1","body":{"message":0,"msg_id":1,"seen_nodes":["n0","n1"],"type":"gossip"}}

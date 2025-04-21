@@ -1,5 +1,0 @@
-2025/04/20 17:07:04 Received {c1 n0 {"type":"init","node_id":"n0","node_ids":["n0","n1","n2"],"msg_id":1}}
-2025/04/20 17:07:04 Node n0 initialized
-2025/04/20 17:07:04 Sent {"src":"n0","dest":"c1","body":{"in_reply_to":1,"type":"init_ok"}}
-2025/04/20 17:07:04 Received {c8 n0 {"type":"generate","msg_id":1}}
-2025/04/20 17:07:04 No handler for {"id":8,"src":"c8","dest":"n0","body":{"type":"generate","msg_id":1}}

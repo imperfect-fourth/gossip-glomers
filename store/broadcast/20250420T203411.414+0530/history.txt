@@ -1,6 +1,0 @@
-0	:invoke	:read	nil
-0	:ok	:read	[]
-0	:invoke	:read	nil
-0	:ok	:read	[]
-0	:invoke	:read	nil
-0	:ok	:read	[]

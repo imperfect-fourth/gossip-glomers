@@ -1,6 +1,0 @@
-0	:invoke	:broadcast	0
-0	:ok	:broadcast	0
-0	:invoke	:read	nil
-1	:invoke	:read	nil
-0	:ok	:read	[{}]
-1	:ok	:read	[{}]
