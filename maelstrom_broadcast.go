@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"sync"
+	"time"
 
 	maelstrom "github.com/jepsen-io/maelstrom/demo/go"
 )
@@ -14,6 +15,7 @@ type Data struct {
 	data        any
 	nodesLookup map[string]struct{}
 	nodes       []string
+	originNode  string
 }
 
 // return false if node already registered
@@ -28,8 +30,27 @@ func (d *Data) RegisterNode(n string) (bool, []string) {
 	return true, d.nodes
 }
 
+func (d *Data) HasNode(n string) bool {
+	d.Lock()
+	defer d.Unlock()
+	_, ok := d.nodesLookup[n]
+	return ok
+}
+
 func (d *Data) Nodes() []string {
 	return d.nodes
+}
+func (d *Data) NodesWithNeighbours(neighbours []string) []string {
+	d.Lock()
+	defer d.Unlock()
+	res := make([]string, len(d.nodes))
+	copy(res, d.nodes)
+	for _, n := range neighbours {
+		if _, ok := d.nodesLookup[n]; !ok {
+			res = append(res, n)
+		}
+	}
+	return res
 }
 
 func (d *Data) SyncNodes(nodes []string) []string {
@@ -44,7 +65,7 @@ type DataStore struct {
 	dataLookup map[string]*Data
 }
 
-func (s *DataStore) SaveData(currNodeID, dataID string, msg any) (bool, *Data) {
+func (s *DataStore) SaveData(currNodeID, originNode, dataID string, msg any) (bool, *Data) {
 	s.Lock()
 	defer s.Unlock()
 	if data, ok := s.dataLookup[dataID]; ok {
@@ -85,17 +106,21 @@ type GossipRequest struct {
 
 type GossipResponse struct {
 	maelstrom.MessageBody
-	AlreadySeen bool     `json:"already_seen"`
-	SeenNodes   []string `json:"seen_nodes"`
+	DataID    string   `json:"data_id"`
+	SeenNodes []string `json:"seen_nodes"`
 }
 
-func Gossip(currNode *maelstrom.Node, data *Data) error {
+func gossip(currNode *maelstrom.Node, data *Data) (int, error) {
+	sent := 0
 	for _, node := range topology[currNode.ID()] {
-		registered, nodes := data.RegisterNode(node)
-		// if already registered continue
-		if !registered {
+		if node == data.originNode {
+			data.RegisterNode(node)
 			continue
 		}
+		if data.HasNode(node) {
+			continue
+		}
+		sent++
 
 		err := currNode.RPC(node, GossipRequest{
 			MessageBody: maelstrom.MessageBody{
@@ -104,19 +129,33 @@ func Gossip(currNode *maelstrom.Node, data *Data) error {
 			},
 			DataID:    data.id,
 			Data:      data.data,
-			SeenNodes: nodes,
+			SeenNodes: data.NodesWithNeighbours(topology[currNode.ID()]),
 		},
 			func(msg maelstrom.Message) error {
 				var body GossipResponse
 				if err := json.Unmarshal(msg.Body, &body); err != nil {
 					return err
 				}
-				if body.AlreadySeen {
-					data.SyncNodes(body.SeenNodes)
-				}
+				data.RegisterNode(node)
+				data.SyncNodes(body.SeenNodes)
 				return nil
 			},
 		)
+		if err != nil {
+			return sent, err
+		}
+	}
+	return sent, nil
+}
+
+func Gossip(currNode *maelstrom.Node, data *Data) error {
+	sent, err := gossip(currNode, data)
+	if err != nil {
+		return err
+	}
+	for sent != 0 {
+		time.Sleep(1000 * time.Millisecond)
+		sent, err = gossip(currNode, data)
 		if err != nil {
 			return err
 		}
@@ -136,10 +175,11 @@ func maelstromBroadcast(node *maelstrom.Node) func(msg maelstrom.Message) error 
 		}
 
 		dataID := getDataID(msg.Src, body.MsgID)
-		_, data := dataStore.SaveData(node.ID(), dataID, body.Data)
-		if err := Gossip(node, data); err != nil {
-			return err
-		}
+		_, data := dataStore.SaveData(node.ID(), msg.Src, dataID, body.Data)
+		go Gossip(node, data)
+		//if err := Gossip(node, data); err != nil {
+		//	return err
+		//}
 
 		return node.Reply(msg, map[string]any{"msg_id": NextMsgID(), "type": "broadcast_ok"})
 	}
@@ -152,30 +192,23 @@ func maelstromGossip(node *maelstrom.Node) func(maelstrom.Message) error {
 			return err
 		}
 
-		saved, data := dataStore.SaveData(node.ID(), body.DataID, body.Data)
+		saved, data := dataStore.SaveData(node.ID(), msg.Src, body.DataID, body.Data)
 		// if data already exists
+		var seenNodes = topology[node.ID()]
 		if !saved {
-			defer data.SyncNodes(body.SeenNodes)
-			return node.Reply(msg, GossipResponse{
-				MessageBody: maelstrom.MessageBody{
-					Type:  "gossip_ok",
-					MsgID: NextMsgID(),
-				},
-				AlreadySeen: true,
-				SeenNodes:   data.Nodes(),
-			})
+			seenNodes = data.NodesWithNeighbours(topology[node.ID()])
 		}
-		data.SyncNodes(body.SeenNodes)
-		if err := Gossip(node, data); err != nil {
-			return err
-		}
+		go func() {
+			data.SyncNodes(body.SeenNodes)
+			Gossip(node, data)
+		}()
 		return node.Reply(msg, GossipResponse{
 			MessageBody: maelstrom.MessageBody{
 				Type:  "gossip_ok",
 				MsgID: NextMsgID(),
 			},
-			AlreadySeen: false,
-			SeenNodes:   data.Nodes(),
+			DataID:    data.id,
+			SeenNodes: seenNodes,
 		})
 	}
 }

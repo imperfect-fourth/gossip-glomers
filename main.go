@@ -15,6 +15,7 @@ func main() {
 	n.Handle("read", maelstromRead(n))
 	n.Handle("topology", maelstromTopology(n))
 	n.Handle("gossip", maelstromGossip(n))
+
 	if err := n.Run(); err != nil {
 		log.Fatal(err)
 	}

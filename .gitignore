@@ -26,3 +26,5 @@ go.work.sum
 
 # maelstrom store
 store/
+
+fly-io
